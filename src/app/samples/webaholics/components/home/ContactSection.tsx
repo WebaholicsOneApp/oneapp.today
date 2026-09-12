@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Check,
   User,
@@ -29,6 +29,21 @@ export function ContactSection() {
     message: "",
     website: "", // Honeypot field - should remain empty
   });
+  const lastOfferMessage = useRef("");
+  const [selectedOffer, setSelectedOffer] = useState("");
+  useEffect(() => {
+    const selectOffer = (event: Event) => {
+      const detail = (event as CustomEvent<{offer:string;service:string}>).detail;
+      if (!detail || !["web-design", "e-commerce", "web-development"].includes(detail.service)) return;
+      setSelectedOffer(detail.offer);
+      const previousMessage = lastOfferMessage.current;
+      const nextMessage = `I'd like to discuss the ${detail.offer}.`;
+      setFormData(current => ({...current, currentPlatform: detail.service, message: !current.message || current.message === previousMessage ? nextMessage : current.message}));
+      lastOfferMessage.current = nextMessage;
+    };
+    window.addEventListener("webaholics:offer-selected", selectOffer);
+    return () => window.removeEventListener("webaholics:offer-selected", selectOffer);
+  }, []);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -71,6 +86,7 @@ export function ContactSection() {
                 Get Started?
               </span>
             </motion.h2>
+            {selectedOffer && <p className="mt-5 rounded-xl border border-blue-400/30 bg-blue-400/10 p-4 text-lg font-semibold text-blue-200">Your next step: {selectedOffer}</p>}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
