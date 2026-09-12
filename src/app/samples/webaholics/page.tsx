@@ -1,0 +1,1 @@
+import type { Metadata } from "next"; import { HomePageContent } from "./HomeClient"; export const metadata:Metadata={ title:"Webaholics | Growth Team — Design Preview",robots:{index:false,follow:false},alternates:{canonical:"https://www.webaholics.ai"}}; export default function Page(){return <HomePageContent/>;}
