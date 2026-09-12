@@ -5,7 +5,7 @@ const serviceLinks = [
   { href: "https://www.webaholics.ai/services/web-design", label: "Web Design" },
   { href: "https://www.webaholics.ai/services/web-development", label: "Web Development" },
   { href: "https://www.webaholics.ai/services/ecommerce", label: "E-Commerce" },
-  { href: "/ai-seo-services", label: "AI SEO & AEO" },
+  { href: "https://www.webaholics.ai/ai-seo-services", label: "AI SEO & AEO" },
   { href: "https://www.webaholics.ai/services/digital-marketing", label: "Digital Marketing" },
 ];
 
