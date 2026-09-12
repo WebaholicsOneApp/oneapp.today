@@ -7,9 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/samples/webaholics/growth/leads", label: "Websites & Leads" },
-  { href: "/samples/webaholics/growth/ecommerce", label: "Ecommerce" },
-  { href: "/samples/webaholics/growth/applications", label: "Custom Applications" },
+  { href: "/samples/webaholics#journey-leads", label: "Websites & Leads" },
+  { href: "/samples/webaholics#journey-ecommerce", label: "Ecommerce" },
+  { href: "/samples/webaholics#journey-applications", label: "Custom Applications" },
   { href: "https://www.webaholics.ai/portfolio", label: "Our Work" },
   { href: "https://www.webaholics.ai/about", label: "Our Team" },
 ];
