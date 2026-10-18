@@ -15,7 +15,8 @@ const modules = [
     eyebrow: "Growth intelligence",
     title: "Know where growth is profitable.",
     copy: "Connect advertising, products, margin and inventory so your team can see which growth is worth buying—and which is quietly destroying value.",
-    image: "/screenshots/revenueGrowth-desktop.png",
+    image: "/screenshots/current/oneapp-analytics.webp",
+    alt: "OneApp Analytics with the current overview tabs, commerce KPIs and revenue trend, using representative data",
     icon: BarChart3,
     signal: "ACQUISITION × MARGIN",
   },
@@ -23,7 +24,8 @@ const modules = [
     eyebrow: "Commerce operations",
     title: "Coordinate the work behind the storefront.",
     copy: "Turn company goals into measured scorecards with owners, live progress, margin guardrails and AI-visible next actions.",
-    image: "/screenshots/goals-dzone-desktop.png",
+    image: "/screenshots/current/oneapp-goals.webp",
+    alt: "OneApp Goals with goal health, owners and progress against targets, using representative data",
     icon: Target,
     signal: "GOALS × ACCOUNTABILITY",
   },
@@ -31,7 +33,8 @@ const modules = [
     eyebrow: "Customer intelligence",
     title: "Carry intent through every conversation.",
     copy: "Let AI answer routine questions from the full customer, product and order context—then escalate uncertainty without losing the thread.",
-    image: "/screenshots/messages-ai-autoresponse-desktop.png",
+    image: "/screenshots/current/oneapp-messages.webp",
+    alt: "OneApp Webaholics service inbox with a sample client conversation, assignment and team notes",
     icon: Users,
     signal: "CUSTOMER × RETENTION",
   },
@@ -87,11 +90,10 @@ function ProductStage() {
         <div className="flex h-10 items-center gap-2 rounded-t-[20px] border-b border-white/[0.07] px-4">
           <i className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" /><i className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" /><i className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <span className="ml-3 font-mono text-[9px] uppercase tracking-[0.18em] text-white/30">OneApp / Commerce command</span>
-          <span className="ml-auto flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-[#69f7d3]"><i className="h-1.5 w-1.5 animate-pulse rounded-full bg-current" /> Live</span>
+          <span className="ml-auto flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-[#69f7d3]"><i className="h-1.5 w-1.5 animate-pulse rounded-full bg-current" /> Preview</span>
         </div>
-        <div className="relative aspect-[1.35/1] overflow-hidden rounded-b-[20px] bg-[#121019]">
-          <Image src="/screenshots/revenueGrowth-desktop.png" alt="OneApp commerce intelligence dashboard" fill className="object-cover object-left-top opacity-90" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121019] via-transparent to-transparent" />
+        <div className="relative aspect-[1363/936] overflow-hidden rounded-b-[20px] bg-[#f2f7fa]">
+          <Image src="/screenshots/current/oneapp-analytics.webp" alt="OneApp Analytics with commerce KPIs and a revenue trend using representative data" fill sizes="(max-width: 1023px) 100vw, 680px" className="object-contain" priority />
         </div>
       </motion.div>
       <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .65, duration: .6 }} className="absolute -left-4 top-[24%] hidden w-60 rounded-2xl border border-white/15 bg-[#1b1627]/95 p-4 shadow-2xl backdrop-blur md:block">
@@ -135,7 +137,7 @@ function PlatformModules() {
         <div id="intelligence" className="mt-14 space-y-5">
           {modules.map((module, index) => { const Icon = module.icon; return <motion.article key={module.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} className="grid overflow-hidden rounded-[32px] border border-black/10 bg-white shadow-[0_20px_70px_rgba(20,10,30,.08)] lg:grid-cols-[.82fr_1.18fr]">
             <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-14"><div><div className="mb-16 flex items-center justify-between"><span className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-[#8b26ca]">{module.eyebrow}</span><span className="font-mono text-[10px] text-black/30">0{index + 1} / 03</span></div><span className="mb-7 grid h-12 w-12 place-items-center rounded-2xl bg-[#f2e7fb] text-[#8b26ca]"><Icon className="h-6 w-6" /></span><h3 className="text-4xl font-bold leading-[1] tracking-[-.05em] sm:text-5xl">{module.title}</h3><p className="mt-6 max-w-xl text-base leading-relaxed text-black/55 sm:text-lg">{module.copy}</p></div><span className="mt-12 w-fit rounded-full border border-black/10 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[.15em] text-black/45">{module.signal}</span></div>
-            <div className="relative min-h-[430px] overflow-hidden bg-[#17131d] p-5 sm:p-9"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:45px_45px]" /><div className="relative h-full min-h-[380px] overflow-hidden rounded-2xl border border-white/10 bg-[#0f0d14] shadow-2xl"><Image src={module.image} alt="" fill className="object-cover object-left-top" /><div className="absolute inset-0 bg-gradient-to-t from-[#0f0d14]/60 via-transparent to-transparent" /></div></div>
+            <figure className="relative flex flex-col justify-center overflow-hidden bg-[#17131d] p-5 sm:p-9"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:45px_45px]" /><div className="relative aspect-[1363/936] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#f2f7fa] shadow-2xl"><Image src={module.image} alt={module.alt} fill sizes="(max-width: 1023px) 100vw, 760px" className="object-contain" /></div><figcaption className="relative mt-3 text-center text-xs text-white/45">Current OneApp interface · representative data</figcaption></figure>
           </motion.article>; })}
         </div>
       </div>
@@ -239,3 +241,4 @@ function FinalCta() {
 export function OneAppPageContent() {
   return <main className="overflow-hidden bg-[#0b0a10]"><Navigation /><Hero /><CommerceRail /><PlatformModules /><MobilePwa /><Proof /><WebaholicsBridge /><FinalCta /><footer className="border-t border-white/10 bg-[#0b0a10] py-10 text-white/35"><div className="mx-auto flex max-w-[1380px] flex-col gap-6 px-5 sm:px-8 md:flex-row md:items-center md:justify-between"><Logo /><div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs"><p>© 2026 OneApp. The AI operating system for commerce growth.</p><Link href="/privacy" className="transition hover:text-white">Privacy</Link><a href="mailto:info@oneapp.today" className="transition hover:text-white">Contact</a></div></div></footer></main>;
 }
+
