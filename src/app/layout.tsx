@@ -15,22 +15,22 @@ function validTrackingId(value: string | undefined, pattern: RegExp) {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'OneApp | The AI Operating System for Commerce Growth',
+    default: 'OneApp | An AI Workforce Platform for Business Growth',
     template: '%s | OneApp',
   },
   description:
-    'Connect acquisition, products, marketplaces, customers, and operations. OneApp turns commerce signals into coordinated growth action.',
+    'An AI workforce platform built around your business. Connect customers, performance and daily work. Included for every Webaholics client.',
   keywords: [
-    'commerce operating system',
+    'AI workforce platform',
     'AI ecommerce platform',
-    'commerce growth intelligence',
+    'business growth platform',
     'marketplace automation',
-    'ecommerce operations software',
+    'service business software',
     'product data automation',
-    'commerce AI agents',
+    'business AI assistance',
     'multi-channel commerce platform',
     'OneApp',
-    'AI commerce automation',
+    'Webaholics client platform',
   ],
   authors: [{ name: 'OneApp', url: BASE_URL }],
   creator: 'OneApp',
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'OneApp | AI Growth Engine for Commerce',
+    title: 'OneApp | An AI Workforce Platform for Business Growth',
     description:
-      'Connect acquisition, products, marketplaces, customers and operations with AI built for commerce growth.',
+      'Your business, your team and AI in one connected platform. Built for service businesses and commerce brands, with Webaholics support.',
     url: BASE_URL,
     siteName: 'OneApp',
     locale: 'en_US',
@@ -53,20 +53,16 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/social/oneapp-ai-growth-engine-v2.png`,
         width: 1200,
         height: 630,
-        type: 'image/png',
         alt: 'OneApp. AI Growth Engine for Commerce.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OneApp | AI Growth Engine for Commerce',
+    title: 'OneApp | An AI Workforce Platform for Business Growth',
     description:
-      'Connect acquisition, products, marketplaces, customers and operations with AI built for commerce growth.',
-    images: [{
-      url: `${BASE_URL}/social/oneapp-ai-growth-engine-v2.png`,
-      alt: 'OneApp. AI Growth Engine for Commerce.',
-    }],
+      'Grow your business with an AI workforce platform built around your customers, performance and daily work.',
+    images: [{ url: `${BASE_URL}/social/oneapp-ai-growth-engine-v2.png`, alt: 'OneApp. AI Growth Engine for Commerce.' }],
   },
   robots: {
     index: true,
@@ -88,7 +84,7 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   other: {
-    'ai-content-declaration': 'This website describes OneApp, an AI operating system for commerce growth.',
+    'ai-content-declaration': 'This website describes OneApp, an AI workforce platform for service businesses and commerce brands.',
   },
 };
 
@@ -117,7 +113,7 @@ const jsonLd = {
         url: `${BASE_URL}/oneapp-logo.png`,
       },
       description:
-        'OneApp is an AI operating system connecting acquisition, products, marketplaces, customers, and commerce operations.',
+        'OneApp is an AI workforce platform connecting websites, customers, performance and daily work for service businesses and commerce brands.',
       sameAs: [],
     },
     {
@@ -127,17 +123,17 @@ const jsonLd = {
       name: 'OneApp',
       publisher: { '@id': `${BASE_URL}/#organization` },
       description:
-        'AI-powered commerce operating system that turns connected signals into coordinated growth action.',
+        'An AI workforce platform built around your business, included for every Webaholics client.',
     },
     {
       '@type': 'WebPage',
       '@id': `${BASE_URL}/#webpage`,
       url: BASE_URL,
-      name: 'OneApp | The AI Operating System for Commerce Growth',
+      name: 'OneApp | An AI Workforce Platform for Business Growth',
       isPartOf: { '@id': `${BASE_URL}/#website` },
       about: { '@id': `${BASE_URL}/#organization` },
       description:
-        'OneApp connects acquisition, product data, marketplaces, customers, and operations for commerce brands.',
+        'OneApp brings customers, analytics, goals and daily work into one workspace for your team and AI.',
     },
     {
       '@type': 'SoftwareApplication',
@@ -146,12 +142,12 @@ const jsonLd = {
       operatingSystem: 'Web',
       url: BASE_URL,
       description:
-        'AI operating system for commerce growth, combining intelligence, workflows, integrations, and AI execution across the commerce operation.',
+        'An AI workforce platform combining business analytics, customer relationships, goals and AI-assisted workflows.',
       featureList: [
-        'Growth intelligence connecting advertising, product economics, margin, and inventory',
-        'Commerce operations workflows for teams and AI agents',
-        'Marketplace and product data coordination',
-        'Customer intelligence across leads, conversations, and retention',
+        'Analytics for sales, leads, marketing and business performance',
+        'Goals and workflows for teams with AI assistance',
+        'Websites, leads and customer relationship management',
+        'AI-assisted conversations and customer follow-up',
       ],
       provider: { '@id': `${BASE_URL}/#organization` },
     },
@@ -163,15 +159,15 @@ const jsonLd = {
           name: 'What is OneApp?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OneApp is an AI operating system that connects acquisition, products, marketplaces, customers, and operations so commerce teams can turn intelligence into coordinated action.',
+            text: 'OneApp is an AI workforce platform that connects your website, customers, performance and daily work so your team and AI can move growth forward together.',
           },
         },
         {
           '@type': 'Question',
-          name: 'How does OneApp help commerce teams grow?',
+          name: 'How does OneApp help businesses grow?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OneApp connects commercial signals across advertising, products, inventory, customers, and marketplaces, then helps operators and AI agents prioritize and execute the highest-value work.',
+            text: 'OneApp helps your team see performance, manage customer relationships and coordinate work. AI assists with insights, content and next steps while your team guides decisions.',
           },
         },
         {
@@ -179,7 +175,7 @@ const jsonLd = {
           name: 'Is OneApp software or a managed service?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OneApp is the commerce platform. Brands that also want an embedded strategy and operating team can engage Webaholics for managed growth powered by OneApp.',
+            text: 'OneApp is the platform. Webaholics is the team that helps configure it around your business and supports your team. Every Webaholics client gets access to OneApp.',
           },
         },
         {
@@ -187,7 +183,7 @@ const jsonLd = {
           name: 'Who is OneApp built for?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'OneApp is built for established commerce brands and operators managing multiple channels, products, marketplaces, customer signals, and operational workflows.',
+            text: 'OneApp is built for service businesses and commerce brands. The workspace adapts to the customers, performance measures and workflows that matter to each business.',
           },
         },
       ],
