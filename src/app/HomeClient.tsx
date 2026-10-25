@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useRef, useState } from "react";
 import { DemoRequestForm } from "~/components/DemoRequestForm";
+import { WebsiteChatShowcase } from "~/components/WebsiteChatShowcase";
 
 const modules = [
   {
@@ -141,6 +142,7 @@ function CommerceRail() {
 
 function PlatformModules() {
   return (
+    <>
     <section id="platform" className="scroll-mt-20 bg-[#f3f1f5] py-24 text-[#17131d] sm:py-32">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8">
         <div className="grid gap-8 border-b border-black/10 pb-14 lg:grid-cols-[1fr_.75fr] lg:items-end"><div><p className="mb-5 font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#8b26ca]">The platform</p><h2 className="max-w-4xl text-5xl font-bold leading-[.95] tracking-[-.06em] sm:text-7xl">One connected platform. More ways to grow.</h2></div><p className="max-w-xl text-lg leading-relaxed text-black/55 lg:justify-self-end">OneApp brings your business into one workspace. AI helps you understand performance, create content and move work forward—with your team guiding the decisions.</p></div>
@@ -152,6 +154,8 @@ function PlatformModules() {
         </div>
       </div>
     </section>
+    <WebsiteChatShowcase />
+    </>
   );
 }
 
