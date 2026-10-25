@@ -16,9 +16,9 @@ const modules = [
     eyebrow: "Growth intelligence",
     title: "Know what’s working.",
     copy: "See sales, leads and marketing performance in one place. Give your team and AI a shared view of what’s changing, where to focus and what to do next.",
-    image: "/screenshots/dzone-analytics-detail-oct23.jpg",
-    alt: "D Zone Analytics in OneApp showing revenue, orders, profit margin and marketplace sales trends",
-    caption: "D Zone Analytics · Actual OneApp UI, October 23",
+    image: "/screenshots/dzone-analytics-demo-oct25.png",
+    alt: "D Zone Analytics with illustrative revenue of $181,888, 22% profit margin and marketplace sales trends",
+    caption: "D Zone Analytics · Illustrative data",
     icon: BarChart3,
     signal: "PERFORMANCE × CLARITY",
   },
@@ -100,10 +100,10 @@ function ProductStage() {
         <div className="flex h-10 items-center gap-2 rounded-t-[20px] border-b border-white/[0.07] px-4">
           <i className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" /><i className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" /><i className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <span className="ml-3 font-mono text-[9px] uppercase tracking-[0.18em] text-white/30">OneApp / D Zone Analytics</span>
-          <span className="ml-auto flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-[#69f7d3]">Product view</span>
+          <span className="ml-auto flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-[#69f7d3]">Illustrative data</span>
         </div>
         <div className="relative aspect-[1.28/1] overflow-hidden rounded-b-[20px] bg-[#121019]">
-          <Image src="/screenshots/dzone-analytics-hero-oct23.jpg" alt="D Zone Analytics showing revenue, orders, margin and sales trends across marketplaces" fill className="object-cover object-left-top" priority unoptimized />
+          <Image src="/screenshots/dzone-analytics-demo-oct25.png" alt="D Zone Analytics with illustrative revenue of $181,888, 22% profit margin and marketplace sales trends" fill className="object-cover object-left-top" priority unoptimized />
 
         </div>
       </motion.div>
