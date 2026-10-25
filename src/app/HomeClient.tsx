@@ -157,16 +157,16 @@ function PlatformModules() {
 
 const mobileScreens = [
   {
-    image: "/screenshots/mobile-dzone-oct23.jpg",
-    alt: "OneApp mobile home for D Zone showing ecommerce revenue, profit, orders, average order value and refunds",
+    image: "/screenshots/mobile-dzone-demo-oct25.png",
+    alt: "OneApp mobile home for D Zone showing illustrative ecommerce revenue, profit, orders, average order value and refunds",
     label: "D Zone",
-    meta: "Commerce analytics · current mobile UI",
+    meta: "Commerce analytics · illustrative data",
   },
   {
-    image: "/screenshots/mobile-webaholics-oct23.jpg",
-    alt: "OneApp mobile home for Webaholics showing service revenue, sessions, leads, search position and advertising spend",
+    image: "/screenshots/mobile-webaholics-demo-oct25.png",
+    alt: "OneApp mobile home for Webaholics showing illustrative service revenue, sessions, leads, search position and advertising spend",
     label: "Webaholics",
-    meta: "Service analytics · current mobile UI",
+    meta: "Service analytics · illustrative data",
   },
 ];
 
