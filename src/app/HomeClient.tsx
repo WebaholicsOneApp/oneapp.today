@@ -35,9 +35,9 @@ const modules = [
     eyebrow: "Customer intelligence",
     title: "Keep every relationship moving.",
     copy: "Bring leads, clients and messages together. Use AI-assisted replies and website chat to answer questions, capture interest and help your team follow up with context.",
-    image: "/screenshots/platform-messages-oct22.jpg",
-    alt: "OneApp Messages response performance showing first reply trends and reply time by channel",
-    caption: "Messages response performance · OneApp UI, October 22",
+    image: "/screenshots/messages-response-demo.svg",
+    alt: "OneApp Messages illustration with fictional demo response trends and reply times by channel",
+    caption: "Messages response performance · Illustrative demo data",
     icon: Users,
     signal: "CUSTOMER × RETENTION",
   },
@@ -147,7 +147,7 @@ function PlatformModules() {
         <div id="intelligence" className="scroll-mt-24 mt-14 space-y-5">
           {modules.map((module, index) => { const Icon = module.icon; return <motion.article key={module.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} className="grid overflow-hidden rounded-[32px] border border-black/10 bg-white shadow-[0_20px_70px_rgba(20,10,30,.08)] lg:grid-cols-[.82fr_1.18fr]">
             <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-14"><div><div className="mb-16 flex items-center justify-between"><span className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-[#8b26ca]">{module.eyebrow}</span><span className="font-mono text-[10px] text-black/30">0{index + 1} / 03</span></div><span className="mb-7 grid h-12 w-12 place-items-center rounded-2xl bg-[#f2e7fb] text-[#8b26ca]"><Icon className="h-6 w-6" /></span><h3 className="text-4xl font-bold leading-[1] tracking-[-.05em] sm:text-5xl">{module.title}</h3><p className="mt-6 max-w-xl text-base leading-relaxed text-black/55 sm:text-lg">{module.copy}</p></div><span className="mt-12 w-fit rounded-full border border-black/10 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[.15em] text-black/45">{module.signal}</span></div>
-            <div className="relative flex min-w-0 flex-col justify-center overflow-hidden bg-[#17131d] p-5 sm:p-9"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:45px_45px]" /><figure className="relative min-w-0"><a href={module.image} target="_blank" rel="noreferrer" aria-label={`Open ${module.eyebrow} screenshot full size`} className="relative block aspect-[1.08/1] overflow-hidden rounded-2xl border border-white/10 bg-[#1d263a] shadow-2xl focus-visible:outline-2 focus-visible:outline-[#ce7bff]"><Image src={module.image} alt={module.alt} fill sizes="(max-width: 1024px) 90vw, 700px" unoptimized className={index === 0 ? "object-contain" : "object-cover object-left-top"} /></a><figcaption className="mt-4 text-xs leading-relaxed text-white/50">{module.caption} · Open full screenshot</figcaption></figure></div>
+            <div className="relative flex min-w-0 flex-col justify-center overflow-hidden bg-[#17131d] p-5 sm:p-9"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:45px_45px]" /><figure className="relative min-w-0"><a href={module.image} target="_blank" rel="noreferrer" aria-label={`Open ${module.eyebrow} screenshot full size`} className="relative block aspect-[1.08/1] overflow-hidden rounded-2xl border border-white/10 bg-[#1d263a] shadow-2xl focus-visible:outline-2 focus-visible:outline-[#ce7bff]"><Image src={module.image} alt={module.alt} fill sizes="(max-width: 1024px) 90vw, 700px" unoptimized className={index !== 1 ? "object-contain" : "object-cover object-left-top"} /></a><figcaption className="mt-4 text-xs leading-relaxed text-white/50">{module.caption} · Open full screenshot</figcaption></figure></div>
           </motion.article>; })}
         </div>
       </div>
@@ -157,16 +157,16 @@ function PlatformModules() {
 
 const mobileScreens = [
   {
-    image: "/screenshots/mobile-dzone-oct23.jpg",
-    alt: "OneApp mobile home for D Zone showing ecommerce revenue, profit, orders, average order value and refunds",
+    image: "/screenshots/mobile-dzone-demo.svg",
+    alt: "OneApp D Zone mobile analytics illustration with fictional revenue, profit, orders, average order value and refunds",
     label: "D Zone",
-    meta: "Commerce analytics · current mobile UI",
+    meta: "Commerce analytics · Demo data",
   },
   {
-    image: "/screenshots/mobile-webaholics-oct23.jpg",
-    alt: "OneApp mobile home for Webaholics showing service revenue, sessions, leads, search position and advertising spend",
+    image: "/screenshots/mobile-webaholics-demo.svg",
+    alt: "OneApp Webaholics mobile analytics illustration with fictional service revenue, leads, ad spend and correctly calculated ROAS",
     label: "Webaholics",
-    meta: "Service analytics · current mobile UI",
+    meta: "Service analytics · Demo data",
   },
 ];
 
