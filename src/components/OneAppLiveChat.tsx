@@ -34,6 +34,9 @@ export function OneAppLiveChat() {
       data-api-key={apiKey}
       data-accent="#8b26ca"
       data-title="Chat with OneApp"
+      data-toolset="agency"
+      data-placeholder="Ask about OneApp..."
+      data-greeting="Hi! I'm OneApp's AI assistant. I can help explain the platform and how to get started with Webaholics. What would you like to know?"
       data-offset-bottom="20"
       data-offset-bottom-mobile="88"
     />
