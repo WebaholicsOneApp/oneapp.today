@@ -157,7 +157,7 @@ function PlatformModules() {
 
 const mobileScreens = [
   {
-    image: "/screenshots/mobile-dzone-demo-oct25.png",
+    image: "/screenshots/mobile-dzone-demo-oct25-v2.png",
     alt: "OneApp mobile home for D Zone showing illustrative ecommerce revenue, profit, orders, average order value and refunds",
     label: "D Zone",
     meta: "Commerce analytics · illustrative data",
