@@ -16,8 +16,8 @@ const modules = [
     eyebrow: "Growth intelligence",
     title: "Know what’s working.",
     copy: "See sales, leads and marketing performance in one place. Give your team and AI a shared view of what’s changing, where to focus and what to do next.",
-    image: "/screenshots/dzone-analytics-demo-oct25.png",
-    alt: "D Zone Analytics with illustrative revenue of $181,888, 22% profit margin and marketplace sales trends",
+    image: "/screenshots/dzone-analytics-simple-demo-oct25.png",
+    alt: "D Zone Analytics with illustrative revenue of $181,888, 22% profit margin and Amazon, eBay, Website and Walmart sales trends",
     caption: "D Zone Analytics · Illustrative data",
     icon: BarChart3,
     signal: "PERFORMANCE × CLARITY",
@@ -103,7 +103,7 @@ function ProductStage() {
           <span className="ml-auto flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-[#69f7d3]">Illustrative data</span>
         </div>
         <div className="relative aspect-[1.28/1] overflow-hidden rounded-b-[20px] bg-[#121019]">
-          <Image src="/screenshots/dzone-analytics-demo-oct25.png" alt="D Zone Analytics with illustrative revenue of $181,888, 22% profit margin and marketplace sales trends" fill className="object-cover object-left-top" priority unoptimized />
+          <Image src="/screenshots/dzone-analytics-simple-demo-oct25.png" alt="D Zone Analytics with illustrative revenue of $181,888, 22% profit margin and Amazon, eBay, Website and Walmart sales trends" fill className="object-cover object-left-top" priority unoptimized />
 
         </div>
       </motion.div>
