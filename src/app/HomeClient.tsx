@@ -73,18 +73,19 @@ function Navigation() {
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#0b0a10]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1380px] items-center justify-between px-5 sm:px-8">
         <Logo />
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-6 xl:flex">
           {links.map(([href, label]) => <a key={href} href={href} className="text-sm font-medium text-white/55 transition hover:text-white">{label}</a>)}
         </div>
-        <div className="hidden items-center gap-3 sm:flex">
-          <span className="hidden text-[10px] font-bold uppercase tracking-[0.18em] text-white/35 xl:block">Built around your business</span>
-          <a href="#demo" className="group flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#0b0a10] transition hover:bg-[#d7ff7b]">Request a demo <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></a>
+        <div className="flex items-center gap-3">
+          <a href="https://prod.oneapp.today/" className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full border border-white/25 px-3 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-4">Client login</a>
+          <a href="#demo" className="group hidden items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#0b0a10] transition hover:bg-[#d7ff7b] sm:flex">Request a demo <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></a>
         </div>
-        <button onClick={() => setOpen(!open)} className="rounded-lg p-2 text-white lg:hidden" aria-label="Toggle menu" aria-expanded={open} aria-controls="mobile-navigation">{open ? <X /> : <Menu />}</button>
+        <button onClick={() => setOpen(!open)} className="rounded-lg p-2 text-white xl:hidden" aria-label="Toggle menu" aria-expanded={open} aria-controls="mobile-navigation">{open ? <X /> : <Menu />}</button>
       </div>
       <AnimatePresence onExitComplete={finishMenuNavigation}>
-        {open && <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} id="mobile-navigation" className="border-t border-white/10 bg-[#111019] px-5 py-5 lg:hidden">
+        {open && <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} id="mobile-navigation" className="border-t border-white/10 bg-[#111019] px-5 py-5 xl:hidden">
           {links.map(([href, label]) => <a key={href} onClick={() => { pendingAnchor.current = href ?? null; setOpen(false); }} href={href} className="block border-b border-white/[0.06] py-4 text-white/75">{label}</a>)}
+          <a href="https://prod.oneapp.today/" onClick={() => setOpen(false)} className="mt-5 flex min-h-11 items-center justify-center rounded-full border border-white/25 px-5 py-4 font-semibold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Client login</a>
           <a href="#demo" onClick={() => { pendingAnchor.current = "#demo"; setOpen(false); }} className="mt-5 flex items-center justify-center gap-2 rounded-full bg-white px-5 py-4 font-bold text-black">Request a demo <ArrowRight className="h-4 w-4" /></a>
         </motion.div>}
       </AnimatePresence>
@@ -259,5 +260,5 @@ function FinalCta() {
 }
 
 export function OneAppPageContent() {
-  return <main className="overflow-hidden bg-[#0b0a10]"><Navigation /><Hero /><CommerceRail /><PlatformModules /><MobilePwa /><Proof /><FinalCta /><WebaholicsBridge /><footer className="border-t border-white/10 bg-[#0b0a10] py-10 text-white/35"><div className="mx-auto flex max-w-[1380px] flex-col gap-6 px-5 sm:px-8 md:flex-row md:items-center md:justify-between"><Logo /><div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs"><p>© 2026 OneApp. An AI workforce platform for business growth.</p><Link href="/privacy" className="transition hover:text-white">Privacy</Link><a href="mailto:info@oneapp.today" className="transition hover:text-white">Contact</a></div></div></footer></main>;
+  return <main className="overflow-hidden bg-[#0b0a10]"><Navigation /><Hero /><CommerceRail /><PlatformModules /><MobilePwa /><Proof /><FinalCta /><WebaholicsBridge /><footer className="border-t border-white/10 bg-[#0b0a10] py-10 text-white/35"><div className="mx-auto flex max-w-[1380px] flex-col gap-6 px-5 sm:px-8 md:flex-row md:items-center md:justify-between"><Logo /><div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs"><p>© 2026 OneApp. An AI workforce platform for business growth.</p><a href="https://prod.oneapp.today/" className="inline-flex min-h-11 items-center text-white/70 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Client login</a><Link href="/privacy" className="transition hover:text-white">Privacy</Link><a href="mailto:info@oneapp.today" className="transition hover:text-white">Contact</a></div></div></footer></main>;
 }
