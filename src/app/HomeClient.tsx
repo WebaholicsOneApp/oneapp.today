@@ -26,9 +26,9 @@ const modules = [
     eyebrow: "Goals & execution",
     title: "Turn priorities into progress.",
     copy: "Connect goals, tasks and responsibilities. Use AI to help plan the next step, with clear ownership and visible progress for your team and Webaholics.",
-    image: "/screenshots/goal-detail-oct22.jpg",
-    alt: "OneApp goal detail showing ownership, next action and progress toward 10 profitable clients",
-    caption: "Goals & accountability · OneApp UI, October 22",
+    image: "/screenshots/goals-channel-progress.jpg",
+    alt: "OneApp Goals overview: $72,000 toward a $100,000 monthly sales goal, with storefront ahead of pace and wholesale behind. Illustrative data.",
+    caption: "OneApp Goals · Channel targets and pace · Illustrative data",
     icon: Target,
     signal: "GOALS × ACCOUNTABILITY",
   },
@@ -148,10 +148,10 @@ function PlatformModules() {
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8">
         <div className="grid gap-8 border-b border-black/10 pb-14 lg:grid-cols-[1fr_.75fr] lg:items-end"><div><p className="mb-5 font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#8b26ca]">The platform</p><h2 className="max-w-4xl text-5xl font-bold leading-[.95] tracking-[-.06em] sm:text-7xl">One connected platform. More ways to grow.</h2></div><p className="max-w-xl text-lg leading-relaxed text-black/55 lg:justify-self-end">OneApp brings your business into one workspace. AI helps you understand performance, create content and move work forward—with your team guiding the decisions.</p></div>
         <div id="intelligence" className="scroll-mt-24 mt-14 space-y-5">
-          {modules.map((module, index) => { const Icon = module.icon; return <motion.article key={module.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} className="grid overflow-hidden rounded-[32px] border border-black/10 bg-white shadow-[0_20px_70px_rgba(20,10,30,.08)] lg:grid-cols-[.82fr_1.18fr]">
+          {modules.map((module, index) => { const Icon = module.icon; return <article id={module.icon === Target ? "goals" : undefined} key={module.title} className="grid scroll-mt-24 overflow-hidden rounded-[32px] border border-black/10 bg-white shadow-[0_20px_70px_rgba(20,10,30,.08)] lg:grid-cols-[.82fr_1.18fr]">
             <div className="flex flex-col justify-between p-8 sm:p-12 lg:p-14"><div><div className="mb-16 flex items-center justify-between"><span className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-[#8b26ca]">{module.eyebrow}</span><span className="font-mono text-[10px] text-black/30">0{index + 1} / 03</span></div><span className="mb-7 grid h-12 w-12 place-items-center rounded-2xl bg-[#f2e7fb] text-[#8b26ca]"><Icon className="h-6 w-6" /></span><h3 className="text-4xl font-bold leading-[1] tracking-[-.05em] sm:text-5xl">{module.title}</h3><p className="mt-6 max-w-xl text-base leading-relaxed text-black/55 sm:text-lg">{module.copy}</p></div><span className="mt-12 w-fit rounded-full border border-black/10 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[.15em] text-black/45">{module.signal}</span></div>
-            <div className="relative flex min-w-0 flex-col justify-center overflow-hidden bg-[#17131d] p-5 sm:p-9"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:45px_45px]" /><figure className="relative min-w-0"><a href={module.image} target="_blank" rel="noreferrer" aria-label={`Open ${module.eyebrow} screenshot full size`} className="relative block aspect-[1.08/1] overflow-hidden rounded-2xl border border-white/10 bg-[#1d263a] shadow-2xl focus-visible:outline-2 focus-visible:outline-[#ce7bff]"><Image src={module.image} alt={module.alt} fill sizes="(max-width: 1024px) 90vw, 700px" unoptimized className={index === 0 ? "object-contain" : "object-cover object-left-top"} /></a><figcaption className="mt-4 text-xs leading-relaxed text-white/50">{module.caption} · Open full screenshot</figcaption></figure></div>
-          </motion.article>; })}
+            <div className="relative flex min-w-0 flex-col justify-center overflow-hidden bg-[#17131d] p-5 sm:p-9"><div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:45px_45px]" /><figure className="relative min-w-0"><a href={module.image} style={module.icon === Target ? { aspectRatio: "820 / 850" } : undefined} target="_blank" rel="noreferrer" aria-label={`Open ${module.eyebrow} screenshot full size`} className="relative block aspect-[1.08/1] overflow-hidden rounded-2xl border border-white/10 bg-[#1d263a] shadow-2xl focus-visible:outline-2 focus-visible:outline-[#ce7bff]"><Image src={module.image} alt={module.alt} fill sizes="(max-width: 1024px) 90vw, 700px" unoptimized className={index === 0 ? "object-contain" : "object-cover object-left-top"} /></a><figcaption className="mt-4 text-xs leading-relaxed text-white/50">{module.caption} · Open full screenshot</figcaption></figure></div>
+          </article>; })}
         </div>
       </div>
     </section>
