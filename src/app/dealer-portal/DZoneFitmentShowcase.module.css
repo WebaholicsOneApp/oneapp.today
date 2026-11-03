@@ -1,0 +1,83 @@
+.showcase { padding: 88px 0 96px; background: #fff; color: #1b2535; border-top: 1px solid #e6ebf0; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; scroll-margin-top: 25px; }
+.showcase .layout { display: grid; grid-template-columns: .83fr 1.17fr; align-items: center; gap: 72px; max-width: 1240px; width: calc(100% - 96px); margin-inline: auto; }
+.showcase .copy { min-width: 0; }
+.showcase .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 23px; color: #437eae; font-size: 10px; font-weight: 750; letter-spacing: .13em; }
+.showcase .heading { margin: 0 0 23px; color: #1b2535; font-size: clamp(35px, 3.6vw, 49px); font-weight: 650; line-height: 1.12; letter-spacing: -.045em; }
+.showcase .heading > span { color: #468ac2; }
+.showcase .description { margin: 0; color: #667281; font-size: 15px; line-height: 1.9; max-width: 420px; }
+.showcase .steps { display: grid; gap: 20px; padding: 29px 0 26px; }
+.showcase .step { display: flex; align-items: flex-start; gap: 15px; }
+.showcase .step > span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0; border: 1px solid #e1e8ee; background: #f6f8fa; color: #9ba9b6; font-size: 10px; font-weight: 700; transition: background .25s, border-color .25s; }
+.showcase .activeStep > span { color: #377bab; background: #eaf4fc; border-color: #bed8ed; }
+.showcase .step h3 { margin: 1px 0 5px; font-size: 14px; font-weight: 650; line-height: 1.4; letter-spacing: -.015em; color: #263b4f; }
+.showcase .step p { font-size: 12px; line-height: 1.65; color: #657b8d; margin: 0; }
+.showcase .brandNote { border-top: 1px solid #e7edf2; padding-top: 23px; margin: 0; font-size: 12px; line-height: 1.9; color: #657b8d; }
+.showcase .cta { display: inline-flex; align-items: center; gap: 15px; padding: 14px 0 0; color: #3375a8; font-size: 13px; font-weight: 700; text-decoration: none; }
+.showcase .cta:hover { color: #1d5787; }
+.showcase .visual { min-width: 0; }
+.showcase .browser { overflow: hidden; border-radius: 18px; border: 1px solid #d9e4ed; background: #f1f5f9; margin: 0; box-shadow: 0 18px 65px #273f5910, 0 3px 12px #273f5906; }
+.showcase .browserBar { height: 37px; display: flex; align-items: center; gap: 13px; padding: 0 17px; background: #f7f9fb; border-bottom: 1px solid #e1e8ee; color: #8896a4; font-size: 9px; }
+.showcase .browserDots { display: flex; gap: 4px; }
+.showcase .browserDots i { width: 5px; height: 5px; background: #d1dae3; border-radius: 50%; }
+.showcase .demoBadge { font-size: 7px; letter-spacing: .07em; color: #6088aa; padding: 4px 6px; border: 1px solid #d9e6f0; border-radius: 4px; margin-left: auto; white-space: nowrap; }
+.showcase .storeHeader { padding: 14px 22px; background: #fff; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid #e3eaf0; }
+.showcase .storeHeader img { width: 156px; height: auto; }
+.showcase .storeHeader > span { font-size: 9px; color: #8494a1; }
+.showcase .chatHeader { display: flex; align-items: center; gap: 10px; padding: 13px 21px; color: white; background: #4a8dc4; }
+.showcase .chatAvatar { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; background: #ffffff1c; border: 1px solid #ffffff22; }
+.showcase .chatHeader > div { flex: 1; }
+.showcase .chatHeader strong { display: block; font-size: 13px; font-weight: 650; line-height: 1.4; }
+.showcase .chatHeader div > span { display: block; font-size: 9px; color: #d7eaf9; margin-top: 2px; }
+.showcase .aiBadge { font-size: 8px; letter-spacing: .06em; border: 1px solid #ffffff40; padding: 4px 7px; border-radius: 5px; }
+.showcase .scene { height: 437px; padding: 20px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(145deg, #f3f6fa, #f7f9fc); overflow: auto; scrollbar-width: thin; }
+.showcase .greeting, .showcase .question, .showcase .reply { padding: 12px 14px; border-radius: 13px; font-size: 12px; line-height: 1.65; animation: arrive .25s ease-out; flex-shrink: 0; overflow-wrap: anywhere; }
+.showcase .greeting { align-self: flex-start; max-width: 83%; background: #fff; border: 1px solid #e6ecf2; border-bottom-left-radius: 3px; color: #667a8b; }
+.showcase .question { align-self: flex-end; max-width: 88%; background: #4a8dc4; color: #fff; border-bottom-right-radius: 3px; }
+.showcase .searching { display: flex; align-items: center; gap: 9px; color: #8b9cab; font-size: 10px; padding: 3px 1px; min-height: 23px; flex-shrink: 0; }
+.showcase .typingDots { display: flex; gap: 3px; }
+.showcase .typingDots i { width: 4px; height: 4px; border-radius: 50%; background: #8dabc0; animation: dot 1s infinite; }
+.showcase .typingDots i:nth-child(2) { animation-delay: .14s; }
+.showcase .typingDots i:nth-child(3) { animation-delay: .28s; }
+.showcase .vehicle { display: flex; align-items: center; gap: 6px; color: #50836c; font-size: 10px; padding: 1px 0; animation: arrive .25s ease-out; flex-shrink: 0; }
+.showcase .vehicle small { margin-left: auto; color: #89a094; font-size: 7px; font-weight: 700; letter-spacing: .07em; }
+.showcase .reply { background: #fff; border: 1px solid #e1e8f0; border-bottom-left-radius: 3px; color: #4f6477; min-height: 44px; }
+.showcase .products { display: grid; gap: 7px; flex-shrink: 0; animation: arrive .35s ease-out; }
+.showcase .product { display: flex; align-items: center; gap: 12px; border-radius: 10px; background: #fff; border: 1px solid #dbe6ee; padding: 9px 12px; }
+.showcase .productImage { display: grid; place-items: center; width: 47px; height: 47px; background: #fff; border-radius: 6px; flex-shrink: 0; }
+.showcase .productImage img { width: 47px; height: 47px; object-fit: contain; }
+.showcase .product > div { flex: 1; min-width: 0; }
+.showcase .product small { font-size: 6px; color: #9aabb9; letter-spacing: .1em; font-weight: 700; display: block; }
+.showcase .product strong { display: block; font-size: 12px; font-weight: 650; line-height: 1.5; margin: 2px 0; color: #334e65; }
+.showcase .product div > span { display: flex; gap: 4px; align-items: center; color: #6b9882; font-size: 8px; }
+.showcase .product > svg { color: #b2c3d0; flex-shrink: 0; }
+.showcase .composer { display: flex; align-items: center; gap: 9px; padding: 13px 16px; background: white; border-top: 1px solid #e3eaf1; color: #9aaab7; min-height: 56px; }
+.showcase .composer > svg { flex-shrink: 0; }
+.showcase .composer > span { flex: 1; color: #8fa0ae; font-size: 11px; line-height: 1.5; min-height: 17px; }
+.showcase .composer > i { display: grid; place-items: center; height: 30px; width: 30px; border-radius: 50%; background: #4a8dc4; color: white; flex-shrink: 0; }
+.showcase .caret { display: inline-block; vertical-align: text-bottom; height: 12px; width: 1px; margin-left: 2px; background: #648eae; animation: blink .9s steps(1) infinite; }
+.showcase .poweredBy { color: #a1afbc; font-size: 8px; text-align: center; background: #fff; padding: 0 10px 11px; }
+.showcase .caption { margin: 0; color: #61788b; font-size: 9px; line-height: 1.65; padding: 11px 17px; border-top: 1px solid #e1e8ee; background: #f7f9fb; }
+.showcase .controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+.showcase .progressLabel { display: flex; gap: 7px; align-items: center; color: #5b768c; font-size: 10px; }
+.showcase .progressLabel > i { width: 5px; height: 5px; background: #79acd0; border-radius: 50%; }
+.showcase .progressLabel > i.doneDot { background: #79a58e; }
+.showcase .controls > div { display: flex; gap: 15px; }
+.showcase .controls button { background: none; border: 0; padding: 4px 0; color: #496f8d; font-family: inherit; font-size: 10px; display: flex; gap: 5px; align-items: center; cursor: pointer; }
+.showcase .controls button:hover { color: #2c709f; }
+.showcase .progress { height: 2px; border-radius: 2px; overflow: hidden; background: #edf2f6; margin-top: 12px; }
+.showcase .progress > span { display: block; background: #9bc0dc; height: 100%; }
+.showcase .transcript { margin-top: 15px; font-size: 10px; color: #647e92; }
+.showcase .transcript summary { cursor: pointer; }
+.showcase .transcript > div { padding: 14px 0; color: #60788b; }
+.showcase .transcript p { margin: 0 0 9px; font-size: 11px; color: #60788b; line-height: 1.7; }
+.showcase .transcript ul { list-style: disc; padding-left: 17px; margin: 8px 0 12px; line-height: 2; }
+.showcase .transcript a { color: #4c85b1; text-decoration: underline; text-underline-offset: 3px; }
+.showcase .bikeLink { display: inline-block; font-size: 10px; }
+.showcase a:focus-visible, .showcase button:focus-visible, .showcase summary:focus-visible { outline: 3px solid #80b2d8; outline-offset: 5px; }
+@keyframes arrive { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes dot { 0%, 70%, 100% { opacity: .35; transform: translateY(0); } 35% { opacity: 1; transform: translateY(-2px); } }
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 1050px) { .showcase .layout { gap: 36px; grid-template-columns: .85fr 1.15fr; width: calc(100% - 64px); } .showcase .description { font-size: 13px; } .showcase .scene { padding: 16px; } .showcase .storeHeader > span { display: none; } .showcase .browserBar { gap: 9px; padding-inline: 12px; font-size: 8px; } .showcase .demoBadge { font-size: 6px; } }
+@media (max-width: 800px) { .showcase { padding-block: 60px; } .showcase .layout { grid-template-columns: 1fr; width: calc(100% - 48px); gap: 32px; max-width: 620px; } .showcase .heading { font-size: 38px; } .showcase .description { font-size: 14px; max-width: 100%; } .showcase .steps { grid-template-columns: repeat(3, 1fr); gap: 16px; } .showcase .step { flex-direction: column; gap: 10px; } .showcase .step h3 { font-size: 12px; } .showcase .step p { font-size: 10px; } .showcase .brandNote { font-size: 12px; max-width: 100%; } .showcase .scene { height: 426px; padding: 20px; } .showcase .storeHeader > span { display: block; } }
+@media (max-width: 480px) { .showcase { padding: 49px 0 58px; } .showcase .layout { width: calc(100% - 40px); gap: 28px; } .showcase .eyebrow { font-size: 8px; margin-bottom: 18px; letter-spacing: .1em; } .showcase .heading { font-size: 34px; margin-bottom: 17px; } .showcase .description { font-size: 12px; line-height: 1.85; } .showcase .steps { padding-block: 25px 23px; gap: 13px; } .showcase .step { gap: 9px; } .showcase .step > span { width: 26px; height: 26px; border-radius: 7px; font-size: 9px; } .showcase .step h3 { font-size: 10px; line-height: 1.5; } .showcase .step p { font-size: 9px; line-height: 1.8; } .showcase .brandNote { padding-top: 19px; font-size: 11px; } .showcase .cta { font-size: 12px; padding-top: 16px; } .showcase .browser { border-radius: 13px; } .showcase .browserBar { height: 33px; font-size: 7px; gap: 8px; padding-inline: 10px; } .showcase .browserDots { gap: 3px; } .showcase .browserDots i { width: 4px; height: 4px; } .showcase .demoBadge { font-size: 5px; padding: 3px 4px; letter-spacing: .03em; } .showcase .storeHeader { padding: 13px 16px; gap: 8px; } .showcase .storeHeader img { width: 130px; } .showcase .storeHeader > span { font-size: 7px; max-width: 80px; text-align: right; } .showcase .chatHeader { padding: 11px 15px; } .showcase .chatHeader strong { font-size: 12px; } .showcase .scene { padding: 15px; height: 444px; gap: 10px; } .showcase .greeting, .showcase .question, .showcase .reply { font-size: 11px; padding: 10px 12px; line-height: 1.65; } .showcase .greeting { max-width: 90%; } .showcase .question { max-width: 92%; } .showcase .vehicle { font-size: 9px; } .showcase .vehicle small { font-size: 6px; } .showcase .product { padding: 8px 10px; gap: 9px; } .showcase .productImage, .showcase .productImage img { width: 39px; height: 39px; } .showcase .product strong { font-size: 10px; } .showcase .product div > span { font-size: 7px; } .showcase .product small { font-size: 5px; } .showcase .composer { padding: 11px 13px; min-height: 54px; gap: 7px; } .showcase .composer > span { font-size: 10px; } .showcase .caption { font-size: 8px; padding: 10px 13px; } .showcase .controls { margin-top: 15px; } .showcase .progressLabel, .showcase .controls button { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { .showcase *, .showcase *::before, .showcase *::after { animation: none !important; transition: none !important; } }
