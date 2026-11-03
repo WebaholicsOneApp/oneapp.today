@@ -247,7 +247,7 @@ export function WebaholicsBridge({ tone = "blue" }: { tone?: "blue" | "white" })
           <p className={`mt-4 max-w-2xl text-lg leading-relaxed ${blue ? "text-white/90" : "text-[#243b53]"}`}>Webaholics helps set up the platform around your business and supports your team as you use it.</p>
         </div>
         <div className="flex flex-col items-start gap-8 lg:items-center">
-          <Image src={blue ? "https://www.webaholics.ai/Webaholics_text-web-white.png" : "/webaholics-wordmark-blue.png"} alt="Webaholics" width={220} height={50} unoptimized={blue} className="h-auto w-[280px] max-w-full lg:w-[310px]" />
+          <Image src={blue ? "https://www.webaholics.ai/Webaholics_text-web-white.png" : "/webaholics-wordmark-blue.png"} alt="Webaholics" width={1000} height={171} className="h-auto w-[280px] max-w-full lg:w-[310px]" />
           <a href="https://www.webaholics.ai/" target="_blank" rel="noreferrer" className={`group flex items-center justify-center gap-3 rounded-full px-6 py-4 text-sm font-bold transition hover:scale-[1.02] ${blue ? "bg-white text-[#1265c4]" : "bg-[#1265c4] text-white"}`}>Explore working with Webaholics <ArrowRight className="h-5 w-5 shrink-0 transition group-hover:translate-x-1" /></a>
         </div>
       </div>

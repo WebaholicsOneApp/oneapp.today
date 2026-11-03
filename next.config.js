@@ -55,6 +55,11 @@ const config = {
         protocol: 'https',
         hostname: 'www.oneapp.today',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.webaholics.ai',
+        pathname: '/Webaholics_text-web-white.png',
+      },
     ],
   },
 };
