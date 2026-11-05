@@ -60,7 +60,7 @@ function Logo() {
   );
 }
 
-function Navigation() {
+export function Navigation({ base = "" }: { base?: string }) {
   const [open, setOpen] = useState(false);
   const pendingAnchor = useRef<string | null>(null);
   const finishMenuNavigation = () => {
@@ -68,7 +68,7 @@ function Navigation() {
     pendingAnchor.current = null;
     if (href) document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const links = [["#platform", "Platform"], ["#intelligence", "Intelligence"], ["#mobile", "Mobile"], ["#proof", "Why OneApp"], ["#webaholics", "Your growth team"]];
+  const links = [[`${base}#platform`, "Platform"], [`${base}#intelligence`, "Intelligence"], [`${base}#mobile`, "Mobile"], [`${base}#proof`, "Why OneApp"], ["/pricing", "Pricing"], [`${base}#webaholics`, "Your growth team"]];
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-[#0b0a10]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1380px] items-center justify-between px-5 sm:px-8">
@@ -255,10 +255,14 @@ export function WebaholicsBridge({ tone = "blue" }: { tone?: "blue" | "white" })
   );
 }
 
-function FinalCta() {
+export function FinalCta() {
   return <section id="demo" className="scroll-mt-20 bg-[#f3f1f5] py-24 sm:py-32"><div className="mx-auto max-w-[1380px] px-5 sm:px-8"><div className="relative overflow-hidden rounded-[36px] bg-[#17131d] px-7 py-16 text-center text-white sm:px-14 sm:py-24"><div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:48px_48px]" /><div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a83cff]/25 blur-[100px]" /><div className="relative"><Sparkles className="mx-auto mb-6 h-8 w-8 text-[#cf79ff]" /><p className="font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#cf79ff]">Platform walkthrough</p><h2 className="mx-auto mt-6 max-w-4xl text-5xl font-bold leading-[.94] tracking-[-.06em] sm:text-7xl">See what OneApp could do for your business.</h2><p className="mx-auto mt-7 max-w-2xl text-lg text-white/50">Tell us how your business works. We’ll show you how OneApp and Webaholics can help connect the people, information and work behind your growth.</p><DemoRequestForm /></div></div></div></section>;
 }
 
+export function SiteFooter() {
+  return <footer className="border-t border-white/10 bg-[#0b0a10] py-10 text-white/35"><div className="mx-auto flex max-w-[1380px] flex-col gap-6 px-5 sm:px-8 md:flex-row md:items-center md:justify-between"><Logo /><div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs"><p>© 2026 OneApp. An AI workforce platform for business growth.</p><a href="https://prod.oneapp.today/" className="inline-flex min-h-11 items-center text-white/70 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Client login</a><Link href="/pricing" className="transition hover:text-white">Pricing</Link><Link href="/privacy" className="transition hover:text-white">Privacy</Link><a href="mailto:info@oneapp.today" className="transition hover:text-white">Contact</a></div></div></footer>;
+}
+
 export function OneAppPageContent() {
-  return <main className="overflow-hidden bg-[#0b0a10]"><Navigation /><Hero /><CommerceRail /><PlatformModules /><MobilePwa /><Proof /><FinalCta /><WebaholicsBridge /><footer className="border-t border-white/10 bg-[#0b0a10] py-10 text-white/35"><div className="mx-auto flex max-w-[1380px] flex-col gap-6 px-5 sm:px-8 md:flex-row md:items-center md:justify-between"><Logo /><div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs"><p>© 2026 OneApp. An AI workforce platform for business growth.</p><a href="https://prod.oneapp.today/" className="inline-flex min-h-11 items-center text-white/70 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Client login</a><Link href="/privacy" className="transition hover:text-white">Privacy</Link><a href="mailto:info@oneapp.today" className="transition hover:text-white">Contact</a></div></div></footer></main>;
+  return <main className="overflow-hidden bg-[#0b0a10]"><Navigation /><Hero /><CommerceRail /><PlatformModules /><MobilePwa /><Proof /><FinalCta /><WebaholicsBridge /><SiteFooter /></main>;
 }
