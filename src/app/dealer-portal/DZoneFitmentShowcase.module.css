@@ -20,9 +20,9 @@
 .showcase .browserDots { display: flex; gap: 4px; }
 .showcase .browserDots i { width: 5px; height: 5px; background: #d1dae3; border-radius: 50%; }
 .showcase .demoBadge { font-size: 7px; letter-spacing: .07em; color: #6088aa; padding: 4px 6px; border: 1px solid #d9e6f0; border-radius: 4px; margin-left: auto; white-space: nowrap; }
-.showcase .storeHeader { padding: 14px 22px; background: #fff; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid #e3eaf0; }
+.showcase .storeHeader { padding: 14px 22px; background: #201829; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid #35263f; }
 .showcase .storeHeader img { width: 156px; height: auto; }
-.showcase .storeHeader > span { font-size: 9px; color: #8494a1; }
+.showcase .storeHeader > span { font-size: 9px; color: #c3b5cf; }
 .showcase .chatHeader { display: flex; align-items: center; gap: 10px; padding: 13px 21px; color: white; background: #8b26ca; }
 .showcase .chatAvatar { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; background: #ffffff1c; border: 1px solid #ffffff22; }
 .showcase .chatHeader > div { flex: 1; }
