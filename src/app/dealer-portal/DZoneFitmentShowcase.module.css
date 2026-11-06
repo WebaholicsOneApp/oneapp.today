@@ -1,9 +1,9 @@
 .showcase { padding: 88px 0 96px; background: #fff; color: #1b2535; border-top: 1px solid #e6ebf0; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; scroll-margin-top: 25px; }
 .showcase .layout { display: grid; grid-template-columns: .83fr 1.17fr; align-items: center; gap: 72px; max-width: 1240px; width: calc(100% - 96px); margin-inline: auto; }
 .showcase .copy { min-width: 0; }
-.showcase .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 23px; color: #437eae; font-size: 10px; font-weight: 750; letter-spacing: .13em; }
+.showcase .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 23px; color: #8b26ca; font-size: 10px; font-weight: 750; letter-spacing: .13em; }
 .showcase .heading { margin: 0 0 23px; color: #1b2535; font-size: clamp(35px, 3.6vw, 49px); font-weight: 650; line-height: 1.12; letter-spacing: -.045em; }
-.showcase .heading > span { color: #468ac2; }
+.showcase .heading > span { color: #8b26ca; }
 .showcase .description { margin: 0; color: #667281; font-size: 15px; line-height: 1.9; max-width: 420px; }
 .showcase .steps { display: grid; gap: 20px; padding: 29px 0 26px; }
 .showcase .step { display: flex; align-items: flex-start; gap: 15px; }
@@ -23,16 +23,16 @@
 .showcase .storeHeader { padding: 14px 22px; background: #fff; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid #e3eaf0; }
 .showcase .storeHeader img { width: 156px; height: auto; }
 .showcase .storeHeader > span { font-size: 9px; color: #8494a1; }
-.showcase .chatHeader { display: flex; align-items: center; gap: 10px; padding: 13px 21px; color: white; background: #4a8dc4; }
+.showcase .chatHeader { display: flex; align-items: center; gap: 10px; padding: 13px 21px; color: white; background: #8b26ca; }
 .showcase .chatAvatar { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; background: #ffffff1c; border: 1px solid #ffffff22; }
 .showcase .chatHeader > div { flex: 1; }
 .showcase .chatHeader strong { display: block; font-size: 13px; font-weight: 650; line-height: 1.4; }
-.showcase .chatHeader div > span { display: block; font-size: 9px; color: #d7eaf9; margin-top: 2px; }
+.showcase .chatHeader div > span { display: block; font-size: 9px; color: #f0ddfa; margin-top: 2px; }
 .showcase .aiBadge { font-size: 8px; letter-spacing: .06em; border: 1px solid #ffffff40; padding: 4px 7px; border-radius: 5px; }
 .showcase .scene { height: 437px; padding: 20px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(145deg, #f3f6fa, #f7f9fc); overflow: auto; scrollbar-width: thin; }
 .showcase .greeting, .showcase .question, .showcase .reply { padding: 12px 14px; border-radius: 13px; font-size: 12px; line-height: 1.65; animation: arrive .25s ease-out; flex-shrink: 0; overflow-wrap: anywhere; }
 .showcase .greeting { align-self: flex-start; max-width: 83%; background: #fff; border: 1px solid #e6ecf2; border-bottom-left-radius: 3px; color: #667a8b; }
-.showcase .question { align-self: flex-end; max-width: 88%; background: #4a8dc4; color: #fff; border-bottom-right-radius: 3px; }
+.showcase .question { align-self: flex-end; max-width: 88%; background: #8b26ca; color: #fff; border-bottom-right-radius: 3px; }
 .showcase .searching { display: flex; align-items: center; gap: 9px; color: #8b9cab; font-size: 10px; padding: 3px 1px; min-height: 23px; flex-shrink: 0; }
 .showcase .typingDots { display: flex; gap: 3px; }
 .showcase .typingDots i { width: 4px; height: 4px; border-radius: 50%; background: #8dabc0; animation: dot 1s infinite; }
@@ -53,7 +53,7 @@
 .showcase .composer { display: flex; align-items: center; gap: 9px; padding: 13px 16px; background: white; border-top: 1px solid #e3eaf1; color: #9aaab7; min-height: 56px; }
 .showcase .composer > svg { flex-shrink: 0; }
 .showcase .composer > span { flex: 1; color: #8fa0ae; font-size: 11px; line-height: 1.5; min-height: 17px; }
-.showcase .composer > i { display: grid; place-items: center; height: 30px; width: 30px; border-radius: 50%; background: #4a8dc4; color: white; flex-shrink: 0; }
+.showcase .composer > i { display: grid; place-items: center; height: 30px; width: 30px; border-radius: 50%; background: #8b26ca; color: white; flex-shrink: 0; }
 .showcase .caret { display: inline-block; vertical-align: text-bottom; height: 12px; width: 1px; margin-left: 2px; background: #648eae; animation: blink .9s steps(1) infinite; }
 .showcase .poweredBy { color: #a1afbc; font-size: 8px; text-align: center; background: #fff; padding: 0 10px 11px; }
 .showcase .caption { margin: 0; color: #61788b; font-size: 9px; line-height: 1.65; padding: 11px 17px; border-top: 1px solid #e1e8ee; background: #f7f9fb; }
@@ -65,7 +65,7 @@
 .showcase .controls button { background: none; border: 0; padding: 4px 0; color: #496f8d; font-family: inherit; font-size: 10px; display: flex; gap: 5px; align-items: center; cursor: pointer; }
 .showcase .controls button:hover { color: #2c709f; }
 .showcase .progress { height: 2px; border-radius: 2px; overflow: hidden; background: #edf2f6; margin-top: 12px; }
-.showcase .progress > span { display: block; background: #9bc0dc; height: 100%; }
+.showcase .progress > span { display: block; background: #b885d8; height: 100%; }
 .showcase .transcript { margin-top: 15px; font-size: 10px; color: #647e92; }
 .showcase .transcript summary { cursor: pointer; }
 .showcase .transcript > div { padding: 14px 0; color: #60788b; }
@@ -81,3 +81,38 @@
 @media (max-width: 800px) { .showcase { padding-block: 60px; } .showcase .layout { grid-template-columns: 1fr; width: calc(100% - 48px); gap: 32px; max-width: 620px; } .showcase .heading { font-size: 38px; } .showcase .description { font-size: 14px; max-width: 100%; } .showcase .steps { grid-template-columns: repeat(3, 1fr); gap: 16px; } .showcase .step { flex-direction: column; gap: 10px; } .showcase .step h3 { font-size: 12px; } .showcase .step p { font-size: 10px; } .showcase .brandNote { font-size: 12px; max-width: 100%; } .showcase .scene { height: 426px; padding: 20px; } .showcase .storeHeader > span { display: block; } }
 @media (max-width: 480px) { .showcase { padding: 49px 0 58px; } .showcase .layout { width: calc(100% - 40px); gap: 28px; } .showcase .eyebrow { font-size: 8px; margin-bottom: 18px; letter-spacing: .1em; } .showcase .heading { font-size: 34px; margin-bottom: 17px; } .showcase .description { font-size: 12px; line-height: 1.85; } .showcase .steps { padding-block: 25px 23px; gap: 13px; } .showcase .step { gap: 9px; } .showcase .step > span { width: 26px; height: 26px; border-radius: 7px; font-size: 9px; } .showcase .step h3 { font-size: 10px; line-height: 1.5; } .showcase .step p { font-size: 9px; line-height: 1.8; } .showcase .brandNote { padding-top: 19px; font-size: 11px; } .showcase .cta { font-size: 12px; padding-top: 16px; } .showcase .browser { border-radius: 13px; } .showcase .browserBar { height: 33px; font-size: 7px; gap: 8px; padding-inline: 10px; } .showcase .browserDots { gap: 3px; } .showcase .browserDots i { width: 4px; height: 4px; } .showcase .demoBadge { font-size: 5px; padding: 3px 4px; letter-spacing: .03em; } .showcase .storeHeader { padding: 13px 16px; gap: 8px; } .showcase .storeHeader img { width: 130px; } .showcase .storeHeader > span { font-size: 7px; max-width: 80px; text-align: right; } .showcase .chatHeader { padding: 11px 15px; } .showcase .chatHeader strong { font-size: 12px; } .showcase .scene { padding: 15px; height: 444px; gap: 10px; } .showcase .greeting, .showcase .question, .showcase .reply { font-size: 11px; padding: 10px 12px; line-height: 1.65; } .showcase .greeting { max-width: 90%; } .showcase .question { max-width: 92%; } .showcase .vehicle { font-size: 9px; } .showcase .vehicle small { font-size: 6px; } .showcase .product { padding: 8px 10px; gap: 9px; } .showcase .productImage, .showcase .productImage img { width: 39px; height: 39px; } .showcase .product strong { font-size: 10px; } .showcase .product div > span { font-size: 7px; } .showcase .product small { font-size: 5px; } .showcase .composer { padding: 11px 13px; min-height: 54px; gap: 7px; } .showcase .composer > span { font-size: 10px; } .showcase .caption { font-size: 8px; padding: 10px 13px; } .showcase .controls { margin-top: 15px; } .showcase .progressLabel, .showcase .controls button { font-size: 9px; } }
 @media (prefers-reduced-motion: reduce) { .showcase *, .showcase *::before, .showcase *::after { animation: none !important; transition: none !important; } }
+
+.showcase .modeTabs { display: flex; gap: 7px; background: #fff; padding: 12px 18px; border-bottom: 1px solid #e8e1ed; }
+.showcase .modeTabs button { display: inline-flex; gap: 8px; align-items: center; justify-content: center; flex: 1; border: 1px solid transparent; border-radius: 8px; padding: 9px 12px; font-family: inherit; font-size: 11px; font-weight: 650; cursor: pointer; color: #7b6c85; background: #f8f6fa; }
+.showcase .modeTabs button[aria-pressed="true"] { color: #8124b9; border-color: #e4cbee; background: #f5eafb; }
+.showcase .storeHeader img { width: 128px; height: auto; max-height: 38px; object-fit: contain; }
+.showcase .liveScene { height: 493px; padding: 18px; background: #f7f5f9; }
+.showcase .liveSearch { min-width: 0; }
+.showcase .liveSearch .greeting { max-width: 100%; margin-bottom: 14px; }
+.showcase .bikeForm { padding: 14px; background: #fff; border: 1px solid #e4dfeb; border-radius: 12px; }
+.showcase .bikeFields { display: grid; grid-template-columns: .7fr 1fr 1.4fr; gap: 8px; }
+.showcase .bikeForm label { display: block; min-width: 0; font-size: 10px; font-weight: 650; color: #54415f; }
+.showcase .bikeForm select, .showcase .bikeForm input { width: 100%; min-width: 0; display: block; margin-top: 6px; border: 1px solid #ded5e7; border-radius: 7px; padding: 10px 7px; font: inherit; font-size: 11px; color: #382a43; background: #fff; height: 37px; }
+.showcase .bikeForm select:disabled { background: #f5f3f7; color: #9c92a5; }
+.showcase .bikeForm select:focus-visible, .showcase .bikeForm input:focus-visible { outline: 2px solid #a96ccc; outline-offset: 2px; }
+.showcase .partLabel { margin-top: 13px; }
+.showcase .partLabel > span { color: #9c91a4; font-weight: 400; margin-left: 5px; font-size: 9px; }
+.showcase .findButton { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 13px; padding: 11px; background: #8b26ca; color: #fff; border: 0; border-radius: 8px; font: inherit; font-size: 11px; font-weight: 650; cursor: pointer; }
+.showcase .findButton:hover:enabled { background: #7620ac; }
+.showcase .findButton:disabled { background: #e7dfec; color: #97859f; cursor: default; }
+.showcase .searchError { color: #9c324a; font-size: 11px; line-height: 1.6; margin: 12px 0 0; }
+.showcase .searchError p { color: inherit; font-size: inherit; margin: 0 0 6px; }
+.showcase .searchError button { border: 1px solid #d4bbdf; background: #fff; color: #8124b9; padding: 6px 10px; border-radius: 5px; font-size: 11px; cursor: pointer; }
+.showcase .emptyHint { font-size: 11px; line-height: 1.6; color: #7b6c85; margin: 9px 0 0; }
+.showcase .resultStatus { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.showcase .liveResults { display: grid; gap: 12px; margin-top: 17px; padding-bottom: 2px; }
+.showcase .liveResults .vehicle { flex-wrap: wrap; }
+.showcase .liveResults .vehicle > span { flex: 1; min-width: 120px; line-height: 1.6; }
+.showcase a.product { text-decoration: none; transition: border-color .15s, box-shadow .15s; }
+.showcase a.product:hover { border-color: #b885d8; box-shadow: 0 2px 10px #8b26ca0d; }
+.showcase .product em { display: block; font-style: normal; font-size: 10px; color: #665073; margin-top: 3px; }
+.showcase .liveProductImage { position: relative; color: #beafc9; }
+.showcase .liveProductImage img { position: absolute; inset: 0; background: #fff; }
+.showcase .spinner { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 480px) { .showcase .modeTabs { padding: 10px; } .showcase .modeTabs button { padding: 9px 7px; font-size: 10px; } .showcase .liveScene { padding: 12px; height: 490px; } .showcase .bikeForm { padding: 12px; } .showcase .bikeFields { grid-template-columns: .8fr 1.2fr; gap: 10px 8px; } .showcase .bikeFields > label:last-child { grid-column: 1 / -1; } .showcase .bikeForm select, .showcase .bikeForm input { font-size: 12px; } .showcase .storeHeader img { width: 112px; } }
