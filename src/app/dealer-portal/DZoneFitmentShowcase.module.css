@@ -86,34 +86,6 @@
 .showcase .modeTabs button { display: inline-flex; gap: 8px; align-items: center; justify-content: center; flex: 1; border: 1px solid transparent; border-radius: 8px; padding: 9px 12px; font-family: inherit; font-size: 11px; font-weight: 650; cursor: pointer; color: #7b6c85; background: #f8f6fa; }
 .showcase .modeTabs button[aria-pressed="true"] { color: #8124b9; border-color: #e4cbee; background: #f5eafb; }
 .showcase .storeHeader img { width: 128px; height: auto; max-height: 38px; object-fit: contain; }
-.showcase .liveScene { height: 493px; padding: 18px; background: #f7f5f9; }
-.showcase .liveSearch { min-width: 0; }
-.showcase .liveSearch .greeting { max-width: 100%; margin-bottom: 14px; }
-.showcase .bikeForm { padding: 14px; background: #fff; border: 1px solid #e4dfeb; border-radius: 12px; }
-.showcase .bikeFields { display: grid; grid-template-columns: .7fr 1fr 1.4fr; gap: 8px; }
-.showcase .bikeForm label { display: block; min-width: 0; font-size: 10px; font-weight: 650; color: #54415f; }
-.showcase .bikeForm select, .showcase .bikeForm input { width: 100%; min-width: 0; display: block; margin-top: 6px; border: 1px solid #ded5e7; border-radius: 7px; padding: 10px 7px; font: inherit; font-size: 11px; color: #382a43; background: #fff; height: 37px; }
-.showcase .bikeForm select:disabled { background: #f5f3f7; color: #9c92a5; }
-.showcase .bikeForm select:focus-visible, .showcase .bikeForm input:focus-visible { outline: 2px solid #a96ccc; outline-offset: 2px; }
-.showcase .partLabel { margin-top: 13px; }
-.showcase .partLabel > span { color: #9c91a4; font-weight: 400; margin-left: 5px; font-size: 9px; }
-.showcase .findButton { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 13px; padding: 11px; background: #8b26ca; color: #fff; border: 0; border-radius: 8px; font: inherit; font-size: 11px; font-weight: 650; cursor: pointer; }
-.showcase .findButton:hover:enabled { background: #7620ac; }
-.showcase .findButton:disabled { background: #e7dfec; color: #97859f; cursor: default; }
-.showcase .searchError { color: #9c324a; font-size: 11px; line-height: 1.6; margin: 12px 0 0; }
-.showcase .searchError p { color: inherit; font-size: inherit; margin: 0 0 6px; }
-.showcase .searchError button { border: 1px solid #d4bbdf; background: #fff; color: #8124b9; padding: 6px 10px; border-radius: 5px; font-size: 11px; cursor: pointer; }
-.showcase .emptyHint { font-size: 11px; line-height: 1.6; color: #7b6c85; margin: 9px 0 0; }
-.showcase .resultStatus { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.showcase .liveResults { display: grid; gap: 12px; margin-top: 17px; padding-bottom: 2px; }
-.showcase .editSearch { justify-self: start; border: 0; padding: 0; background: none; color: #8124b9; font: inherit; font-size: 10px; font-weight: 650; cursor: pointer; }
-.showcase .liveResults .vehicle { flex-wrap: wrap; }
-.showcase .liveResults .vehicle > span { flex: 1; min-width: 120px; line-height: 1.6; }
-.showcase a.product { text-decoration: none; transition: border-color .15s, box-shadow .15s; }
-.showcase a.product:hover { border-color: #b885d8; box-shadow: 0 2px 10px #8b26ca0d; }
-.showcase .product em { display: block; font-style: normal; font-size: 10px; color: #665073; margin-top: 3px; }
-.showcase .liveProductImage { position: relative; color: #beafc9; }
-.showcase .liveProductImage img { position: absolute; inset: 0; background: #fff; }
-.showcase .spinner { animation: spin 1s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-@media (max-width: 480px) { .showcase .modeTabs { padding: 10px; } .showcase .modeTabs button { padding: 9px 7px; font-size: 10px; } .showcase .liveScene { padding: 12px; height: 490px; } .showcase .bikeForm { padding: 12px; } .showcase .bikeFields { grid-template-columns: .8fr 1.2fr; gap: 10px 8px; } .showcase .bikeFields > label:last-child { grid-column: 1 / -1; } .showcase .bikeForm select, .showcase .bikeForm input { font-size: 12px; } .showcase .storeHeader img { width: 112px; } }
+.showcase .liveScene { display: grid; place-items: center; height: 600px; padding: 0; overflow: hidden; background: #f7f5f9; }
+.showcase .liveChatFrame { display: block; width: 100%; max-width: 620px; height: 600px; border: 0; background: #f7f5f9; }
+@media (max-width: 480px) { .showcase .modeTabs { padding: 10px; } .showcase .modeTabs button { padding: 9px 7px; font-size: 10px; } .showcase .liveScene, .showcase .liveChatFrame { height: 580px; padding: 0; } .showcase .storeHeader img { width: 112px; } }

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight, Check, ChevronRight, MessageCircle, Pause, Play, RotateCcw, Search, Send } from 'lucide-react';
 import styles from './DZoneFitmentShowcase.module.css';
-import { FitmentBikeSearch } from './FitmentBikeSearch';
 
 const QUESTION = 'I ride a 2022 Yamaha YZ250F. Show me brake pads and sprockets that fit.';
 const REPLY = 'I found brake pad sets and front sprockets matched to your bike in the catalog. Choose a part below, and we can narrow down the variant.';
@@ -23,7 +22,7 @@ const products = [
   },
 ];
 
-/** Dealer-portal-only OneApp showcase: a scripted example and a live, read-only catalog lookup. */
+/** Dealer-portal-only OneApp showcase: a scripted example and the existing fitment chatbot in an isolated frame. */
 export function DZoneFitmentShowcase() {
   const preview = useRef<HTMLDivElement>(null);
   const scene = useRef<HTMLDivElement>(null);
@@ -88,7 +87,7 @@ export function DZoneFitmentShowcase() {
         <div className={styles.copy}>
           <p className={styles.eyebrow}><MessageCircle size={15} /> ONEAPP FITMENT ASSISTANT</p>
           <h2 id="fitment-chat-title" className={styles.heading}>It knows the bike.<br /><span>It finds the part.</span></h2>
-          <p className={styles.description}>“What fits my bike?” should be the start of a sale. Watch OneApp connect a rider’s question to the right parts. Then choose a bike and try a real catalog lookup yourself.</p>
+          <p className={styles.description}>“What fits my bike?” should be the start of a sale. Watch OneApp connect a rider’s question to the right parts. Then ask about your own bike and see what it finds.</p>
           <div className={styles.steps} aria-label="How fitment chat works">
             {[
               ['01', 'Start with the bike', 'Year, make, and model—in the rider’s own words.'],
@@ -106,13 +105,13 @@ export function DZoneFitmentShowcase() {
 
         <div ref={preview} className={styles.visual}>
           <figure className={styles.browser}>
-            <div className={styles.browserBar}><span className={styles.browserDots} aria-hidden="true"><i /><i /><i /></span><span>OneApp / fitment assistant</span><span className={styles.demoBadge}>{mode === 'example' ? 'ANIMATED EXAMPLE' : 'LIVE CATALOG SEARCH'}</span></div>
+            <div className={styles.browserBar}><span className={styles.browserDots} aria-hidden="true"><i /><i /><i /></span><span>OneApp / fitment assistant</span><span className={styles.demoBadge}>{mode === 'example' ? 'ANIMATED EXAMPLE' : 'LIVE CHAT DEMO'}</span></div>
             <div className={styles.storeHeader}><Image src="/oneapp-logo.png" width={128} height={38} alt="OneApp" /><span>Your catalog. A smarter conversation.</span></div>
-            <div className={styles.chatHeader}><span className={styles.chatAvatar}><MessageCircle size={21} /></span><div><strong>OneApp Assistant</strong><span>Product &amp; fitment help</span></div><span className={styles.aiBadge}>AI</span></div>
+            {mode === 'example' && <div className={styles.chatHeader}><span className={styles.chatAvatar}><MessageCircle size={21} /></span><div><strong>OneApp Assistant</strong><span>Product &amp; fitment help</span></div><span className={styles.aiBadge}>AI</span></div>}
 
             <div className={styles.modeTabs} aria-label="Fitment demo mode"><button type="button" aria-pressed={mode === 'example'} onClick={() => setMode('example')}>Watch example</button><button type="button" aria-pressed={mode === 'live'} onClick={() => setMode('live')}>Try your bike <ArrowRight size={13} /></button></div>
             <div ref={scene} className={`${styles.scene} ${mode === 'live' ? styles.liveScene : ''}`} aria-hidden={mode === 'example'} data-demo-stage={mode === 'live' ? 'interactive' : !started && !reducedMotion ? 'waiting' : complete ? 'complete' : showProducts ? 'results' : answering ? 'replying' : sent ? 'matching' : 'typing'}>
-              {mode === 'live' ? <FitmentBikeSearch /> : <>
+              {mode === 'live' ? <iframe className={styles.liveChatFrame} src="/dealer-portal/live-chat" title="Live OneApp fitment chatbot" referrerPolicy="same-origin" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" /> : <>
               <div className={styles.greeting}>What are you riding? Tell me the bike and the parts you’re looking for.</div>
               {sent && <div className={styles.question}>{QUESTION}</div>}
               {sent && !answering && <div className={styles.searching}><span className={styles.typingDots}><i /><i /><i /></span> Checking catalog fitment…</div>}
@@ -129,8 +128,8 @@ export function DZoneFitmentShowcase() {
             </div>
 
             {mode === 'example' && <div className={styles.composer} aria-hidden="true"><Search size={16} /><span>{sent ? 'Ask about products…' : typedQuestion || 'Ask about products…'}{!sent && <span className={styles.caret} />}</span><i><Send size={15} /></i></div>}
-            <div className={styles.poweredBy}>OneApp Assistant · Built for your storefront</div>
-            <figcaption className={styles.caption}>{mode === 'example' ? 'Illustrative conversation. Select “Try your bike” for a live lookup.' : 'Live fitment lookup using D-Zone’s catalog. Prices may change; confirm the variant on the product page.'}</figcaption>
+            {mode === 'example' && <div className={styles.poweredBy}>OneApp Assistant · Built for your storefront</div>}
+            <figcaption className={styles.caption}>{mode === 'example' ? 'Illustrative conversation. Select “Try your bike” to chat with the real assistant.' : 'OneApp demo using D-Zone’s existing chatbot and fitment data. Product links open on D-Zone.'}</figcaption>
           </figure>
 
           {mode === 'example' && <><div className={styles.controls}>

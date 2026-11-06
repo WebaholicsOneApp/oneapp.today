@@ -73,3 +73,7 @@
 
 .dealer-portal-page { min-height: 100vh; box-sizing: border-box; }
 .dealer-portal-page [id] { scroll-margin-top: 24px; }
+
+/* The dealer portal has its own embedded fitment assistant. Other pages keep
+   the existing OneApp services chat; the frame disposes itself on navigation. */
+body:has(.dealer-portal-page) > #oneapp-chat-widget { display: none; }

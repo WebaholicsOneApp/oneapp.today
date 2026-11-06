@@ -38,12 +38,17 @@ const config = {
         headers: [{ key: 'Cache-Control', value: 'no-store, max-age=0' }],
       },
       {
-        // Live catalog thumbnails are used on the dealer portal only.
         source: '/dealer-portal',
         headers: securityHeaders.filter(header => header.key === 'Content-Security-Policy').map(header => ({
-          ...header,
-          value: header.value.replace("img-src 'self'", "img-src 'self' https://oneappprodcentral.blob.core.windows.net"),
+          ...header, value: header.value.replace('frame-src https:', "frame-src 'self' https:"),
         })),
+      },
+      {
+        source: '/dealer-portal/live-chat',
+        headers: [
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Content-Security-Policy', value: "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'self'; base-uri 'none'; object-src 'none'; form-action 'none'" },
+        ],
       },
     ];
   },
