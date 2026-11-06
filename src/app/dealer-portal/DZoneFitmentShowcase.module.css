@@ -106,6 +106,7 @@
 .showcase .emptyHint { font-size: 11px; line-height: 1.6; color: #7b6c85; margin: 9px 0 0; }
 .showcase .resultStatus { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .showcase .liveResults { display: grid; gap: 12px; margin-top: 17px; padding-bottom: 2px; }
+.showcase .editSearch { justify-self: start; border: 0; padding: 0; background: none; color: #8124b9; font: inherit; font-size: 10px; font-weight: 650; cursor: pointer; }
 .showcase .liveResults .vehicle { flex-wrap: wrap; }
 .showcase .liveResults .vehicle > span { flex: 1; min-width: 120px; line-height: 1.6; }
 .showcase a.product { text-decoration: none; transition: border-color .15s, box-shadow .15s; }

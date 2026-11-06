@@ -39,7 +39,13 @@ export function FitmentBikeSearch() {
   const [error, setError] = useState('');
   const [result, setResult] = useState<{ bike: Bike; search: string; products: FitmentProduct[] } | null>(null);
   const request = useRef<AbortController | null>(null);
+  const results = useRef<HTMLDivElement>(null);
   useEffect(() => () => request.current?.abort(), []);
+  useEffect(() => {
+    if (!result || !results.current) return;
+    const panel = results.current.closest<HTMLElement>('[data-demo-stage]');
+    if (panel) panel.scrollTop += results.current.getBoundingClientRect().top - panel.getBoundingClientRect().top - 16;
+  }, [result]);
 
   function clearResult() {
     request.current?.abort();
@@ -80,7 +86,11 @@ export function FitmentBikeSearch() {
       </form>
       <div role="status" aria-live="polite" aria-atomic="true" className={styles.resultStatus}>{pending ? 'Searching the catalog for confirmed fitment matches.' : error || (result ? `${result.products.length ? `${result.products.length} matching product${result.products.length === 1 ? '' : 's'} shown` : 'No confirmed matches found'} for ${result.bike.year} ${result.bike.make} ${result.bike.model}.` : '')}</div>
       {error && <p className={styles.searchError}>{error} You can use “Find matching parts” to retry.</p>}
-      {result && <div className={styles.liveResults}>
+      {result && <div ref={results} className={styles.liveResults}>
+        <button type="button" className={styles.editSearch} onClick={() => {
+          const panel = results.current?.closest<HTMLElement>('[data-demo-stage]');
+          if (panel) { panel.scrollTop = 0; panel.querySelector('select')?.focus({ preventScroll: true }); }
+        }}>Edit bike or part search ↑</button>
         <div className={styles.vehicle}><Check size={13} /><span>{result.bike.year} {result.bike.make} {result.bike.model}</span><small>YOUR BIKE</small></div>
         <div className={styles.reply}>{result.products.length ? 'Here are parts with fitment records matching your bike. Open a product to review the fitting variants.' : `I couldn’t confirm ${result.search ? `a match for “${result.search}”` : 'matching parts'} for this bike. ${result.search ? 'Try a broader part name or leave the part field blank.' : 'Try another bike or check back as the catalog grows.'}`}</div>
         {result.products.length > 0 && <div className={styles.products}>{result.products.map(product => <a key={product.url} className={styles.product} href={product.url} target="_blank" rel="noopener noreferrer" aria-label={`View ${product.name} on D-Zone (opens in a new tab)`}>
