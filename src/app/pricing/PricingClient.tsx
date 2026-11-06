@@ -1,11 +1,12 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight, CalendarDays, Check, ChevronDown, CreditCard, FileText, Globe, LayoutGrid,
   MessageCircle, MessagesSquare, Package, Phone, Receipt, Search, Smartphone, Sparkles,
-  Store, Truck, UserPlus, Users, Workflow, type LucideIcon,
+  Store, Truck, UserPlus, Users, Workflow, X, type LucideIcon,
 } from "lucide-react";
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import { FinalCta, Navigation, SiteFooter } from "../HomeClient";
 
 type Offer = "service" | "ecommerce" | "custom-app";
@@ -75,7 +76,9 @@ const overviews: Record<Offer, { title: string; copy: string; features: [LucideI
 
 const essentials = ["Live AI chat", "AI assistant", "Reports & insights", "Customer CRM", "Unified inbox", "Tasks & teamwork", "Invoices & payments", "Business knowledge"];
 
-const toolkits: Record<Offer, { title: string; items: string[]; note?: string }[]> = {
+type ToolGroup = { title: string; items: string[]; note?: string };
+
+const toolkits: Record<Offer, ToolGroup[]> = {
   service: [{ title: "For your service business", items: ["Website & content", "Lead pipeline", "Bookings & forms", "Follow-up workflows", "Service reports"] }],
   ecommerce: [{ title: "For your online business", items: ["Store & checkout", "Products & inventory", "Orders, shipping & returns", "Marketplace listings", "Pricing tools", "Sales & margin reports"] }],
   "custom-app": [
@@ -116,11 +119,11 @@ const faqs: [string, string][] = [
 const count = (value: number) => value.toLocaleString("en-US");
 const offerLabel = (offer: Offer) => offers.find((item) => item.key === offer)?.label;
 
-function OfferPicker({ offer, onChange }: { offer: Offer; onChange: (offer: Offer) => void }) {
+function OfferPicker({ offer, onChange, compact = false }: { offer: Offer; onChange: (offer: Offer) => void; compact?: boolean }) {
   return (
-    <div role="group" aria-label="Choose your business type" className="mt-10 inline-flex rounded-full border border-white/15 bg-white/[0.04] p-1">
+    <div role="group" aria-label="Choose your business type" className={`rounded-full border border-white/15 bg-white/[0.04] p-1 ${compact ? "mt-5 flex" : "mt-10 inline-flex"}`}>
       {offers.map(({ key, label }) => (
-        <button key={key} type="button" aria-pressed={offer === key} onClick={() => onChange(key)} className={`rounded-full px-4 py-2.5 text-sm font-semibold transition sm:px-6 ${offer === key ? "bg-white text-[#0b0a10]" : "text-white/60 hover:text-white"}`}>{label}</button>
+        <button key={key} type="button" aria-pressed={offer === key} onClick={() => onChange(key)} className={`rounded-full font-semibold transition ${compact ? "flex-1 px-2 py-2 text-xs" : "px-4 py-2.5 text-sm sm:px-6"} ${offer === key ? "bg-white text-[#0b0a10]" : "text-white/60 hover:text-white"}`}>{label}</button>
       ))}
     </div>
   );
@@ -183,19 +186,8 @@ function PricingHero({ offer, onOfferChange }: { offer: Offer; onOfferChange: (o
   );
 }
 
-function ToolList({ title, items, note }: { title: string; items: string[]; note?: string }) {
-  return (
-    <div className="rounded-[28px] border border-black/10 bg-white p-7">
-      <h3 className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-[#8b26ca]">{title}</h3>
-      {note && <p className="mt-2 text-sm text-black/50">{note}</p>}
-      <ul className="mt-5 flex flex-wrap gap-2">{items.map((item) => <li key={item} className="rounded-full border border-black/10 bg-[#f7f5f9] px-3 py-2 text-sm text-black/70">{item}</li>)}</ul>
-    </div>
-  );
-}
-
-function Included({ offer }: { offer: Offer }) {
+function Included({ offer, onShowFeatures }: { offer: Offer; onShowFeatures: () => void }) {
   const overview = overviews[offer];
-  const kits = [{ title: "Every plan includes", items: essentials }, ...toolkits[offer]];
   return (
     <section id="included" className="scroll-mt-20 bg-[#f3f1f5] py-24 text-[#17131d] sm:py-32">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8">
@@ -212,7 +204,7 @@ function Included({ offer }: { offer: Offer }) {
             </article>
           ))}
         </div>
-        <div className={`mt-5 grid gap-5 ${kits.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>{kits.map((kit) => <ToolList key={kit.title} {...kit} />)}</div>
+        <button type="button" onClick={onShowFeatures} className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#17131d] px-6 py-4 text-sm font-bold text-white transition hover:bg-[#8b26ca] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8b26ca]">See everything included <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></button>
       </div>
     </section>
   );
@@ -328,8 +320,54 @@ function PlanQuestions() {
   );
 }
 
+function FeatureSidebar({ offer, onOfferChange, open, onOpenChange }: { offer: Offer; onOfferChange: (offer: Offer) => void; open: boolean; onOpenChange: (open: boolean) => void }) {
+  const tab = useRef<HTMLButtonElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+  const groups: ToolGroup[] = [{ title: "Every plan includes", items: essentials }, ...toolkits[offer]];
+
+  useEffect(() => {
+    if (open) closeButton.current?.focus({ preventScroll: true });
+    else if (wasOpen.current) tab.current?.focus({ preventScroll: true });
+    wasOpen.current = open;
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onOpenChange(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open, onOpenChange]);
+
+  return (
+    <aside aria-label="OneApp features">
+      <button ref={tab} type="button" aria-expanded={open} aria-controls="feature-sidebar" onClick={() => onOpenChange(true)} className={`fixed right-0 top-1/2 z-40 -translate-y-1/2 items-center gap-2 rounded-l-2xl bg-[#8b26ca] px-2 py-4 font-mono text-[10px] font-bold uppercase tracking-[.18em] text-white shadow-[-6px_8px_30px_rgba(0,0,0,.35)] transition [writing-mode:vertical-rl] hover:bg-[#a43ae6] ${open ? "hidden" : "flex"}`}><Sparkles className="h-4 w-4" /> Features</button>
+      <AnimatePresence>
+        {open && <motion.div id="feature-sidebar" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ duration: .24, ease: "easeOut" }} className="fixed right-0 top-24 z-40 max-h-[calc(100dvh-7.5rem)] w-[min(340px,calc(100vw-2.5rem))] overflow-y-auto rounded-l-[24px] border border-r-0 border-white/15 bg-[#15121b] p-6 text-white shadow-[-20px_20px_70px_rgba(0,0,0,.5)]">
+          <div className="flex items-center justify-between gap-4">
+            <div><p className="font-mono text-[10px] font-bold uppercase tracking-[.18em] text-[#ce7bff]">OneApp</p><h2 className="mt-1 text-2xl font-bold tracking-[-.04em]">Features</h2></div>
+            <button ref={closeButton} type="button" aria-label="Close OneApp features" onClick={() => onOpenChange(false)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-white/70 transition hover:border-white/40 hover:text-white"><X className="h-5 w-5" /></button>
+          </div>
+          <OfferPicker offer={offer} onChange={onOfferChange} compact />
+          {groups.map((group) => (
+            <div key={group.title} className="mt-6 border-t border-white/10 pt-5">
+              <h3 className="font-mono text-[10px] font-bold uppercase tracking-[.16em] text-white/45">{group.title}</h3>
+              {group.note && <p className="mt-2 text-xs text-white/45">{group.note}</p>}
+              <ul className="mt-3 space-y-2.5 text-sm text-white/75">{group.items.map((item) => <PlanItem key={item}>{item}</PlanItem>)}</ul>
+            </div>
+          ))}
+          <p className="mt-6 border-t border-white/10 pt-5 text-xs leading-relaxed text-white/45">Platform capacity follows your plan. Custom builds and specialist implementation require a separate proposal.</p>
+        </motion.div>}
+      </AnimatePresence>
+    </aside>
+  );
+}
+
 export function PricingPageContent() {
   const [offer, setOffer] = useState<Offer>("service");
+  const [featuresOpen, setFeaturesOpen] = useState(false);
 
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("offer");
@@ -344,5 +382,5 @@ export function PricingPageContent() {
     window.history.replaceState(null, "", url);
   };
 
-  return <main className="overflow-hidden bg-[#0b0a10]"><Navigation base="/" /><PricingHero offer={offer} onOfferChange={chooseOffer} /><Included offer={offer} /><Limits offer={offer} /><AiUsage /><PlanQuestions /><FinalCta /><SiteFooter /></main>;
+  return <main className="overflow-hidden bg-[#0b0a10]"><Navigation base="/" /><PricingHero offer={offer} onOfferChange={chooseOffer} /><Included offer={offer} onShowFeatures={() => setFeaturesOpen(true)} /><Limits offer={offer} /><AiUsage /><PlanQuestions /><FinalCta /><SiteFooter /><FeatureSidebar offer={offer} onOfferChange={chooseOffer} open={featuresOpen} onOpenChange={setFeaturesOpen} /></main>;
 }
