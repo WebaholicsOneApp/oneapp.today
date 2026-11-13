@@ -113,10 +113,36 @@ export const dealerPortalMarkup = String.raw`
       </article>
     </div>
     <p class="pilot-target-note">Suggested targets. We’ll measure the pilot against your brand’s starting numbers.</p>
-    <div class="pilot-model revenue-forecast"><div class="pilot-model-intro"><div><span class="eyebrow">ILLUSTRATIVE REVENUE FORECAST</span><h3>Wholesale + retail.<br>One growth forecast.</h3><p>Adjust both channels below to see the added monthly revenue for your brand.</p></div><span class="pilot-model-badge">Editable assumptions · USD</span></div>
+    <div class="pilot-model revenue-forecast">
+      <div class="pilot-model-intro">
+        <span class="eyebrow">ILLUSTRATIVE FORECAST</span>
+        <h3>Wholesale + retail revenue forecast</h3>
+        <p>Adjust the inputs to see your projected added monthly revenue in USD.</p>
+      </div>
       <form id="pilot-model-form" class="revenue-assumptions" aria-label="Wholesale and direct retail revenue assumptions">
-        <fieldset class="revenue-channel-inputs"><legend><span class="revenue-channel-dot wholesale-dot" aria-hidden="true"></span>Dealer wholesale</legend><p>Sales to your approved dealer network.</p><div class="revenue-input-grid wholesale-input-grid"><label>Current orders / month<input id="pilot-orders" type="number" min="0" max="1000000" step="1" value="200" inputmode="numeric"></label><label>Order growth (%)<input id="pilot-growth" type="number" min="0" max="1000" step="1" value="20" inputmode="decimal"></label><label>Average order ($)<input id="pilot-aov" type="number" min="0" max="1000000" step="1" value="125" inputmode="decimal"></label></div><div class="revenue-input-summary" id="pilot-runrate">200 → 240 dealer orders / month</div></fieldset>
-        <fieldset class="revenue-channel-inputs"><legend><span class="revenue-channel-dot retail-dot" aria-hidden="true"></span>Your retail storefront</legend><p>Direct retail sales through your brand’s own website.</p><div class="revenue-input-grid retail-input-grid"><label>Current sales / month ($)<input id="pilot-retail-sales" type="number" min="0" max="10000000" step="100" value="20000" inputmode="decimal"></label><label>Retail growth (%)<input id="pilot-retail-growth" type="number" min="0" max="1000" step="1" value="10" inputmode="decimal"></label></div><div class="revenue-input-summary" id="pilot-retail-runrate">$20,000 → $22,000 retail sales / month</div></fieldset>
+        <section class="revenue-channel-inputs" aria-labelledby="wholesale-input-heading">
+          <h4 id="wholesale-input-heading">Dealer wholesale</h4>
+          <div class="revenue-channel-body">
+            <p>Sales to your approved dealer network.</p>
+            <div class="revenue-input-grid wholesale-input-grid">
+              <label>Monthly orders<input id="pilot-orders" type="number" min="0" max="1000000" step="1" value="200" inputmode="numeric"></label>
+              <label>Order growth (%)<input id="pilot-growth" type="number" min="0" max="1000" step="1" value="20" inputmode="decimal"></label>
+              <label>Average order ($)<input id="pilot-aov" type="number" min="0" max="1000000" step="1" value="125" inputmode="decimal"></label>
+            </div>
+            <p class="revenue-input-summary"><strong id="pilot-runrate">200 → 240</strong> orders per month</p>
+          </div>
+        </section>
+        <section class="revenue-channel-inputs" aria-labelledby="retail-input-heading">
+          <h4 id="retail-input-heading">Your retail storefront</h4>
+          <div class="revenue-channel-body">
+            <p>Sales through your brand’s own website.</p>
+            <div class="revenue-input-grid retail-input-grid">
+              <label>Monthly sales ($)<input id="pilot-retail-sales" type="number" min="0" max="10000000" step="100" value="20000" inputmode="decimal"></label>
+              <label>Retail growth (%)<input id="pilot-retail-growth" type="number" min="0" max="1000" step="1" value="10" inputmode="decimal"></label>
+            </div>
+            <p class="revenue-input-summary"><strong id="pilot-retail-runrate">$20,000 → $22,000</strong> sales per month</p>
+          </div>
+        </section>
       </form>
       <div class="revenue-output-heading"><span>PROJECTED ADDED REVENUE</span><span>At your target sales pace</span></div>
       <div class="revenue-channel-results" role="status" aria-live="polite" aria-atomic="true">
