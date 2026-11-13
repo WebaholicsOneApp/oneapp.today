@@ -167,7 +167,7 @@ export function initializeDealerPortal(root: HTMLElement) {
     const wholesaleAdded = addedOrders * aov;
     const retail = read('pilot-retail-sales', 10_000_000);
     const retailAdded = retail * read('pilot-retail-growth', 1000) / 100;
-    text('pilot-growth-target', `+${count(growth)}%`);
+    text('pilot-growth-target', `${count(growth)}% more`);
     text('pilot-runrate', `${count(orders)} → ${count(orders + addedOrders)} dealer orders / month`);
     text('pilot-retail-runrate', `${money(retail)} → ${money(retail + retailAdded)} retail sales / month`);
     text('pilot-extra-orders', `${count(addedOrders)} added dealer orders / month`);

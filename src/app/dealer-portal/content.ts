@@ -86,9 +86,33 @@ export const dealerPortalMarkup = String.raw`
   </div></section>
 
   <section class="growth-pilot" id="pilot"><div class="shell">
-    <div class="visual-heading"><div><span class="eyebrow">YOUR FIRST 90 DAYS</span><h2>A pilot with numbers<br>worth measuring.</h2></div><p>Start with an example scope of 10 dealers and 25 products. Agree the baseline, then measure orders, speed, dealer experience, and return.</p></div>
-    <div class="pilot-target-heading"><span>SUGGESTED PILOT TARGETS</span><span>Agree targets against your brand’s baseline before launch</span></div>
-    <div class="pilot-targets"><div><span class="pilot-target-icon" aria-hidden="true">↗</span><strong id="pilot-growth-target">+20%</strong><h3>More dealer orders</h3><p>Target monthly run rate by day 90.</p></div><div><span class="pilot-target-icon" aria-hidden="true">◷</span><strong>≥95%</strong><h3>Same-day dispatch</h3><p>Eligible orders placed before the agreed cutoff.</p></div><div><span class="pilot-target-icon" aria-hidden="true">✓</span><strong>30%</strong><h3>Less handling time</h3><p>Target reduction per order vs. your baseline.</p></div><div><span class="pilot-target-icon" aria-hidden="true">☆</span><strong>4.5<span>/5</span></strong><h3>Dealer satisfaction</h3><p>Target score from post-order dealer surveys.</p></div></div>
+    <div class="visual-heading">
+      <div><span class="eyebrow">DEALER PORTAL PILOT</span><h2>What success looks like in 90 days</h2></div>
+      <p>Start with 10 dealers and 25 products in this example. We agree on targets before launch.</p>
+    </div>
+    <div class="pilot-targets">
+      <article>
+        <strong id="pilot-growth-target">20% more</strong>
+        <h3>Dealer orders per month</h3>
+        <p>Compared with your starting monthly order volume.</p>
+      </article>
+      <article>
+        <strong>95% or more</strong>
+        <h3>Eligible orders ship the same day</h3>
+        <p>Applies to orders placed before the agreed cutoff.</p>
+      </article>
+      <article>
+        <strong>30% less</strong>
+        <h3>Handling time per order</h3>
+        <p>Less time your team spends handling each order.</p>
+      </article>
+      <article>
+        <strong>4.5 out of 5</strong>
+        <h3>Average dealer rating</h3>
+        <p>Measured in surveys after dealers place orders.</p>
+      </article>
+    </div>
+    <p class="pilot-target-note">Suggested targets. We’ll measure the pilot against your brand’s starting numbers.</p>
     <div class="pilot-model revenue-forecast"><div class="pilot-model-intro"><div><span class="eyebrow">ILLUSTRATIVE REVENUE FORECAST</span><h3>Wholesale + retail.<br>One growth forecast.</h3><p>Adjust both channels below to see the added monthly revenue for your brand.</p></div><span class="pilot-model-badge">Editable assumptions · USD</span></div>
       <form id="pilot-model-form" class="revenue-assumptions" aria-label="Wholesale and direct retail revenue assumptions">
         <fieldset class="revenue-channel-inputs"><legend><span class="revenue-channel-dot wholesale-dot" aria-hidden="true"></span>Dealer wholesale</legend><p>Sales to your approved dealer network.</p><div class="revenue-input-grid wholesale-input-grid"><label>Current orders / month<input id="pilot-orders" type="number" min="0" max="1000000" step="1" value="200" inputmode="numeric"></label><label>Order growth (%)<input id="pilot-growth" type="number" min="0" max="1000" step="1" value="20" inputmode="decimal"></label><label>Average order ($)<input id="pilot-aov" type="number" min="0" max="1000000" step="1" value="125" inputmode="decimal"></label></div><div class="revenue-input-summary" id="pilot-runrate">200 → 240 dealer orders / month</div></fieldset>
