@@ -118,8 +118,20 @@ export const dealerPortalMarkup = String.raw`
         <fieldset class="revenue-channel-inputs"><legend><span class="revenue-channel-dot wholesale-dot" aria-hidden="true"></span>Dealer wholesale</legend><p>Sales to your approved dealer network.</p><div class="revenue-input-grid wholesale-input-grid"><label>Current orders / month<input id="pilot-orders" type="number" min="0" max="1000000" step="1" value="200" inputmode="numeric"></label><label>Order growth (%)<input id="pilot-growth" type="number" min="0" max="1000" step="1" value="20" inputmode="decimal"></label><label>Average order ($)<input id="pilot-aov" type="number" min="0" max="1000000" step="1" value="125" inputmode="decimal"></label></div><div class="revenue-input-summary" id="pilot-runrate">200 → 240 dealer orders / month</div></fieldset>
         <fieldset class="revenue-channel-inputs"><legend><span class="revenue-channel-dot retail-dot" aria-hidden="true"></span>Your retail storefront</legend><p>Direct retail sales through your brand’s own website.</p><div class="revenue-input-grid retail-input-grid"><label>Current sales / month ($)<input id="pilot-retail-sales" type="number" min="0" max="10000000" step="100" value="20000" inputmode="decimal"></label><label>Retail growth (%)<input id="pilot-retail-growth" type="number" min="0" max="1000" step="1" value="10" inputmode="decimal"></label></div><div class="revenue-input-summary" id="pilot-retail-runrate">$20,000 → $22,000 retail sales / month</div></fieldset>
       </form>
-      <div class="revenue-output-heading"><span>YOUR PROJECTED MONTHLY REVENUE</span><span>At your target run rate</span></div>
-      <div class="revenue-channel-results" role="status" aria-live="polite" aria-atomic="true"><div><span><i class="revenue-channel-dot wholesale-dot" aria-hidden="true"></i> Added wholesale revenue / month</span><strong id="pilot-extra-revenue">+$5,000</strong><small id="pilot-wholesale-sales">$25,000 → $30,000 wholesale sales / month</small><small id="pilot-extra-orders">40 added dealer orders / month</small></div><div><span><i class="revenue-channel-dot retail-dot" aria-hidden="true"></i> Added retail revenue / month</span><strong id="pilot-retail-revenue">+$2,000</strong><small id="pilot-retail-sales-result">$20,000 → $22,000 direct retail sales / month</small></div></div>
+      <div class="revenue-output-heading"><span>PROJECTED ADDED REVENUE</span><span>At your target sales pace</span></div>
+      <div class="revenue-channel-results" role="status" aria-live="polite" aria-atomic="true">
+        <article>
+          <h4>Dealer wholesale</h4>
+          <p class="revenue-channel-amount"><strong id="pilot-extra-revenue">+$5,000</strong> <span>per month</span></p>
+          <p id="pilot-wholesale-sales">$25,000 → $30,000 wholesale sales / month</p>
+          <p id="pilot-extra-orders">40 added dealer orders / month</p>
+        </article>
+        <article>
+          <h4>Your retail storefront</h4>
+          <p class="revenue-channel-amount"><strong id="pilot-retail-revenue">+$2,000</strong> <span>per month</span></p>
+          <p id="pilot-retail-sales-result">$20,000 → $22,000 direct retail sales / month</p>
+        </article>
+      </div>
       <div class="revenue-total" role="status" aria-live="polite" aria-atomic="true"><div><span>WHOLESALE + DIRECT RETAIL</span><h4>Total added revenue / month</h4><p id="pilot-total-sales">$45,000 → $52,000 combined monthly sales</p></div><strong id="pilot-combined-revenue">+$7,000</strong></div>
       <p class="pilot-model-note">Illustrative growth assumptions, not guaranteed results. Revenue is shown before costs and fees. Direct retail means the brand’s own storefront; dealer resale revenue is not counted again. Figures show the target monthly run rate, not cumulative revenue during the pilot.</p>
     </div>
