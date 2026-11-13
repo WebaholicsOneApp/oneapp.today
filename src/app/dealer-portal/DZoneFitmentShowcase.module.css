@@ -89,3 +89,28 @@
 .showcase .liveScene { display: grid; place-items: center; height: 600px; padding: 0; overflow: hidden; background: #f7f5f9; }
 .showcase .liveChatFrame { display: block; width: 100%; max-width: 620px; height: 600px; border: 0; background: #f7f5f9; }
 @media (max-width: 480px) { .showcase .modeTabs { padding: 10px; } .showcase .modeTabs button { padding: 9px 7px; font-size: 10px; } .showcase .liveScene, .showcase .liveChatFrame { height: 580px; padding: 0; } .showcase .storeHeader img { width: 112px; } }
+
+/* Keep the example's light text readable beside the dark storefront chrome. */
+.showcase { --light-copy: #405466; --light-link: #245b83; --light-fitment: #285e49; }
+.showcase .heading { font-weight: 720; }
+.showcase :is(.description, .step p, .brandNote, .greeting, .reply, .searching, .composer > span, .poweredBy, .caption, .progressLabel, .transcript, .transcript p, .transcript > div, .browserBar, .product small) {
+  color: var(--light-copy);
+  font-weight: 550;
+}
+.showcase :is(.cta, .transcript a, .demoBadge, .controls button, .step > span) {
+  color: var(--light-link);
+  font-weight: 700;
+}
+.showcase :is(.step h3, .product strong, .modeTabs button) { font-weight: 700; }
+.showcase :is(.vehicle, .vehicle small, .product div > span) { color: var(--light-fitment); font-weight: 650; }
+.showcase .modeTabs button { color: #514459; font-size: 12px; }
+.showcase .modeTabs button[aria-pressed="true"] { color: #63227f; }
+.showcase :is(.step p, .brandNote, .greeting, .reply) { font-size: 13px; }
+.showcase :is(.browserBar, .searching, .vehicle, .product div > span, .poweredBy, .caption, .composer > span, .progressLabel, .transcript, .controls button, .bikeLink) {
+  font-size: 11px;
+}
+.showcase :is(.demoBadge, .vehicle small, .product small) { font-size: 9px; }
+@media (max-width: 480px) {
+  .showcase .step p { font-size: 11px; }
+  .showcase :is(.browserBar, .demoBadge) { font-size: 9px; }
+}
