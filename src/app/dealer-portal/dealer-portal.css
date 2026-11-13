@@ -55,7 +55,7 @@
 
 
 /* retail-refinement.css */
-.dealer-portal-page .compact-storefront-section{padding-block:65px}.dealer-portal-page .compact-storefront-section .visual-heading{margin-bottom:30px}.dealer-portal-page .compact-storefront .storefront-header{padding:19px 26px}.dealer-portal-page .compact-storefront .storefront-access-line{padding:9px 26px}.dealer-portal-page .compact-storefront .compact-catalog{padding:23px 26px 17px}.dealer-portal-page .compact-catalog .storefront-catalog-heading{margin-bottom:18px}.dealer-portal-page .compact-catalog .storefront-catalog-heading h3{font-size:24px;margin-top:4px}.dealer-portal-page .compact-catalog .storefront-catalog-heading>div>span{font-size:7px}.dealer-portal-page .compact-catalog .storefront-view-switch{align-self:center}.dealer-portal-page .compact-catalog .storefront-view-switch button{font-size:11px;padding:8px 17px;min-width:93px}.dealer-portal-page .compact-catalog .catalog-products{gap:17px}.dealer-portal-page .compact-catalog .catalog-product{display:grid;grid-template-columns:43% 1fr;background:#fff;border-color:#e5dce9}.dealer-portal-page .compact-catalog .catalog-product[hidden]{display:none}.dealer-portal-page .compact-catalog .product-art{height:auto;min-height:202px;border-radius:0;background:linear-gradient(140deg,#f5f1f8,#eae3f0)}.dealer-portal-page .compact-catalog .product-art img{padding:19px 0 5px;object-fit:contain}.dealer-portal-page .compact-catalog .product-meta{padding:18px 17px;display:flex;flex-direction:column;align-items:flex-start}.dealer-portal-page .compact-catalog .product-meta>small{font-size:7px}.dealer-portal-page .compact-catalog .product-meta h4{font-size:13px;margin:8px 0 14px;line-height:1.4}.dealer-portal-page .compact-catalog .product-price{gap:7px}.dealer-portal-page .compact-catalog .product-price strong{font-size:23px}.dealer-portal-page .compact-catalog .product-price-type{font-size:7px}.dealer-portal-page .compact-catalog .stock-dot{font-size:7px;margin-top:10px;line-height:1.8}.dealer-portal-page .compact-catalog .catalog-add{font-size:9px;margin-top:auto;padding:9px 10px;min-height:34px}.dealer-portal-page .product-retail-reference{font-size:8px;color:#b69cc2;margin-top:5px;line-height:1.5;text-decoration:line-through}.dealer-portal-page .product-retail-reference[hidden]{display:none}.dealer-portal-page .compact-catalog .storefront-catalog-footer{margin-top:13px;font-size:7px}.dealer-portal-page .compact-storefront .visual-caption{font-size:9px;margin-top:17px}.dealer-portal-page .compact-storefront .visual-caption>a{font-size:10px;color:#9663ac;white-space:nowrap}.dealer-portal-page .compact-storefront .visual-caption>a>span{margin-left:10px}.dealer-portal-page .compact-cart{margin-top:20px;border:1px solid #e4d6eb;border-radius:7px;background:#faf6fc;overflow:hidden}.dealer-portal-page .compact-cart>summary{display:grid;grid-template-columns:1fr 1fr auto auto;gap:26px;align-items:center;padding:14px 17px;font-weight:400}.dealer-portal-page .compact-cart>summary>span{font-size:9px;color:#a286b2}.dealer-portal-page .compact-cart-title{display:flex;align-items:center;gap:10px;font-size:11px!important;color:#8e62a4!important}.dealer-portal-page .compact-cart-title>span{font-size:20px;color:#a67db9}.dealer-portal-page .compact-cart-title>b{width:20px;height:20px;border-radius:5px;background:#eee3f4;color:#a478ba;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:500}.dealer-portal-page .compact-cart>summary>strong{font-size:19px;font-weight:600;letter-spacing:-.03em;color:#8d519f}.dealer-portal-page .compact-cart .compact-cart-expand{display:flex;gap:9px;align-items:center;font-size:9px;color:#ab84bc}.dealer-portal-page .compact-cart-expand i{font-size:14px;font-style:normal;transition:transform .2s}.dealer-portal-page .compact-cart[open] .compact-cart-expand i{transform:rotate(180deg)}.dealer-portal-page .compact-cart[open] summary span{transform:none}.dealer-portal-page .compact-cart-body{display:grid;grid-template-columns:1fr 300px;gap:50px;border-top:1px solid #e9deef;padding:20px 17px}.dealer-portal-page .compact-cart-body>div>small{font-size:7px;letter-spacing:.08em;color:#ad8fbd}.dealer-portal-page .compact-cart-body .cart-item{font-size:11px;padding-top:12px;color:#94749f}.dealer-portal-page .compact-cart-body .cart-item strong{font-size:11px}.dealer-portal-page .compact-cart-body .cart-totals{margin:0;padding:0;border:0}.dealer-portal-page .compact-cart-body .cart-totals>div{font-size:10px;margin-bottom:7px}.dealer-portal-page .compact-cart-body .cart-totals strong{font-size:11px}.dealer-portal-page .compact-cart-body [hidden]{display:none}
+.dealer-portal-page .compact-storefront-section{padding-block:65px}.dealer-portal-page .compact-storefront-section .visual-heading{margin-bottom:30px}.dealer-portal-page .compact-storefront .storefront-header{padding:19px 26px}.dealer-portal-page .compact-storefront .storefront-access-line{padding:9px 26px}.dealer-portal-page .compact-storefront .compact-catalog{padding:23px 26px 17px}.dealer-portal-page .compact-catalog .storefront-catalog-heading{margin-bottom:18px}.dealer-portal-page .compact-catalog .storefront-catalog-heading h3{font-size:24px;margin-top:4px}.dealer-portal-page .compact-catalog .storefront-catalog-heading>div>span{font-size:7px}.dealer-portal-page .compact-catalog .storefront-view-switch{align-self:center}.dealer-portal-page .compact-catalog .storefront-view-switch button{font-size:11px;padding:8px 17px;min-width:93px}.dealer-portal-page .compact-catalog .catalog-products{gap:17px}.dealer-portal-page .compact-catalog .catalog-product{display:grid;grid-template-columns:43% 1fr;background:#fff;border-color:#e5dce9}.dealer-portal-page .compact-catalog .catalog-product[hidden]{display:none}.dealer-portal-page .compact-catalog .product-art{height:auto;min-height:202px;border-radius:0;background:linear-gradient(140deg,#f5f1f8,#eae3f0)}.dealer-portal-page .compact-catalog .product-art img{padding:19px 0 5px;object-fit:contain}.dealer-portal-page .compact-catalog .product-meta{padding:18px 17px;display:flex;flex-direction:column;align-items:flex-start}.dealer-portal-page .compact-catalog .product-meta>small{font-size:7px}.dealer-portal-page .compact-catalog .product-meta h4{font-size:13px;margin:8px 0 14px;line-height:1.4}.dealer-portal-page .compact-catalog .product-price{gap:7px}.dealer-portal-page .compact-catalog .product-price strong{font-size:23px}.dealer-portal-page .compact-catalog .product-price-type{font-size:7px}.dealer-portal-page .compact-catalog .stock-dot{font-size:7px;margin-top:10px;line-height:1.8}.dealer-portal-page .compact-catalog .catalog-add{font-size:9px;margin-top:auto;padding:9px 10px;min-height:34px}.dealer-portal-page .product-retail-reference{font-size:8px;color:#b69cc2;margin-top:5px;line-height:1.5;text-decoration:line-through}.dealer-portal-page .product-retail-reference[hidden]{display:none}.dealer-portal-page .compact-catalog .storefront-catalog-footer{margin-top:13px;font-size:7px}.dealer-portal-page .compact-storefront .visual-caption{font-size:9px;margin-top:17px}.dealer-portal-page .compact-storefront .visual-caption>a{font-size:10px;color:#9663ac;white-space:nowrap}.dealer-portal-page .compact-storefront .visual-caption>a>span{margin-left:10px}.dealer-portal-page .compact-cart{margin-top:20px;border:1px solid #e4d6eb;border-radius:7px;background:#faf6fc;overflow:hidden}.dealer-portal-page .compact-cart>summary{display:grid;grid-template-columns:1fr 1fr auto auto;gap:26px;align-items:center;padding:14px 17px;font-weight:400}.dealer-portal-page .compact-cart>summary>span{font-size:9px;color:#a286b2}.dealer-portal-page .compact-cart-title{display:flex;align-items:center;gap:10px;font-size:11px!important;color:#8e62a4}.dealer-portal-page .compact-cart-title>span{font-size:20px;color:#a67db9}.dealer-portal-page .compact-cart-title>b{width:20px;height:20px;border-radius:5px;background:#eee3f4;color:#a478ba;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:500}.dealer-portal-page .compact-cart>summary>strong{font-size:19px;font-weight:600;letter-spacing:-.03em;color:#8d519f}.dealer-portal-page .compact-cart .compact-cart-expand{display:flex;gap:9px;align-items:center;font-size:9px;color:#ab84bc}.dealer-portal-page .compact-cart-expand i{font-size:14px;font-style:normal;transition:transform .2s}.dealer-portal-page .compact-cart[open] .compact-cart-expand i{transform:rotate(180deg)}.dealer-portal-page .compact-cart[open] summary span{transform:none}.dealer-portal-page .compact-cart-body{display:grid;grid-template-columns:1fr 300px;gap:50px;border-top:1px solid #e9deef;padding:20px 17px}.dealer-portal-page .compact-cart-body>div>small{font-size:7px;letter-spacing:.08em;color:#ad8fbd}.dealer-portal-page .compact-cart-body .cart-item{font-size:11px;padding-top:12px;color:#94749f}.dealer-portal-page .compact-cart-body .cart-item strong{font-size:11px}.dealer-portal-page .compact-cart-body .cart-totals{margin:0;padding:0;border:0}.dealer-portal-page .compact-cart-body .cart-totals>div{font-size:10px;margin-bottom:7px}.dealer-portal-page .compact-cart-body .cart-totals strong{font-size:11px}.dealer-portal-page .compact-cart-body [hidden]{display:none}
 .dealer-portal-page .pilot-results>div>small{max-width:270px}.dealer-portal-page .pilot-retail-scenario{border:1px solid #e0d1e9;background:#fcf9fe;border-radius:10px;margin-top:26px;padding:25px}.dealer-portal-page .pilot-retail-heading{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-bottom:22px}.dealer-portal-page .pilot-retail-heading .eyebrow{font-size:7px;letter-spacing:.1em;margin-bottom:12px}.dealer-portal-page .pilot-retail-heading h3{font-size:24px;color:#754a87;margin:0 0 10px}.dealer-portal-page .pilot-retail-heading p{font-size:11px;color:#a386b4;margin:0;line-height:1.8}.dealer-portal-page .retail-scenario-toggle{display:flex;align-items:center;gap:9px;font-size:10px;color:#9668aa;white-space:nowrap}.dealer-portal-page .retail-scenario-toggle input{accent-color:#a14fc6;width:16px;height:16px;margin:0}.dealer-portal-page .pilot-retail-assumptions{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.dealer-portal-page .pilot-retail-assumptions label{font-size:9px}.dealer-portal-page .pilot-retail-assumptions input{font-size:21px}.dealer-portal-page .retail-results{display:flex;gap:50px;margin-top:21px;padding-top:19px;border-top:1px solid #e9ddef}.dealer-portal-page .retail-results>span{font-size:10px;color:#ab8dbb;line-height:1.7;flex:1}.dealer-portal-page .retail-results strong{display:block;font-size:25px;line-height:1.3;color:#9a5db3;margin-top:9px;font-weight:550;letter-spacing:-.03em}.dealer-portal-page .retail-scenario-note{font-size:8px;color:#b19bc0;line-height:1.8;margin:16px 0 0}.dealer-portal-page .pilot-combined-results{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:23px;padding:24px 25px;background:#21172e;border:1px solid #3c284c;border-radius:9px}.dealer-portal-page .pilot-combined-results>div{position:relative}.dealer-portal-page .pilot-combined-results>div+div{border-left:1px solid #4a3159;padding-left:26px}.dealer-portal-page .pilot-combined-results span{font-size:7px;letter-spacing:.08em;color:#a788b8;display:block;margin-bottom:13px}.dealer-portal-page .pilot-combined-results strong{font-size:34px;line-height:1.1;letter-spacing:-.04em;color:#d4adea;display:block;margin-bottom:12px;font-weight:600}.dealer-portal-page .pilot-combined-results small{font-size:9px;color:#ad91bc;line-height:1.8;display:block}.dealer-portal-page .pilot-fee-row #pilot-cost-result>span{line-height:1.7}.dealer-portal-page .pilot-fee-row #pilot-cost-result small{display:block;color:#b7a0c1;font-size:7px;line-height:1.7;margin-top:5px}.dealer-portal-page .pilot-retail-scenario #pilot-retail-fields[hidden]{display:none}
 @media(max-width:1100px){.dealer-portal-page .compact-catalog .catalog-products{gap:12px}.dealer-portal-page .compact-catalog .catalog-product{grid-template-columns:39% 1fr}.dealer-portal-page .compact-catalog .product-meta{padding:15px 12px}.dealer-portal-page .compact-catalog .product-meta h4{font-size:11px}.dealer-portal-page .compact-catalog .product-price strong{font-size:20px}.dealer-portal-page .compact-catalog .product-art{min-height:200px}.dealer-portal-page .compact-catalog .catalog-add{font-size:8px}.dealer-portal-page .compact-cart>summary{gap:17px}.dealer-portal-page .compact-cart>summary>#storefront-cart-state{font-size:8px}}
 @media(max-width:900px){.dealer-portal-page .compact-catalog .catalog-product{display:block}.dealer-portal-page .compact-catalog .product-art{height:115px;min-height:0}.dealer-portal-page .compact-catalog .product-meta{min-height:195px;padding:15px}.dealer-portal-page .compact-catalog .product-meta h4{font-size:12px}.dealer-portal-page .compact-catalog .stock-dot{font-size:6px}.dealer-portal-page .compact-catalog .catalog-add{font-size:9px}.dealer-portal-page .compact-catalog .product-price strong{font-size:22px}.dealer-portal-page .compact-cart-body{grid-template-columns:1fr 240px;gap:35px}}
@@ -73,6 +73,149 @@
 
 .dealer-portal-page { min-height: 100vh; box-sizing: border-box; }
 .dealer-portal-page [id] { scroll-margin-top: 24px; }
+
+/* Presentation typography for the portal's light surfaces. */
+.dealer-portal-page :is(.compact-storefront-section, .board-section, .growth-pilot, .visual-faq) {
+  --light-secondary: #514459;
+  --light-accent: #653779;
+  --light-positive: #285e49;
+}
+
+.dealer-portal-page :is(.compact-storefront-section, .board-section, .growth-pilot) .visual-heading h2,
+.dealer-portal-page .visual-faq h2 {
+  font-weight: 720;
+}
+
+.dealer-portal-page :is(.compact-storefront-section, .board-section, .growth-pilot) .visual-heading > p {
+  color: var(--light-secondary);
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.dealer-portal-page :is(.compact-storefront-section, .board-section, .growth-pilot) .eyebrow {
+  color: var(--light-accent);
+  font-size: 11px;
+}
+
+.dealer-portal-page .compact-storefront :is(.browser-bar, .ridge-logo small, .storefront-categories button, .storefront-view-switch button, .storefront-catalog-footer, .visual-caption > span:first-child),
+.dealer-portal-page .compact-catalog :is(.product-meta > small, .product-price-type, .product-retail-reference, .catalog-empty),
+.dealer-portal-page .compact-cart > summary > #storefront-cart-state,
+.dealer-portal-page .compact-cart-body :is(div > small, .cart-item, .cart-totals > div) {
+  color: var(--light-secondary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.dealer-portal-page .compact-storefront .browser-bar > .concept-label,
+.dealer-portal-page .compact-storefront .ridge-logo small {
+  font-size: 9px;
+}
+
+.dealer-portal-page .compact-storefront :is(.storefront-categories button.selected, .storefront-view-switch button[aria-selected=true], .storefront-account, .visual-caption > a),
+.dealer-portal-page .compact-catalog :is(.art-label, .storefront-catalog-heading > div > span, .catalog-add),
+.dealer-portal-page .compact-cart :is(.compact-cart-title > b, summary > .compact-cart-expand, .cart-item strong, .cart-totals strong) {
+  color: var(--light-accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dealer-portal-page .compact-storefront .ridge-logo > b,
+.dealer-portal-page .compact-cart-title > span,
+.dealer-portal-page .compact-cart > summary > strong {
+  color: var(--light-accent);
+}
+
+.dealer-portal-page .compact-catalog .art-label { font-size: 9px; }
+.dealer-portal-page .compact-catalog :is(.catalog-add.added, .stock-dot) {
+  color: var(--light-positive);
+  font-weight: 650;
+  font-size: 10px;
+}
+
+.dealer-portal-page .compact-catalog .product-meta h4 { font-size: 14px; font-weight: 720; }
+.dealer-portal-page .compact-catalog :is(.product-price strong, .storefront-catalog-heading h3),
+.dealer-portal-page .compact-cart > summary > strong { font-weight: 720; }
+.dealer-portal-page .compact-cart > summary > .compact-cart-title { color: var(--light-accent); font-weight: 700; }
+
+.dealer-portal-page .fulfillment-tab small {
+  color: var(--light-accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+.dealer-portal-page .fulfillment-tab strong { font-size: 14px; font-weight: 720; }
+.dealer-portal-page .board-section :is(.fulfillment-tab em, .fulfillment-caption > p, .fulfillment-caption > span) {
+  color: var(--light-secondary);
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.dealer-portal-page .growth-pilot :is(.pilot-target-heading, .pilot-targets p, .pilot-model-intro p, .revenue-channel-inputs > p, .revenue-input-grid label, .revenue-output-heading, .pilot-model-note, .pilot-plan p, .pilot-plan-cta > span) {
+  color: var(--light-secondary);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.dealer-portal-page .growth-pilot :is(.pilot-target-heading > span:first-child, .pilot-model-badge, .revenue-channel-inputs legend, .revenue-input-summary, .revenue-output-heading > span:first-child, .pilot-plan > div > span) {
+  color: var(--light-accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dealer-portal-page .growth-pilot :is(.pilot-targets h3, .revenue-channel-inputs legend) {
+  font-size: 14px;
+  font-weight: 700;
+}
+.dealer-portal-page .growth-pilot :is(.pilot-targets strong, .pilot-targets strong > span, .revenue-input-grid input, .revenue-channel-results strong) {
+  color: var(--light-accent);
+  font-weight: 720;
+}
+.dealer-portal-page .growth-pilot :is(.pilot-model-intro h3, .pilot-plan strong) {
+  color: #3f284e;
+  font-weight: 720;
+}
+.dealer-portal-page .growth-pilot .pilot-plan strong { font-size: 16px; }
+.dealer-portal-page .growth-pilot .revenue-channel-results :is(div > span, small) {
+  color: var(--light-accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+.dealer-portal-page .growth-pilot .revenue-channel-results > div:nth-child(2) :is(span, strong, small) {
+  color: var(--light-positive);
+}
+
+.dealer-portal-page .visual-faq summary { font-size: 14px; font-weight: 700; }
+.dealer-portal-page .visual-faq details > p {
+  color: var(--light-secondary);
+  font-size: 13px;
+  font-weight: 550;
+}
+
+@media (max-width: 700px) {
+  .dealer-portal-page .compact-storefront :is(.storefront-categories button, .storefront-view-switch button, .storefront-account),
+  .dealer-portal-page .compact-cart > summary > #storefront-cart-state,
+  .dealer-portal-page .compact-cart summary > .compact-cart-expand {
+    font-size: 10px;
+  }
+  .dealer-portal-page .compact-storefront .storefront-header .storefront-categories { gap: 12px; }
+  .dealer-portal-page .compact-catalog .product-meta h4,
+  .dealer-portal-page .fulfillment-tab strong { font-size: 12px; }
+  .dealer-portal-page .compact-catalog :is(.art-label, .product-meta > small, .product-price-type, .product-retail-reference, .stock-dot, .catalog-add),
+  .dealer-portal-page .fulfillment-tab small,
+  .dealer-portal-page .board-section .fulfillment-tab em {
+    font-size: 9px;
+  }
+  .dealer-portal-page .compact-catalog .product-meta { gap: 4px; }
+  .dealer-portal-page .compact-catalog .catalog-add { margin-top: 8px; }
+  .dealer-portal-page .growth-pilot .pilot-target-heading { align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .dealer-portal-page :is(.compact-storefront-section, .board-section, .growth-pilot) .visual-heading > p { font-size: 14px; }
+  .dealer-portal-page .compact-catalog .catalog-add { padding-inline: 5px; }
+  .dealer-portal-page .compact-catalog .storefront-catalog-footer { flex-wrap: wrap; gap: 5px; }
+  .dealer-portal-page .compact-catalog .storefront-catalog-footer > span:last-child { max-width: none; }
+  .dealer-portal-page .growth-pilot .pilot-model-intro .eyebrow { font-size: 10px; }
+}
 
 /* The dealer portal has its own embedded fitment assistant. Other pages keep
    the existing OneApp services chat; the frame disposes itself on navigation. */
