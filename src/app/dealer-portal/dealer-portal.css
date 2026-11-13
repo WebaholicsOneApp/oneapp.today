@@ -155,6 +155,10 @@
   font-weight: 550;
 }
 
+.dealer-portal-page .growth-pilot {
+  --pilot-charcoal: #38383d;
+}
+
 .dealer-portal-page .growth-pilot .visual-heading {
   display: block;
   margin-bottom: 24px;
@@ -175,7 +179,7 @@
   padding: clamp(13px, 2.5vw, 26px);
   border: 1px solid #302638;
   border-radius: 11px;
-  background: #0e0d12;
+  background: var(--pilot-charcoal);
 }
 
 .dealer-portal-page :is(.pilot-targets, .revenue-channel-results) strong {
@@ -247,7 +251,7 @@
 .dealer-portal-page .revenue-channel-inputs h4 {
   padding: 13px clamp(14px, 2vw, 23px);
   border-radius: 10px 10px 0 0;
-  background: #0e0d12;
+  background: var(--pilot-charcoal);
   color: #fff;
   font-size: clamp(20px, 2.2vw, 25px);
   font-weight: 850;
