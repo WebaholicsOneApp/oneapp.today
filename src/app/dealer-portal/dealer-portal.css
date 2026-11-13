@@ -65,10 +65,10 @@
 
 
 /* revenue-forecast.css */
-.dealer-portal-page .revenue-forecast .pilot-model-intro p{max-width:460px}.dealer-portal-page .revenue-assumptions{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:0}.dealer-portal-page .revenue-channel-inputs{min-width:0;margin:0;padding:21px 21px 18px;border:1px solid #e6d8ee;border-radius:10px;background:#fcfafd}.dealer-portal-page .revenue-channel-inputs legend{display:flex;align-items:center;gap:8px;padding:0 7px;font-size:13px;font-weight:600;letter-spacing:-.02em;color:#815093}.dealer-portal-page .revenue-channel-dot{display:inline-block;width:7px;height:7px;border-radius:50%;flex-shrink:0}.dealer-portal-page .wholesale-dot{background:#a454c9}.dealer-portal-page .retail-dot{background:#63ad99}.dealer-portal-page .revenue-channel-inputs>p{font-size:10px;line-height:1.8;color:#a78db6;margin:0 0 20px}.dealer-portal-page .revenue-input-grid{display:grid;gap:13px}.dealer-portal-page .wholesale-input-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dealer-portal-page .retail-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dealer-portal-page .revenue-input-grid label{min-width:0;font-size:9px;color:#9e7eaf;line-height:1.7}.dealer-portal-page .revenue-input-grid input{display:block;width:100%;min-width:0;margin-top:9px;border:1px solid #dfcee9;background:#fff;border-radius:6px;padding:11px 12px;font:inherit;font-size:20px;color:#75468b}.dealer-portal-page .revenue-input-grid input:focus{outline:2px solid #b877d5;outline-offset:2px}.dealer-portal-page .revenue-input-summary{font-size:9px;color:#aa8db9;line-height:1.8;border-top:1px solid #e9deef;margin-top:20px;padding-top:13px}.dealer-portal-page .revenue-output-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;margin:30px 0 16px;font-size:8px;color:#b097bd}.dealer-portal-page .revenue-output-heading>span:first-child{color:#9b72ad;letter-spacing:.08em;font-weight:600}.dealer-portal-page .revenue-channel-results{display:grid;grid-template-columns:1fr 1fr;gap:20px}.dealer-portal-page .revenue-channel-results>div{background:#f6f0fa;border:1px solid #e9dcf1;border-radius:9px;padding:25px 23px}.dealer-portal-page .revenue-channel-results>div>span{font-size:11px;color:#9c74af;display:flex;align-items:center;gap:8px;margin-bottom:20px;line-height:1.7}.dealer-portal-page .revenue-channel-results strong{display:block;font-size:42px;color:#8c46a8;letter-spacing:-.045em;line-height:1.1;font-weight:600;margin-bottom:17px;overflow-wrap:anywhere}.dealer-portal-page .revenue-channel-results>div:nth-child(2){background:#f4f8f6;border-color:#dae8e2}.dealer-portal-page .revenue-channel-results>div:nth-child(2)>span{color:#7c9f91}.dealer-portal-page .revenue-channel-results>div:nth-child(2)>strong{color:#609c87}.dealer-portal-page .revenue-channel-results small{display:block;font-size:9px;color:#b098bd;line-height:1.8;margin-top:4px}.dealer-portal-page .revenue-channel-results>div:nth-child(2) small{color:#93b0a3}.dealer-portal-page .revenue-total{display:flex;justify-content:space-between;align-items:center;gap:35px;background:#21172e;border:1px solid #3d294c;border-radius:10px;padding:27px 29px;margin-top:20px}.dealer-portal-page .revenue-total>div>span{font-size:7px;letter-spacing:.1em;color:#ad8cbe;display:block;margin-bottom:13px}.dealer-portal-page .revenue-total h4{font-size:18px;line-height:1.5;color:#d3b3e3;letter-spacing:-.025em;margin:0 0 8px;font-weight:550}.dealer-portal-page .revenue-total p{font-size:10px;color:#a98cba;line-height:1.8;margin:0}.dealer-portal-page .revenue-total>strong{font-size:50px;line-height:1.1;font-weight:600;letter-spacing:-.05em;color:#d6a9ed;overflow-wrap:anywhere}.dealer-portal-page .revenue-forecast .pilot-model-note{margin-top:18px;line-height:1.9;max-width:1040px}
-@media(max-width:1100px){.dealer-portal-page .revenue-assumptions{gap:16px}.dealer-portal-page .revenue-channel-inputs{padding:20px 17px 17px}.dealer-portal-page .revenue-input-grid{gap:9px}.dealer-portal-page .revenue-input-grid label{font-size:8px}.dealer-portal-page .revenue-input-grid input{font-size:19px;padding:11px 10px}.dealer-portal-page .revenue-channel-results>div{padding:23px 20px}.dealer-portal-page .revenue-channel-results strong{font-size:38px}.dealer-portal-page .revenue-total>strong{font-size:46px}}
-@media(max-width:850px){.dealer-portal-page .revenue-assumptions{grid-template-columns:1fr;gap:23px}.dealer-portal-page .revenue-channel-inputs{padding:21px}.dealer-portal-page .revenue-channel-inputs legend{font-size:14px}.dealer-portal-page .revenue-input-grid{gap:17px}.dealer-portal-page .revenue-input-grid label{font-size:10px}.dealer-portal-page .revenue-input-grid input{font-size:23px;padding:12px}.dealer-portal-page .revenue-input-summary{font-size:10px}.dealer-portal-page .revenue-channel-results{gap:15px}.dealer-portal-page .revenue-channel-results>div>span{font-size:10px;align-items:flex-start}.dealer-portal-page .revenue-channel-results .revenue-channel-dot{margin-top:5px}.dealer-portal-page .revenue-channel-results strong{font-size:35px}.dealer-portal-page .revenue-channel-results small{font-size:8px}.dealer-portal-page .revenue-total{padding:25px;gap:25px}.dealer-portal-page .revenue-total h4{font-size:16px}.dealer-portal-page .revenue-total>strong{font-size:40px}}
-@media(max-width:600px){.dealer-portal-page .revenue-assumptions{gap:22px}.dealer-portal-page .revenue-channel-inputs{padding:18px 14px 15px;border-radius:8px}.dealer-portal-page .revenue-channel-inputs legend{font-size:12px;padding-inline:6px;gap:7px}.dealer-portal-page .revenue-channel-inputs>p{font-size:9px;margin-bottom:17px}.dealer-portal-page .revenue-input-grid{gap:15px 11px}.dealer-portal-page .wholesale-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dealer-portal-page .wholesale-input-grid>label:last-child{grid-column:1/-1}.dealer-portal-page .revenue-input-grid label{font-size:8px;line-height:1.8}.dealer-portal-page .revenue-input-grid input{font-size:21px;padding:11px;margin-top:7px}.dealer-portal-page .revenue-input-summary{font-size:8px;margin-top:17px;padding-top:12px}.dealer-portal-page .revenue-output-heading{display:block;margin-top:25px;margin-bottom:14px;font-size:7px;line-height:1.8}.dealer-portal-page .revenue-output-heading>span{display:block}.dealer-portal-page .revenue-output-heading>span:last-child{font-size:8px;margin-top:6px}.dealer-portal-page .revenue-channel-results{grid-template-columns:1fr;gap:12px}.dealer-portal-page .revenue-channel-results>div{padding:21px 19px}.dealer-portal-page .revenue-channel-results>div>span{font-size:10px;margin-bottom:16px;align-items:center}.dealer-portal-page .revenue-channel-results .revenue-channel-dot{margin-top:0}.dealer-portal-page .revenue-channel-results strong{font-size:36px;margin-bottom:13px}.dealer-portal-page .revenue-channel-results small{font-size:8px;line-height:1.9}.dealer-portal-page .revenue-total{display:block;padding:23px 20px;margin-top:16px}.dealer-portal-page .revenue-total>div>span{font-size:6px;margin-bottom:12px}.dealer-portal-page .revenue-total h4{font-size:17px;margin-bottom:10px}.dealer-portal-page .revenue-total p{font-size:9px;line-height:1.9}.dealer-portal-page .revenue-total>strong{display:block;font-size:45px;margin-top:21px}.dealer-portal-page .revenue-forecast .pilot-model-note{font-size:8px;line-height:1.9;margin-top:16px}}
+.dealer-portal-page .revenue-forecast .pilot-model-intro p{max-width:460px}.dealer-portal-page .revenue-assumptions{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:0}.dealer-portal-page .revenue-channel-inputs{min-width:0;margin:0;padding:21px 21px 18px;border:1px solid #e6d8ee;border-radius:10px;background:#fcfafd}.dealer-portal-page .revenue-channel-inputs legend{display:flex;align-items:center;gap:8px;padding:0 7px;font-size:13px;font-weight:600;letter-spacing:-.02em;color:#815093}.dealer-portal-page .revenue-channel-dot{display:inline-block;width:7px;height:7px;border-radius:50%;flex-shrink:0}.dealer-portal-page .wholesale-dot{background:#a454c9}.dealer-portal-page .retail-dot{background:#63ad99}.dealer-portal-page .revenue-channel-inputs>p{font-size:10px;line-height:1.8;color:#a78db6;margin:0 0 20px}.dealer-portal-page .revenue-input-grid{display:grid;gap:13px}.dealer-portal-page .wholesale-input-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dealer-portal-page .retail-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dealer-portal-page .revenue-input-grid label{min-width:0;font-size:9px;color:#9e7eaf;line-height:1.7}.dealer-portal-page .revenue-input-grid input{display:block;width:100%;min-width:0;margin-top:9px;border:1px solid #dfcee9;background:#fff;border-radius:6px;padding:11px 12px;font:inherit;font-size:20px;color:#75468b}.dealer-portal-page .revenue-input-grid input:focus{outline:2px solid #b877d5;outline-offset:2px}.dealer-portal-page .revenue-input-summary{font-size:9px;color:#aa8db9;line-height:1.8;border-top:1px solid #e9deef;margin-top:20px;padding-top:13px}.dealer-portal-page .revenue-output-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;margin:30px 0 16px;font-size:8px;color:#b097bd}.dealer-portal-page .revenue-output-heading>span:first-child{color:#9b72ad;letter-spacing:.08em;font-weight:600}.dealer-portal-page .revenue-total{display:flex;justify-content:space-between;align-items:center;gap:35px;background:#21172e;border:1px solid #3d294c;border-radius:10px;padding:27px 29px;margin-top:20px}.dealer-portal-page .revenue-total>div>span{font-size:7px;letter-spacing:.1em;color:#ad8cbe;display:block;margin-bottom:13px}.dealer-portal-page .revenue-total h4{font-size:18px;line-height:1.5;color:#d3b3e3;letter-spacing:-.025em;margin:0 0 8px;font-weight:550}.dealer-portal-page .revenue-total p{font-size:10px;color:#a98cba;line-height:1.8;margin:0}.dealer-portal-page .revenue-total>strong{font-size:50px;line-height:1.1;font-weight:600;letter-spacing:-.05em;color:#d6a9ed;overflow-wrap:anywhere}.dealer-portal-page .revenue-forecast .pilot-model-note{margin-top:18px;line-height:1.9;max-width:1040px}
+@media(max-width:1100px){.dealer-portal-page .revenue-assumptions{gap:16px}.dealer-portal-page .revenue-channel-inputs{padding:20px 17px 17px}.dealer-portal-page .revenue-input-grid{gap:9px}.dealer-portal-page .revenue-input-grid label{font-size:8px}.dealer-portal-page .revenue-input-grid input{font-size:19px;padding:11px 10px}.dealer-portal-page .revenue-total>strong{font-size:46px}}
+@media(max-width:850px){.dealer-portal-page .revenue-assumptions{grid-template-columns:1fr;gap:23px}.dealer-portal-page .revenue-channel-inputs{padding:21px}.dealer-portal-page .revenue-channel-inputs legend{font-size:14px}.dealer-portal-page .revenue-input-grid{gap:17px}.dealer-portal-page .revenue-input-grid label{font-size:10px}.dealer-portal-page .revenue-input-grid input{font-size:23px;padding:12px}.dealer-portal-page .revenue-input-summary{font-size:10px}.dealer-portal-page .revenue-total{padding:25px;gap:25px}.dealer-portal-page .revenue-total h4{font-size:16px}.dealer-portal-page .revenue-total>strong{font-size:40px}}
+@media(max-width:600px){.dealer-portal-page .revenue-assumptions{gap:22px}.dealer-portal-page .revenue-channel-inputs{padding:18px 14px 15px;border-radius:8px}.dealer-portal-page .revenue-channel-inputs legend{font-size:12px;padding-inline:6px;gap:7px}.dealer-portal-page .revenue-channel-inputs>p{font-size:9px;margin-bottom:17px}.dealer-portal-page .revenue-input-grid{gap:15px 11px}.dealer-portal-page .wholesale-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dealer-portal-page .wholesale-input-grid>label:last-child{grid-column:1/-1}.dealer-portal-page .revenue-input-grid label{font-size:8px;line-height:1.8}.dealer-portal-page .revenue-input-grid input{font-size:21px;padding:11px;margin-top:7px}.dealer-portal-page .revenue-input-summary{font-size:8px;margin-top:17px;padding-top:12px}.dealer-portal-page .revenue-output-heading{display:block;margin-top:25px;margin-bottom:14px;font-size:7px;line-height:1.8}.dealer-portal-page .revenue-output-heading>span{display:block}.dealer-portal-page .revenue-output-heading>span:last-child{font-size:8px;margin-top:6px}.dealer-portal-page .revenue-total{display:block;padding:23px 20px;margin-top:16px}.dealer-portal-page .revenue-total>div>span{font-size:6px;margin-bottom:12px}.dealer-portal-page .revenue-total h4{font-size:17px;margin-bottom:10px}.dealer-portal-page .revenue-total p{font-size:9px;line-height:1.9}.dealer-portal-page .revenue-total>strong{display:block;font-size:45px;margin-top:21px}.dealer-portal-page .revenue-forecast .pilot-model-note{font-size:8px;line-height:1.9;margin-top:16px}}
 
 
 .dealer-portal-page { min-height: 100vh; box-sizing: border-box; }
@@ -171,14 +171,14 @@
   gap: clamp(10px, 2vw, 16px);
 }
 
-.dealer-portal-page .pilot-targets article {
+.dealer-portal-page :is(.pilot-targets, .revenue-channel-results) article {
   padding: clamp(13px, 2.5vw, 26px);
   border: 1px solid #302638;
   border-radius: 11px;
   background: #0e0d12;
 }
 
-.dealer-portal-page .pilot-targets strong {
+.dealer-portal-page :is(.pilot-targets, .revenue-channel-results) strong {
   display: block;
   color: #e0aaff;
   font-size: clamp(20px, 4.6vw, 34px);
@@ -187,7 +187,7 @@
   letter-spacing: -.035em;
 }
 
-.dealer-portal-page .pilot-targets h3 {
+.dealer-portal-page :is(.pilot-targets h3, .revenue-channel-results h4) {
   color: #fff;
   font-size: clamp(13px, 1.5vw, 17px);
   line-height: 1.35;
@@ -196,7 +196,7 @@
   margin: 7px 0 4px;
 }
 
-.dealer-portal-page .pilot-targets p {
+.dealer-portal-page :is(.pilot-targets, .revenue-channel-results) p {
   color: #d6cddd;
   font-size: 13px;
   line-height: 1.6;
@@ -206,6 +206,37 @@
 
 .dealer-portal-page .pilot-target-note {
   margin: 12px 0 30px;
+}
+
+.dealer-portal-page .revenue-channel-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 16px);
+}
+
+.dealer-portal-page .revenue-channel-results h4 {
+  margin: 0;
+}
+
+.dealer-portal-page .revenue-channel-results .revenue-channel-amount {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  color: #fff;
+  margin: 7px 0 8px;
+}
+
+.dealer-portal-page .revenue-channel-amount strong {
+  min-width: 0;
+  font-size: clamp(28px, 4.6vw, 40px);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .dealer-portal-page .revenue-channel-results {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .dealer-portal-page .growth-pilot :is(.pilot-model-badge, .revenue-channel-inputs legend, .revenue-input-summary, .revenue-output-heading > span:first-child, .pilot-plan > div > span) {
@@ -218,7 +249,7 @@
   font-size: 14px;
   font-weight: 700;
 }
-.dealer-portal-page .growth-pilot :is(.revenue-input-grid input, .revenue-channel-results strong) {
+.dealer-portal-page .growth-pilot .revenue-input-grid input {
   color: var(--light-accent);
   font-weight: 720;
 }
@@ -227,14 +258,6 @@
   font-weight: 720;
 }
 .dealer-portal-page .growth-pilot .pilot-plan strong { font-size: 16px; }
-.dealer-portal-page .growth-pilot .revenue-channel-results :is(div > span, small) {
-  color: var(--light-accent);
-  font-size: 12px;
-  font-weight: 600;
-}
-.dealer-portal-page .growth-pilot .revenue-channel-results > div:nth-child(2) :is(span, strong, small) {
-  color: var(--light-positive);
-}
 
 .dealer-portal-page .visual-faq summary { font-size: 14px; font-weight: 700; }
 .dealer-portal-page .visual-faq details > p {
