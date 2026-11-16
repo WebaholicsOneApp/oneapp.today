@@ -1,6 +1,7 @@
 // Trusted, authored markup from the approved OneApp dealer portal proposal.
 // All assets are local to this subpage; interaction is initialized by DealerPortalClient.
 import { customAnalyticsMarkup } from './customAnalytics';
+import { dealerPricingMarkup } from './pricingMarkup';
 
 export const dealerPortalMarkup = String.raw`
 <a class="skip" href="#main">Skip to content</a>
@@ -9,7 +10,7 @@ export const dealerPortalMarkup = String.raw`
     <a class="brand" href="/" aria-label="OneApp home"><img src="/dealer-portal/oneapp-logo-white.png" width="132" height="34" alt="OneApp"></a>
     <button class="menu-toggle" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false"><span></span><span></span></button>
     <nav id="navigation" aria-label="Main navigation">
-      <a href="#platform">The platform</a><a href="#how-it-works">How it works</a><a href="#pilot">The pilot</a>
+      <a href="#platform">The platform</a><a href="#how-it-works">How it works</a><a href="#pilot">The pilot</a><a href="#pricing">Pricing</a>
       <a class="button small primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20demo">Request a demo <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
@@ -93,15 +94,65 @@ export const dealerPortalMarkup = String.raw`
 
   <section class="growth-pilot" id="pilot" aria-labelledby="pilot-title"><div class="shell">
     <div class="visual-heading">
-      <div><span class="eyebrow">DEALER PORTAL PILOT</span><h2 id="pilot-title">Wholesale + retail revenue forecast</h2></div>
+      <div><span class="eyebrow">DEALER PORTAL PILOT</span><h2 id="pilot-title">What success looks like in 90 days</h2></div>
+      <p>Start with 10 dealers and 25 products in this example. We agree on targets before launch.</p>
     </div>
+    <div class="pilot-targets">
+      <article>
+        <strong id="pilot-growth-target">20% more</strong>
+        <h3>Dealer orders per month</h3>
+        <p>Compared with your starting monthly order volume.</p>
+      </article>
+      <article>
+        <strong>95% or more</strong>
+        <h3>Eligible orders ship the same day</h3>
+        <p>Applies to orders placed before the agreed cutoff.</p>
+      </article>
+      <article>
+        <strong>30% less</strong>
+        <h3>Handling time per order</h3>
+        <p>Less time your team spends handling each order.</p>
+      </article>
+      <article>
+        <strong>4.5 out of 5</strong>
+        <h3>Average dealer rating</h3>
+        <p>Measured in surveys after dealers place orders.</p>
+      </article>
+    </div>
+    <p class="pilot-target-note">Suggested targets. We’ll measure the pilot against your brand’s starting numbers.</p>
     <div class="pilot-model revenue-forecast">
+      <div class="pilot-model-intro">
+        <span class="eyebrow">ILLUSTRATIVE FORECAST</span>
+        <h3>Wholesale + retail revenue forecast</h3>
+        <p>Adjust the inputs to see your projected added monthly revenue in USD.</p>
+      </div>
+      <form id="pilot-model-form" class="revenue-assumptions" aria-label="Wholesale and direct retail revenue assumptions">
+        <section class="revenue-channel-inputs" aria-labelledby="wholesale-input-heading">
+          <h4 id="wholesale-input-heading">Dealer wholesale</h4>
+          <div class="revenue-channel-body">
+            <p>Sales to your approved dealer network.</p>
+            <div class="revenue-input-grid wholesale-input-grid">
+              <label>Monthly orders<input id="pilot-orders" type="number" min="0" max="1000000" step="1" value="200" inputmode="numeric"></label>
+              <label>Order growth (%)<input id="pilot-growth" type="number" min="0" max="1000" step="1" value="20" inputmode="decimal"></label>
+              <label>Average order ($)<input id="pilot-aov" type="number" min="0" max="1000000" step="1" value="125" inputmode="decimal"></label>
+            </div>
+            <p class="revenue-input-summary"><strong id="pilot-runrate">200 → 240</strong> orders per month</p>
+          </div>
+        </section>
+        <section class="revenue-channel-inputs" aria-labelledby="retail-input-heading">
+          <h4 id="retail-input-heading">Your retail storefront</h4>
+          <div class="revenue-channel-body">
+            <p>Sales through your brand’s own website.</p>
+            <div class="revenue-input-grid retail-input-grid">
+              <label>Monthly sales ($)<input id="pilot-retail-sales" type="number" min="0" max="10000000" step="100" value="20000" inputmode="decimal"></label>
+              <label>Retail growth (%)<input id="pilot-retail-growth" type="number" min="0" max="1000" step="1" value="10" inputmode="decimal"></label>
+            </div>
+            <p class="revenue-input-summary"><strong id="pilot-retail-runrate">$20,000 → $22,000</strong> sales per month</p>
+          </div>
+        </section>
+      </form>
+      <div class="revenue-output-heading"><span>PROJECTED ADDED REVENUE</span><span>At your target sales pace</span></div>
       <div role="status" aria-live="polite" aria-atomic="true">
-        <div class="revenue-total">
-          <h3>Projected added revenue</h3>
-          <div class="revenue-total-amount"><strong id="pilot-combined-revenue">+$7,000</strong> <span>per month</span></div>
-          <p id="pilot-total-sales">$45,000 → $52,000 combined monthly sales</p>
-        </div>
         <div class="revenue-channel-results">
           <article>
             <h4>Dealer wholesale</h4>
@@ -115,67 +166,19 @@ export const dealerPortalMarkup = String.raw`
             <p id="pilot-retail-sales-result">$20,000 → $22,000 direct retail sales / month</p>
           </article>
         </div>
+        <div class="revenue-total">
+          <h4>Total added revenue</h4>
+          <div class="revenue-total-amount"><strong id="pilot-combined-revenue">+$7,000</strong> <span>per month</span></div>
+          <p id="pilot-total-sales">$45,000 → $52,000 combined monthly sales</p>
+        </div>
       </div>
       <p class="pilot-model-note">Illustrative forecast in USD. The figures show one month at your target sales pace, before costs and fees.</p>
-      <details class="revenue-assumptions-panel">
-        <summary>Edit forecast assumptions</summary>
-        <form id="pilot-model-form" class="revenue-assumptions" aria-label="Wholesale and direct retail revenue assumptions">
-          <section class="revenue-channel-inputs" aria-labelledby="wholesale-input-heading">
-            <h4 id="wholesale-input-heading">Dealer wholesale</h4>
-            <div class="revenue-channel-body">
-              <p>Sales to your approved dealer network.</p>
-              <div class="revenue-input-grid wholesale-input-grid">
-                <label>Monthly orders<input id="pilot-orders" type="number" min="0" max="1000000" step="1" value="200" inputmode="numeric"></label>
-                <label>Order growth (%)<input id="pilot-growth" type="number" min="0" max="1000" step="1" value="20" inputmode="decimal"></label>
-                <label>Average order ($)<input id="pilot-aov" type="number" min="0" max="1000000" step="1" value="125" inputmode="decimal"></label>
-              </div>
-              <p class="revenue-input-summary"><strong id="pilot-runrate">200 → 240</strong> orders per month</p>
-            </div>
-          </section>
-          <section class="revenue-channel-inputs" aria-labelledby="retail-input-heading">
-            <h4 id="retail-input-heading">Your retail storefront</h4>
-            <div class="revenue-channel-body">
-              <p>Sales through your brand’s own website.</p>
-              <div class="revenue-input-grid retail-input-grid">
-                <label>Monthly sales ($)<input id="pilot-retail-sales" type="number" min="0" max="10000000" step="100" value="20000" inputmode="decimal"></label>
-                <label>Retail growth (%)<input id="pilot-retail-growth" type="number" min="0" max="1000" step="1" value="10" inputmode="decimal"></label>
-              </div>
-              <p class="revenue-input-summary"><strong id="pilot-retail-runrate">$20,000 → $22,000</strong> sales per month</p>
-            </div>
-          </section>
-        </form>
-      </details>
     </div>
-    <div class="pilot-scorecard-heading">
-      <h3>What success looks like in 90 days</h3>
-      <p>Start with 10 dealers and 25 products in this example. We agree on targets before launch.</p>
-    </div>
-    <div class="pilot-targets">
-      <article>
-        <strong id="pilot-growth-target">20% more</strong>
-        <h4>Dealer orders per month</h4>
-        <p>Compared with your starting monthly order volume.</p>
-      </article>
-      <article>
-        <strong>95% or more</strong>
-        <h4>Eligible orders ship the same day</h4>
-        <p>Applies to orders placed before the agreed cutoff.</p>
-      </article>
-      <article>
-        <strong>30% less</strong>
-        <h4>Handling time per order</h4>
-        <p>Less time your team spends handling each order.</p>
-      </article>
-      <article>
-        <strong>4.5 out of 5</strong>
-        <h4>Average dealer rating</h4>
-        <p>Measured in surveys after dealers place orders.</p>
-      </article>
-    </div>
-    <p class="pilot-target-note">Suggested targets. We’ll measure the pilot against your brand’s starting numbers.</p>
     <div class="pilot-plan"><div><span>01 / PREPARE</span><strong>Set the baseline.</strong><p>Catalog, dealer terms, integrations, and success measures.</p></div><div><span>02 / ACTIVATE</span><strong>Launch with your dealers.</strong><p>Invite the pilot group and fulfill the first customer orders.</p></div><div><span>03 / MEASURE</span><strong>Prove the return.</strong><p>Review sales, dispatch times, dealer feedback, and actual costs.</p></div></div>
-    <div class="pilot-plan-cta"><span>Setup and monthly OneApp plan quoted for your scope.</span><a class="button primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20pilot">Build your pilot forecast <span aria-hidden="true">↗</span></a></div>
+    <div class="pilot-plan-cta"><span>Setup is scoped to your pilot. <a href="#pricing" class="pilot-pricing-link">See proposed pricing</a>.</span><a class="button primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20pilot">Build your pilot forecast <span aria-hidden="true">↗</span></a></div>
   </div></section>
+
+  ${dealerPricingMarkup}
 
   <section class="visual-faq shell" id="questions"><h2>A few practical details.</h2><div class="visual-faq-list"><details><summary>Who ships the products?<span aria-hidden="true">+</span></summary><p>Your brand or fulfillment partner packs and ships. OneApp would coordinate the order flow and updates.</p></details><details><summary>How would payments and returns work?<span aria-hidden="true">+</span></summary><p>Dealers handle their retail sales. Your brand receives wholesale payment under agreed terms. Shipping, fees, returns, and any payment integrations are defined for the pilot.</p></details><details><summary>What would we agree before launch?<span aria-hidden="true">+</span></summary><p>We confirm the proposed features, dealer rules, stock updates, integrations, setup fee, monthly plan, and delivery schedule. The screens above are product concepts with example data. Pilot targets and financial assumptions are agreed against your baseline; they are not guaranteed results.</p></details></div></section>
 
