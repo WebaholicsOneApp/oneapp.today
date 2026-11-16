@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DealerPortalClient } from './DealerPortalClient';
 import './dealer-portal.css';
 import './custom-analytics.css';
+import './dealer-pricing.css';
 
 const title = 'OneApp Dealer Portal | Dropshipping for Your Dealer Network';
 const description =
