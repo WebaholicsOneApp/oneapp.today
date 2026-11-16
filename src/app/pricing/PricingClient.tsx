@@ -23,6 +23,9 @@ const plans = [
   { name: "Scale", price: 499, contacts: 100000, skus: 20000, ai: 10000, voice: 750, sites: 10, support: "Priority support" },
 ];
 
+const offerPremium: Record<Offer, number> = { service: 0, ecommerce: 50, "custom-app": 100 };
+const monthlyFee = (offer: Offer, index: number) => plans[index].price + offerPremium[offer];
+
 const subtitles: Record<Offer, string[]> = {
   service: ["Connect your daily work", "Room for a growing client base", "Keep a busy business connected"],
   ecommerce: ["Start selling with confidence", "Room for a growing catalog", "Keep a busy business connected"],
@@ -30,7 +33,7 @@ const subtitles: Record<Offer, string[]> = {
 };
 
 const capacityNotes: Record<Offer, string> = {
-  service: "Same software prices. Choose capacity for your customer base and AI usage.",
+  service: "Choose capacity for your customer base and AI usage.",
   ecommerce: "*SKU allowances count active, synchronized products. Stored supplier catalogs are separate.",
   "custom-app": "*SKU allowances apply when ecommerce is enabled. Custom builds are quoted separately.",
 };
@@ -111,7 +114,7 @@ const voiceNotes: [string, string][] = [
 
 const faqs: [string, string][] = [
   ["How do new customers get started?", "New customers start through Webaholics onboarding. You choose your OneApp plan, then review any setup or migration costs. An ongoing agency agreement is optional."],
-  ["Is a custom app build included in $199 / $299 / $499?", "These prices cover OneApp platform access and capacity. Custom design, screens, integrations, migration and development have a separate proposal. Choosing Custom App shows the capabilities that can be configured or built, not an included development allowance."],
+  ["Is a custom app build included in the monthly software fee?", "These prices cover OneApp platform access and capacity. Custom design, screens, integrations, migration and development have a separate proposal. Choosing Custom App shows the capabilities that can be configured or built, not an included development allowance."],
   ["What is separate from the monthly platform price?", "Setup, bespoke development, ongoing growth services, site hosting, voice above the included allowance, SMS and external provider charges. AI usage beyond the included allowance also needs an agreed overage rate. No unlimited usage is implied."],
   ["Does a higher software plan change my agency fee?", "No. The platform plan follows your usage. Webaholics pricing follows your agreed scope and results. You can have a higher agency fee while using Starter software, or Scale software without ongoing agency services."],
 ];
@@ -147,7 +150,7 @@ function PlanCards({ offer }: { offer: Offer }) {
               {featured && <span className="rounded-full bg-[#c153ff]/15 px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-[.15em] text-[#e0a3ff]">Room to grow</span>}
             </div>
             <p className="mt-2 text-sm text-white/50">{subtitles[offer][index]}</p>
-            <p className="mt-8 flex items-baseline gap-1"><span className="text-6xl font-bold tracking-[-.06em]">${plan.price}</span><span className="text-sm font-semibold text-white/45">/month</span></p>
+            <p className="mt-8 flex items-baseline gap-1"><span className="text-6xl font-bold tracking-[-.06em]">${monthlyFee(offer, index)}</span><span className="text-sm font-semibold text-white/45">/month</span></p>
             <ul className="mt-8 space-y-3.5 border-t border-white/10 pt-7 text-sm text-white/65">
               {commerce && <PlanItem><strong className="text-white">{count(plan.skus)}</strong> active synced SKUs*</PlanItem>}
               <PlanItem><strong className="text-white">{count(plan.contacts)}</strong> stored contacts</PlanItem>
@@ -231,7 +234,7 @@ function Limits({ offer }: { offer: Offer }) {
           <div role="region" aria-label="Plan capacity comparison" tabIndex={0} className="overflow-x-auto">
             <table className="w-full min-w-[640px] text-left text-sm">
               <caption className="sr-only">OneApp platform limits by plan</caption>
-              <thead><tr className="border-b border-black/10 bg-[#faf9fb]"><th scope="col" className="px-7 py-5 font-mono text-[10px] font-bold uppercase tracking-[.16em] text-black/45 sm:px-10">Recommended capacity</th>{plans.map((plan) => <th key={plan.name} scope="col" className="px-5 py-5 text-base font-bold">{plan.name} · ${plan.price}</th>)}</tr></thead>
+              <thead><tr className="border-b border-black/10 bg-[#faf9fb]"><th scope="col" className="px-7 py-5 font-mono text-[10px] font-bold uppercase tracking-[.16em] text-black/45 sm:px-10">Recommended capacity</th>{plans.map((plan, index) => <th key={plan.name} scope="col" className="px-5 py-5 text-base font-bold">{plan.name} · ${monthlyFee(offer, index)}</th>)}</tr></thead>
               <tbody>{rows.map((row) => <tr key={row.label} className="border-b border-black/[0.06] last:border-0"><th scope="row" className="px-7 py-5 font-semibold sm:px-10">{row.label}</th>{row.values.map((value, index) => <td key={index} className="px-5 py-5 text-black/65">{value}</td>)}</tr>)}</tbody>
             </table>
           </div>
