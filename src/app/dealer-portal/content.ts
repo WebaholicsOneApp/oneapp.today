@@ -152,7 +152,7 @@ export const dealerPortalMarkup = String.raw`
           <h4 id="retail-input-heading">Your retail storefront</h4>
           <div class="revenue-channel-body">
             <div class="revenue-input-grid retail-input-grid">
-              <label>Monthly sales <span class="sr-only">in US dollars</span>
+              <label>Monthly retail sales <span class="sr-only">in US dollars</span>
                 <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-retail-sales" type="text" value="20,000" inputmode="decimal" spellcheck="false"></span>
               </label>
               <label>Retail growth <span class="sr-only">in percent</span>
