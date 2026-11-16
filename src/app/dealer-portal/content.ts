@@ -131,9 +131,15 @@ export const dealerPortalMarkup = String.raw`
           <h4 id="wholesale-input-heading">Dealer wholesale</h4>
           <div class="revenue-channel-body">
             <div class="revenue-input-grid wholesale-input-grid">
-              <label>Monthly orders<input id="pilot-orders" type="text" value="200" inputmode="numeric" spellcheck="false"></label>
-              <label>Order growth (%)<input id="pilot-growth" type="text" value="20%" inputmode="decimal" spellcheck="false"></label>
-              <label>Average order ($)<input id="pilot-aov" type="text" value="$125" inputmode="decimal" spellcheck="false"></label>
+              <label>Monthly orders
+                <span class="revenue-field"><input id="pilot-orders" type="text" value="200" inputmode="numeric" spellcheck="false"></span>
+              </label>
+              <label>Order growth (%)
+                <span class="revenue-field revenue-field-percent"><input id="pilot-growth" type="text" value="20" inputmode="decimal" spellcheck="false"><span aria-hidden="true">%</span></span>
+              </label>
+              <label>Average order ($)
+                <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-aov" type="text" value="125" inputmode="decimal" spellcheck="false"></span>
+              </label>
             </div>
           </div>
         </section>
@@ -141,8 +147,12 @@ export const dealerPortalMarkup = String.raw`
           <h4 id="retail-input-heading">Your retail storefront</h4>
           <div class="revenue-channel-body">
             <div class="revenue-input-grid retail-input-grid">
-              <label>Monthly sales ($)<input id="pilot-retail-sales" type="text" value="$20,000" inputmode="decimal" spellcheck="false"></label>
-              <label>Retail growth (%)<input id="pilot-retail-growth" type="text" value="10%" inputmode="decimal" spellcheck="false"></label>
+              <label>Monthly sales ($)
+                <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-retail-sales" type="text" value="20,000" inputmode="decimal" spellcheck="false"></span>
+              </label>
+              <label>Retail growth (%)
+                <span class="revenue-field revenue-field-percent"><input id="pilot-retail-growth" type="text" value="10" inputmode="decimal" spellcheck="false"><span aria-hidden="true">%</span></span>
+              </label>
             </div>
           </div>
         </section>
