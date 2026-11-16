@@ -1,5 +1,21 @@
 import { initializeCustomAnalytics } from './customAnalytics';
 
+function groupForecastDigits(value: string) {
+  const parts = /^([+-]?)(\d*)(\.\d*)?$/.exec(value);
+  if (!parts) return value;
+  const [, sign = '', integer = '', fraction = ''] = parts;
+  const firstGroup = integer.length % 3 || 3;
+  return sign + integer.slice(0, firstGroup) + integer.slice(firstGroup).replace(/\d{3}/g, ',$&') + fraction;
+}
+
+function forecastCaretIndex(value: string, offset: number, afterComma: boolean) {
+  let index = 0;
+  while (index < value.length && offset > 0) {
+    if (value[index++] !== ',') offset--;
+  }
+  return afterComma && value[index] === ',' ? index + 1 : index;
+}
+
 // All queries and listeners are scoped to the route. Abort them on navigation
 // so remounts and React Strict Mode cannot register duplicate handlers.
 export function initializeDealerPortal(root: HTMLElement) {
@@ -267,16 +283,29 @@ export function initializeDealerPortal(root: HTMLElement) {
   root.addEventListener('click', handleClick, { signal: listeners.signal });
   root.addEventListener('keydown', handleKeydown, { signal: listeners.signal });
   for (const field of Object.values(pilotFields)) {
-    field.input.addEventListener('input', () => {
+    const stripFormatting = (value: string) => {
+      const ungrouped = value.replaceAll(',', '');
+      return field.unit ? ungrouped.replaceAll(field.unit, '') : ungrouped;
+    };
+    field.input.addEventListener('input', event => {
+      const { inputType, isComposing } = event as InputEvent;
+      if (isComposing) return;
       const { value, selectionStart, selectionEnd, selectionDirection } = field.input;
-      if (field.unit && value.includes(field.unit)) {
-        // Accept amounts pasted with their unit without duplicating the fixed sign.
-        const stripUnit = (text: string) => text.replaceAll(field.unit, '');
-        field.input.value = stripUnit(value);
+      const formatted = groupForecastDigits(stripFormatting(value));
+      if (formatted !== value) {
+        field.input.value = formatted;
         if (selectionStart !== null && selectionEnd !== null) {
+          // Keep the same position among the digits. If a deletion restores a
+          // comma, move past it in the direction of the deletion.
+          const mapIndex = (index: number) => forecastCaretIndex(
+            formatted,
+            stripFormatting(value.slice(0, index)).length,
+            inputType === 'deleteContentForward' ||
+              (inputType !== 'deleteContentBackward' && value[index - 1] === ','),
+          );
           field.input.setSelectionRange(
-            stripUnit(value.slice(0, selectionStart)).length,
-            stripUnit(value.slice(0, selectionEnd)).length,
+            mapIndex(selectionStart),
+            mapIndex(selectionEnd),
             selectionDirection ?? undefined,
           );
         }
@@ -284,7 +313,7 @@ export function initializeDealerPortal(root: HTMLElement) {
       updateForecast();
     }, { signal: listeners.signal });
     field.input.addEventListener('blur', () => {
-      // Group digits after editing so separators do not move the caret.
+      // Normalize the finished value without disturbing partial decimals while typing.
       const value = readPilotField(field);
       field.input.value = value === null ? '' : pilotNumber.format(value);
     }, { signal: listeners.signal });
