@@ -283,13 +283,18 @@ export function initializeDealerPortal(root: HTMLElement) {
   root.addEventListener('click', handleClick, { signal: listeners.signal });
   root.addEventListener('keydown', handleKeydown, { signal: listeners.signal });
   for (const field of Object.values(pilotFields)) {
+    const measure = field.input.parentElement?.querySelector('.revenue-percent-measure');
+    const syncMeasure = () => { if (measure) measure.textContent = field.input.value; };
     const stripFormatting = (value: string) => {
       const ungrouped = value.replaceAll(',', '');
       return field.unit ? ungrouped.replaceAll(field.unit, '') : ungrouped;
     };
     field.input.addEventListener('input', event => {
       const { inputType, isComposing } = event as InputEvent;
-      if (isComposing) return;
+      if (isComposing) {
+        syncMeasure();
+        return;
+      }
       const { value, selectionStart, selectionEnd, selectionDirection } = field.input;
       const formatted = groupForecastDigits(stripFormatting(value));
       if (formatted !== value) {
@@ -310,12 +315,14 @@ export function initializeDealerPortal(root: HTMLElement) {
           );
         }
       }
+      syncMeasure();
       updateForecast();
     }, { signal: listeners.signal });
     field.input.addEventListener('blur', () => {
       // Normalize the finished value without disturbing partial decimals while typing.
       const value = readPilotField(field);
       field.input.value = value === null ? '' : pilotNumber.format(value);
+      syncMeasure();
     }, { signal: listeners.signal });
   }
   get('pilot-model-form').addEventListener('submit', event => event.preventDefault(), { signal: listeners.signal });

@@ -135,7 +135,12 @@ export const dealerPortalMarkup = String.raw`
                 <span class="revenue-field"><input id="pilot-orders" type="text" value="200" inputmode="numeric" spellcheck="false"></span>
               </label>
               <label>Order growth (%)
-                <span class="revenue-field revenue-field-percent"><input id="pilot-growth" type="text" value="20" inputmode="decimal" spellcheck="false"><span aria-hidden="true">%</span></span>
+                <span class="revenue-field revenue-field-percent">
+                  <input id="pilot-growth" type="text" value="20" inputmode="decimal" spellcheck="false">
+                  <span class="revenue-percent-overlay" aria-hidden="true">
+                    <span class="revenue-percent-measure">20</span><span>%</span>
+                  </span>
+                </span>
               </label>
               <label>Average order ($)
                 <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-aov" type="text" value="125" inputmode="decimal" spellcheck="false"></span>
@@ -151,7 +156,12 @@ export const dealerPortalMarkup = String.raw`
                 <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-retail-sales" type="text" value="20,000" inputmode="decimal" spellcheck="false"></span>
               </label>
               <label>Retail growth (%)
-                <span class="revenue-field revenue-field-percent"><input id="pilot-retail-growth" type="text" value="10" inputmode="decimal" spellcheck="false"><span aria-hidden="true">%</span></span>
+                <span class="revenue-field revenue-field-percent">
+                  <input id="pilot-retail-growth" type="text" value="10" inputmode="decimal" spellcheck="false">
+                  <span class="revenue-percent-overlay" aria-hidden="true">
+                    <span class="revenue-percent-measure">10</span><span>%</span>
+                  </span>
+                </span>
               </label>
             </div>
           </div>

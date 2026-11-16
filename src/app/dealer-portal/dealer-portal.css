@@ -358,12 +358,13 @@
 }
 
 .dealer-portal-page .revenue-field {
+  --revenue-field-padding: 8px;
   display: flex;
   align-items: center;
   gap: 2px;
   min-width: 0;
   min-height: 48px;
-  padding: 8px;
+  padding: var(--revenue-field-padding);
   border: 2px solid #9c81b0;
   border-radius: 6px;
   background: #fff;
@@ -387,7 +388,31 @@
   outline: none;
 }
 
-.dealer-portal-page .revenue-field-percent input { text-align: right; }
+.dealer-portal-page .revenue-field-percent { position: relative; }
+
+/* Use a hidden copy of the digits to place the sign without shrinking the input. */
+.dealer-portal-page .revenue-percent-overlay {
+  position: absolute;
+  top: 50%;
+  inset-inline: var(--revenue-field-padding);
+  display: flex;
+  gap: 2px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.dealer-portal-page .revenue-percent-measure {
+  visibility: hidden;
+  min-width: 0;
+  overflow: hidden;
+  padding-inline-end: 1px;
+  white-space: pre;
+}
+
+.dealer-portal-page .revenue-field-percent input {
+  padding-inline-end: calc(1em + 3px);
+  text-align: left;
+}
 
 .dealer-portal-page .revenue-field:focus-within {
   outline: 2px solid #8218bc;
