@@ -1,5 +1,7 @@
 // Trusted, authored markup from the approved OneApp dealer portal proposal.
 // All assets are local to this subpage; interaction is initialized by DealerPortalClient.
+import { customAnalyticsMarkup } from './customAnalytics';
+
 export const dealerPortalMarkup = String.raw`
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -69,20 +71,24 @@ export const dealerPortalMarkup = String.raw`
   </div></section>
 
   <section class="ops-showcase" id="oneapp-operations"><div class="shell">
-    <div class="ops-heading"><div><span class="eyebrow light">INSIDE ONEAPP</span><h2>The work behind<br>every shipment.</h2></div><p>See the order flow, revenue trends, and fulfillment performance in one workspace.</p></div>
-    <div class="ops-tabs" role="tablist" aria-label="OneApp screenshots">
-      <button class="ops-tab" id="ops-tab-orders" role="tab" aria-selected="true" aria-controls="ops-panel" data-screen="orders"><img src="/dealer-portal/previews/order-queue.svg" alt="" loading="lazy"><span><small>01</small> Order queue <i aria-hidden="true">↗</i></span></button>
+    <div class="ops-heading"><div><span class="eyebrow light">INSIDE ONEAPP</span><h2>The work behind<br>every shipment.</h2></div><p>Build a report around the numbers you track, then explore sales and fulfillment in one workspace.</p></div>
+    <div class="ops-tabs" role="tablist" aria-label="OneApp dashboard views">
+      <button class="ops-tab" id="ops-tab-custom" role="tab" aria-selected="true" aria-controls="ops-panel" data-screen="custom">
+        <span class="ca-thumbnail" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span>
+        <span><small>01</small> Custom analytics <i aria-hidden="true">↗</i></span>
+      </button>
       <button class="ops-tab" id="ops-tab-analytics" role="tab" aria-selected="false" tabindex="-1" aria-controls="ops-panel" data-screen="analytics"><img src="/dealer-portal/previews/home-analytics.svg" alt="" loading="lazy"><span><small>02</small> Home analytics <i aria-hidden="true">↗</i></span></button>
       <button class="ops-tab" id="ops-tab-labels" role="tab" aria-selected="false" tabindex="-1" aria-controls="ops-panel" data-screen="labels"><img src="/dealer-portal/previews/label-activity.svg" alt="" loading="lazy"><span><small>03</small> Fulfillment activity <i aria-hidden="true">↗</i></span></button>
       <button class="ops-tab" id="ops-tab-quality" role="tab" aria-selected="false" tabindex="-1" aria-controls="ops-panel" data-screen="quality"><img src="/dealer-portal/previews/fulfillment-quality.svg" alt="" loading="lazy"><span><small>04</small> Fulfillment quality <i aria-hidden="true">↗</i></span></button>
     </div>
-    <div class="ops-panel" id="ops-panel" role="tabpanel" aria-labelledby="ops-tab-orders">
-      <div class="ops-window-top"><div class="ops-window-brand"><img src="/dealer-portal/oneapp-logo-white.png" alt="OneApp"><span>/</span><span id="ops-screen-title">Order queue</span></div><span class="ops-source-label">ILLUSTRATIVE DEMO DATA</span><button id="ops-enlarge" class="ops-enlarge" aria-label="Enlarge the OneApp order queue screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span>Enlarge</span></button></div>
-      <button class="ops-image-button" id="ops-image-button" aria-label="Enlarge the OneApp order queue screenshot"><img id="ops-image" src="/dealer-portal/previews/order-queue.svg" width="1440" height="840" alt="Illustrative OneApp order queue with storefront branding and fulfillment readiness"><span class="ops-zoom-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M10 7v6M7 10h6"/></svg>Click to explore the screen</span></button>
-      <div class="ops-caption"><p id="ops-caption-copy">Review dealer orders, OneApp storefronts, ship-by times, and fulfillment readiness in one queue.</p><span>OneApp interface concept</span></div>
+    <div class="ops-panel" id="ops-panel" role="tabpanel" aria-labelledby="ops-tab-custom" data-screen="custom">
+      <div class="ops-window-top"><div class="ops-window-brand"><img src="/dealer-portal/oneapp-logo-white.png" alt="OneApp"><span>/</span><span id="ops-screen-title">Custom analytics</span></div><span class="ops-source-label">ILLUSTRATIVE DEMO DATA</span><button id="ops-enlarge" class="ops-enlarge" aria-label="Enlarge the OneApp home analytics screenshot" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span>Enlarge</span></button></div>
+      ${customAnalyticsMarkup}
+      <button class="ops-image-button" id="ops-image-button" aria-label="Enlarge the OneApp home analytics screenshot" hidden><img id="ops-image" src="/dealer-portal/previews/home-analytics.svg" width="1440" height="840" alt="Illustrative OneApp home analytics with daily revenue, gross profit, and dealer storefront totals" loading="lazy"><span class="ops-zoom-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M10 7v6M7 10h6"/></svg>Click to explore the screen</span></button>
+      <div class="ops-caption" id="ops-screenshot-caption" hidden><p id="ops-caption-copy">Follow daily revenue and gross profit, compare the prior period, and see which dealer storefronts drive sales.</p><span>OneApp interface concept</span></div>
     </div>
     <p class="ops-note">Interface concepts based on OneApp’s tools. All figures and order details are illustrative demo data; pilot features and integrations are agreed before launch.</p>
-    <dialog class="ops-dialog" id="ops-dialog" aria-labelledby="ops-dialog-title"><div class="ops-dialog-top"><div><span>ONEAPP PREVIEW · ILLUSTRATIVE DEMO DATA</span><h3 id="ops-dialog-title">Order queue</h3></div><button id="ops-dialog-close" aria-label="Close enlarged screenshot">×</button></div><div class="ops-dialog-canvas" tabindex="0" role="region" aria-label="Enlarged interface preview; scroll to explore"><img id="ops-dialog-image" src="/dealer-portal/previews/order-queue.svg" alt="Illustrative OneApp order queue with storefront branding and fulfillment readiness"></div><p id="ops-dialog-caption">Review dealer orders, OneApp storefronts, ship-by times, and fulfillment readiness in one queue.</p></dialog>
+    <dialog class="ops-dialog" id="ops-dialog" aria-labelledby="ops-dialog-title"><div class="ops-dialog-top"><div><span>ONEAPP PREVIEW · ILLUSTRATIVE DEMO DATA</span><h3 id="ops-dialog-title">Home analytics</h3></div><button id="ops-dialog-close" aria-label="Close enlarged screenshot">×</button></div><div class="ops-dialog-canvas" tabindex="0" role="region" aria-label="Enlarged interface preview; scroll to explore"><img id="ops-dialog-image" src="/dealer-portal/previews/home-analytics.svg" alt="Illustrative OneApp home analytics" loading="lazy"></div><p id="ops-dialog-caption"></p></dialog>
   </div></section>
 
   <section class="growth-pilot" id="pilot" aria-labelledby="pilot-title"><div class="shell">

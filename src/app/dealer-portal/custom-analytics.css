@@ -1,0 +1,314 @@
+.dealer-portal-page .ops-panel [hidden] {
+  display: none;
+}
+
+.dealer-portal-page .ops-tab > .ca-thumbnail {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  height: 96px;
+  padding: 17px 17%;
+  background: #151e2f;
+  border-bottom: 1px solid #3b2c46;
+  opacity: .65;
+}
+
+.dealer-portal-page .ops-tab:is(:hover, [aria-selected="true"]) > .ca-thumbnail {
+  opacity: 1;
+}
+
+.dealer-portal-page .ca-thumbnail b {
+  flex: 1;
+  height: 57%;
+  border-radius: 2px 2px 0 0;
+  background: #b675dc;
+}
+
+.dealer-portal-page .ca-thumbnail b:nth-child(1) { height: 36%; }
+.dealer-portal-page .ca-thumbnail b:nth-child(3) { height: 48%; }
+.dealer-portal-page .ca-thumbnail b:nth-child(4) { height: 70%; }
+.dealer-portal-page .ca-thumbnail b:nth-child(5) { height: 63%; }
+.dealer-portal-page .ca-thumbnail b:nth-child(6) { height: 79%; }
+.dealer-portal-page .ca-thumbnail b:nth-child(7) { height: 66%; }
+.dealer-portal-page .ca-thumbnail b:nth-child(8) { height: 92%; }
+
+.dealer-portal-page .custom-analytics {
+  --ca-background: #111a2a;
+  --ca-card: #1b263a;
+  --ca-border: #38465e;
+  --ca-text: #f5f2fa;
+  --ca-muted: #b9c4d8;
+  --ca-current: #d79df7;
+  --ca-previous: #85c7dd;
+  padding: clamp(16px, 3vw, 34px);
+  background: var(--ca-background);
+  color: var(--ca-text);
+  color-scheme: dark;
+}
+
+.dealer-portal-page .ca-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+
+.dealer-portal-page .ca-heading h3 {
+  color: var(--ca-text);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 750;
+  margin: 0 0 6px;
+}
+
+.dealer-portal-page .ca-heading p {
+  color: var(--ca-muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+.dealer-portal-page .ca-sample {
+  color: #ead1f8;
+  background: #392847;
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dealer-portal-page .ca-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dealer-portal-page .ca-controls label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  color: var(--ca-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dealer-portal-page .ca-controls select {
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  padding: 7px 9px;
+  border: 1px solid #52617b;
+  border-radius: 6px;
+  background: var(--ca-card);
+  color: var(--ca-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.dealer-portal-page .ca-controls select:focus-visible,
+.dealer-portal-page .ca-compare input:focus-visible {
+  outline: 2px solid var(--ca-current);
+  outline-offset: 2px;
+}
+
+.dealer-portal-page .ca-compare label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ca-muted);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.dealer-portal-page .ca-compare input {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ca-current);
+}
+
+.dealer-portal-page .ca-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dealer-portal-page .ca-figures > div {
+  flex: 1 1 150px;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid var(--ca-border);
+  border-radius: 8px;
+  background: var(--ca-card);
+}
+
+.dealer-portal-page .ca-figures :is(span, small) {
+  display: block;
+  color: var(--ca-muted);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.dealer-portal-page .ca-figures strong {
+  display: block;
+  margin: 3px 0;
+  color: var(--ca-current);
+  font-size: clamp(22px, 3.25vw, 36px);
+  line-height: 1.15;
+  font-weight: 780;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+
+.dealer-portal-page .ca-figures .ca-comparison strong {
+  color: var(--ca-text);
+}
+
+.dealer-portal-page .ca-chart-card {
+  --ca-chart-height: clamp(158px, 24vw, 230px);
+  margin: 12px 0 0;
+  padding: clamp(10px, 1.8vw, 19px);
+  background: var(--ca-card);
+  border: 1px solid var(--ca-border);
+  border-radius: 8px;
+}
+
+.dealer-portal-page .ca-chart-card figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px 12px;
+  margin-bottom: 14px;
+  color: var(--ca-text);
+  font-size: 14px;
+}
+
+.dealer-portal-page .ca-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 13px;
+}
+
+.dealer-portal-page .ca-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--ca-muted);
+}
+
+.dealer-portal-page .ca-legend span::before {
+  content: "";
+  width: 13px;
+  border-top: 2px solid var(--ca-current);
+}
+
+.dealer-portal-page .ca-legend .ca-comparison::before {
+  border-top: 2px dashed var(--ca-previous);
+}
+
+.dealer-portal-page .ca-chart-card:has(.ca-bar) .ca-legend span::before {
+  border-top: 6px solid var(--ca-current);
+}
+
+.dealer-portal-page .ca-chart-card:has(.ca-bar) .ca-legend .ca-comparison::before {
+  border-color: var(--ca-previous);
+}
+
+.dealer-portal-page .ca-chart {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 7px;
+}
+
+.dealer-portal-page :is(.ca-y-axis, .ca-x-axis) {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ca-muted);
+  font-size: 11px;
+}
+
+.dealer-portal-page .ca-y-axis {
+  flex-direction: column;
+  align-items: end;
+  height: calc(var(--ca-chart-height) + 1em);
+  margin-block: -.5em;
+  line-height: 1;
+}
+
+.dealer-portal-page .ca-x-axis {
+  grid-column: 2;
+  margin-top: 5px;
+}
+
+.dealer-portal-page .ca-plot {
+  height: var(--ca-chart-height);
+  background: repeating-linear-gradient(to bottom, var(--ca-border) 0 1px, transparent 1px 25%);
+  border-bottom: 1px solid var(--ca-border);
+}
+
+.dealer-portal-page .ca-plot svg { display: block; width: 100%; height: 100%; }
+.dealer-portal-page .ca-fill { fill: var(--ca-current); opacity: .1; }
+.dealer-portal-page .ca-line {
+  fill: none;
+  stroke: var(--ca-current);
+  stroke-width: 2.4px;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dealer-portal-page .ca-line.ca-previous { stroke: var(--ca-previous); stroke-dasharray: 5 5; stroke-width: 1.7px; }
+.dealer-portal-page .ca-bar.ca-current { fill: var(--ca-current); }
+.dealer-portal-page .ca-bar.ca-previous { fill: var(--ca-previous); }
+
+.dealer-portal-page .ca-table {
+  margin-top: 10px;
+  border-top: 1px solid var(--ca-border);
+}
+
+.dealer-portal-page .ca-table summary {
+  display: list-item;
+  min-height: 44px;
+  padding: 12px 2px;
+  color: var(--ca-current);
+  list-style: revert;
+  font-weight: 750;
+}
+
+.dealer-portal-page .ca-table summary::-webkit-details-marker { display: inline; }
+.dealer-portal-page .ca-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+
+.dealer-portal-page .ca-table :is(th, td) {
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--ca-border);
+}
+
+.dealer-portal-page .ca-table thead th { color: var(--ca-muted); }
+.dealer-portal-page .ca-table-date { color: var(--ca-muted); font-size: 11px; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .dealer-portal-page .ops-tab > .ca-thumbnail { height: 80px; }
+}
+
+@media (max-width: 700px) {
+  .dealer-portal-page .ops-tab > .ca-thumbnail { height: 68px; }
+  .dealer-portal-page .ca-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dealer-portal-page .ca-controls select { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .dealer-portal-page .ops-tab > .ca-thumbnail { height: 75px; }
+  .dealer-portal-page .ca-figures > div { flex-basis: 105px; padding: 9px; }
+}

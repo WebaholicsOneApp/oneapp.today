@@ -1,3 +1,5 @@
+import { initializeCustomAnalytics } from './customAnalytics';
+
 // All queries and listeners are scoped to the route. Abort them on navigation
 // so remounts and React Strict Mode cannot register duplicate handlers.
 export function initializeDealerPortal(root: HTMLElement) {
@@ -88,7 +90,6 @@ export function initializeDealerPortal(root: HTMLElement) {
 
   const asset = (name: string) => `/dealer-portal/previews/${name}.svg`;
   const screens = {
-    orders: { title: 'Order queue', image: asset('order-queue'), alt: 'Illustrative OneApp order queue with OneApp storefront branding and fulfillment readiness', caption: 'Review dealer orders, OneApp storefronts, ship-by times, and fulfillment readiness in one queue.' },
     analytics: { title: 'Home analytics', image: asset('home-analytics'), alt: 'Illustrative OneApp home analytics with daily revenue, gross profit, prior-period revenue lines, and dealer storefront totals', caption: 'Follow daily revenue and gross profit, compare the prior period, and see which dealer storefronts drive sales.' },
     labels: { title: 'Fulfillment activity', image: asset('label-activity'), alt: 'Illustrative OneApp fulfillment dashboard comparing orders received and labels created with packing and tracking events', caption: 'Track orders received, labels created, packages ready for pickup, and the latest fulfillment events.' },
     quality: { title: 'Fulfillment quality', image: asset('fulfillment-quality'), alt: 'Illustrative OneApp fulfillment quality: 97.8 percent same-day dispatch, 14 minutes 23 seconds median time to label, 99.8 percent order accuracy, and zero mis-ships this week', caption: 'Example performance: 97.8% same-day dispatch, 14m 23s median time to label, 99.8% order accuracy, and 0 mis-ships this week. Illustrative demo data.' },
@@ -98,12 +99,15 @@ export function initializeDealerPortal(root: HTMLElement) {
     pack: { title: 'Pick, pack & ship', image: asset('pick-pack'), alt: 'Illustrative OneApp pick list, warehouse location, packing checks, and shipping label preview', caption: 'Give your team a clear pick list, package details, and checks before dispatch.' },
     shipment: { title: 'Shipment detail', image: asset('shipment-detail'), alt: 'Illustrative OneApp shipment timeline with confirmation, pick and pack, label creation, and dealer tracking updates', caption: 'Keep the shipment timeline and tracking attached to the original dealer order.' },
   };
-  type ScreenKey = keyof typeof screens;
+  type ScreenshotKey = keyof typeof screens;
+  type ScreenKey = 'custom' | ScreenshotKey;
   type FulfillmentKey = keyof typeof fulfillment;
-  type Screen = (typeof screens)[ScreenKey];
-  let currentScreen: ScreenKey = 'orders';
+  type Screen = (typeof screens)[ScreenshotKey];
+  let currentScreen: ScreenKey = 'custom';
   let currentFulfillment: FulfillmentKey = 'orders';
   const dialog = get<HTMLDialogElement>('ops-dialog');
+  const customAnalytics = get('ops-custom-analytics');
+  initializeCustomAnalytics(customAnalytics, listeners.signal);
 
   function showPreview(screen: Screen) {
     text('ops-dialog-title', screen.title);
@@ -116,19 +120,24 @@ export function initializeDealerPortal(root: HTMLElement) {
 
   function selectScreen(key: ScreenKey) {
     currentScreen = key;
-    const screen = screens[key];
+    const screen = key === 'custom' ? undefined : screens[key];
     all<HTMLButtonElement>('.ops-tab').forEach(button => {
       const selected = button.dataset.screen === key;
       button.setAttribute('aria-selected', String(selected));
       button.tabIndex = selected ? 0 : -1;
     });
+    get('ops-panel').setAttribute('aria-labelledby', `ops-tab-${key}`);
+    get('ops-panel').dataset.screen = key;
+    customAnalytics.hidden = !!screen;
+    get('ops-enlarge').hidden = !screen;
+    get('ops-image-button').hidden = !screen;
+    get('ops-screenshot-caption').hidden = !screen;
+    text('ops-screen-title', screen?.title ?? 'Custom analytics');
+    if (!screen) return;
     const image = get<HTMLImageElement>('ops-image');
     image.src = screen.image;
     image.alt = screen.alt;
-    text('ops-screen-title', screen.title);
     text('ops-caption-copy', screen.caption);
-    get('ops-panel').setAttribute('aria-labelledby', `ops-tab-${key}`);
-    get('ops-panel').dataset.screen = key;
     ['ops-enlarge', 'ops-image-button'].forEach(id => get(id).setAttribute('aria-label', `Enlarge the OneApp ${screen.title.toLowerCase()} screenshot`));
   }
 
@@ -223,7 +232,7 @@ export function initializeDealerPortal(root: HTMLElement) {
     } else if (button.id === 'fulfillment-enlarge') {
       showPreview(fulfillment[currentFulfillment]);
     } else if (button.id === 'ops-enlarge' || button.id === 'ops-image-button') {
-      showPreview(screens[currentScreen]);
+      if (currentScreen !== 'custom') showPreview(screens[currentScreen]);
     } else if (button.id === 'ops-dialog-close') {
       dialog.close();
     }
