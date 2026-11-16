@@ -174,9 +174,8 @@ export function initializeDealerPortal(root: HTMLElement) {
   } as const;
   const pilotNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 20 });
 
-  function readPilotField({ input, max, unit }: (typeof pilotFields)[keyof typeof pilotFields]) {
-    const raw = input.value.replaceAll(',', '');
-    const value = (unit ? raw.replaceAll(unit, '') : raw).trim();
+  function readPilotField({ input, max }: (typeof pilotFields)[keyof typeof pilotFields]) {
+    const value = input.value.replaceAll(',', '').trim();
     if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(value)) return null;
     return Math.min(max, Math.max(0, Number(value)));
   }
@@ -268,16 +267,26 @@ export function initializeDealerPortal(root: HTMLElement) {
   root.addEventListener('click', handleClick, { signal: listeners.signal });
   root.addEventListener('keydown', handleKeydown, { signal: listeners.signal });
   for (const field of Object.values(pilotFields)) {
-    field.input.addEventListener('input', updateForecast, { signal: listeners.signal });
-    field.input.addEventListener('blur', () => {
-      // Keep the caret stable while typing and restore the display format when done.
-      const value = readPilotField(field);
-      if (value === null) {
-        field.input.value = '';
-      } else {
-        const number = pilotNumber.format(value);
-        field.input.value = field.unit === '$' ? `$${number}` : `${number}${field.unit}`;
+    field.input.addEventListener('input', () => {
+      const { value, selectionStart, selectionEnd, selectionDirection } = field.input;
+      if (field.unit && value.includes(field.unit)) {
+        // Accept amounts pasted with their unit without duplicating the fixed sign.
+        const stripUnit = (text: string) => text.replaceAll(field.unit, '');
+        field.input.value = stripUnit(value);
+        if (selectionStart !== null && selectionEnd !== null) {
+          field.input.setSelectionRange(
+            stripUnit(value.slice(0, selectionStart)).length,
+            stripUnit(value.slice(0, selectionEnd)).length,
+            selectionDirection ?? undefined,
+          );
+        }
       }
+      updateForecast();
+    }, { signal: listeners.signal });
+    field.input.addEventListener('blur', () => {
+      // Group digits after editing so separators do not move the caret.
+      const value = readPilotField(field);
+      field.input.value = value === null ? '' : pilotNumber.format(value);
     }, { signal: listeners.signal });
   }
   get('pilot-model-form').addEventListener('submit', event => event.preventDefault(), { signal: listeners.signal });

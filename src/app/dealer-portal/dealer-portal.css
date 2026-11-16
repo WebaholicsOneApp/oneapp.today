@@ -357,8 +357,10 @@
   line-height: 1.3;
 }
 
-.dealer-portal-page .revenue-input-grid input {
-  width: 100%;
+.dealer-portal-page .revenue-field {
+  display: flex;
+  align-items: center;
+  gap: 2px;
   min-width: 0;
   min-height: 48px;
   padding: 8px;
@@ -366,13 +368,28 @@
   border-radius: 6px;
   background: #fff;
   color: #57266f;
-  font: inherit;
   font-size: clamp(21px, 2.25vw, 29px);
   font-weight: 850;
   font-variant-numeric: tabular-nums;
+  cursor: text;
 }
 
-.dealer-portal-page .revenue-input-grid input:focus-visible {
+.dealer-portal-page .revenue-field input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: inherit;
+  outline: none;
+}
+
+.dealer-portal-page .revenue-field-percent input { text-align: right; }
+
+.dealer-portal-page .revenue-field:focus-within {
   outline: 2px solid #8218bc;
   outline-offset: 2px;
 }
