@@ -142,7 +142,7 @@ export const dealerPortalMarkup = String.raw`
                   </span>
                 </span>
               </label>
-              <label>Average order <span class="sr-only">in US dollars</span>
+              <label>Average order value <span class="sr-only">in US dollars</span>
                 <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-aov" type="text" value="125" inputmode="decimal" spellcheck="false"></span>
               </label>
             </div>
