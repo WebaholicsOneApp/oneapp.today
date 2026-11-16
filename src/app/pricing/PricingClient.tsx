@@ -24,7 +24,7 @@ const plans = [
 ];
 
 const offerPremium: Record<Offer, number> = { service: 0, ecommerce: 50, "custom-app": 100 };
-const monthlyFee = (offer: Offer, index: number) => plans[index].price + offerPremium[offer];
+const monthlyFee = (offer: Offer, price: number) => price + offerPremium[offer];
 
 const subtitles: Record<Offer, string[]> = {
   service: ["Connect your daily work", "Room for a growing client base", "Keep a busy business connected"],
@@ -150,7 +150,7 @@ function PlanCards({ offer }: { offer: Offer }) {
               {featured && <span className="rounded-full bg-[#c153ff]/15 px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-[.15em] text-[#e0a3ff]">Room to grow</span>}
             </div>
             <p className="mt-2 text-sm text-white/50">{subtitles[offer][index]}</p>
-            <p className="mt-8 flex items-baseline gap-1"><span className="text-6xl font-bold tracking-[-.06em]">${monthlyFee(offer, index)}</span><span className="text-sm font-semibold text-white/45">/month</span></p>
+            <p className="mt-8 flex items-baseline gap-1"><span className="text-6xl font-bold tracking-[-.06em]">${monthlyFee(offer, plan.price)}</span><span className="text-sm font-semibold text-white/45">/month</span></p>
             <ul className="mt-8 space-y-3.5 border-t border-white/10 pt-7 text-sm text-white/65">
               {commerce && <PlanItem><strong className="text-white">{count(plan.skus)}</strong> active synced SKUs*</PlanItem>}
               <PlanItem><strong className="text-white">{count(plan.contacts)}</strong> stored contacts</PlanItem>
@@ -234,7 +234,7 @@ function Limits({ offer }: { offer: Offer }) {
           <div role="region" aria-label="Plan capacity comparison" tabIndex={0} className="overflow-x-auto">
             <table className="w-full min-w-[640px] text-left text-sm">
               <caption className="sr-only">OneApp platform limits by plan</caption>
-              <thead><tr className="border-b border-black/10 bg-[#faf9fb]"><th scope="col" className="px-7 py-5 font-mono text-[10px] font-bold uppercase tracking-[.16em] text-black/45 sm:px-10">Recommended capacity</th>{plans.map((plan, index) => <th key={plan.name} scope="col" className="px-5 py-5 text-base font-bold">{plan.name} · ${monthlyFee(offer, index)}</th>)}</tr></thead>
+              <thead><tr className="border-b border-black/10 bg-[#faf9fb]"><th scope="col" className="px-7 py-5 font-mono text-[10px] font-bold uppercase tracking-[.16em] text-black/45 sm:px-10">Recommended capacity</th>{plans.map((plan) => <th key={plan.name} scope="col" className="px-5 py-5 text-base font-bold">{plan.name} · ${monthlyFee(offer, plan.price)}</th>)}</tr></thead>
               <tbody>{rows.map((row) => <tr key={row.label} className="border-b border-black/[0.06] last:border-0"><th scope="row" className="px-7 py-5 font-semibold sm:px-10">{row.label}</th>{row.values.map((value, index) => <td key={index} className="px-5 py-5 text-black/65">{value}</td>)}</tr>)}</tbody>
             </table>
           </div>
