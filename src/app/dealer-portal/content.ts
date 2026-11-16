@@ -134,7 +134,7 @@ export const dealerPortalMarkup = String.raw`
               <label>Monthly orders
                 <span class="revenue-field"><input id="pilot-orders" type="text" value="200" inputmode="numeric" spellcheck="false"></span>
               </label>
-              <label>Order growth (%)
+              <label>Order growth <span class="sr-only">in percent</span>
                 <span class="revenue-field revenue-field-percent">
                   <input id="pilot-growth" type="text" value="20" inputmode="decimal" spellcheck="false">
                   <span class="revenue-percent-overlay" aria-hidden="true">
@@ -142,7 +142,7 @@ export const dealerPortalMarkup = String.raw`
                   </span>
                 </span>
               </label>
-              <label>Average order ($)
+              <label>Average order <span class="sr-only">in US dollars</span>
                 <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-aov" type="text" value="125" inputmode="decimal" spellcheck="false"></span>
               </label>
             </div>
@@ -152,10 +152,10 @@ export const dealerPortalMarkup = String.raw`
           <h4 id="retail-input-heading">Your retail storefront</h4>
           <div class="revenue-channel-body">
             <div class="revenue-input-grid retail-input-grid">
-              <label>Monthly sales ($)
+              <label>Monthly sales <span class="sr-only">in US dollars</span>
                 <span class="revenue-field"><span aria-hidden="true">$</span><input id="pilot-retail-sales" type="text" value="20,000" inputmode="decimal" spellcheck="false"></span>
               </label>
-              <label>Retail growth (%)
+              <label>Retail growth <span class="sr-only">in percent</span>
                 <span class="revenue-field revenue-field-percent">
                   <input id="pilot-retail-growth" type="text" value="10" inputmode="decimal" spellcheck="false">
                   <span class="revenue-percent-overlay" aria-hidden="true">
