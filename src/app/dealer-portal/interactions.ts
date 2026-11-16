@@ -165,17 +165,31 @@ export function initializeDealerPortal(root: HTMLElement) {
     button?.setAttribute('aria-label', 'Open navigation');
   }
 
-  const pilotIds = ['pilot-orders', 'pilot-growth', 'pilot-aov', 'pilot-retail-sales', 'pilot-retail-growth'];
+  const pilotFields = {
+    orders: { input: get<HTMLInputElement>('pilot-orders'), max: 1_000_000, unit: '' },
+    growth: { input: get<HTMLInputElement>('pilot-growth'), max: 1000, unit: '%' },
+    averageOrder: { input: get<HTMLInputElement>('pilot-aov'), max: 1_000_000, unit: '$' },
+    retailSales: { input: get<HTMLInputElement>('pilot-retail-sales'), max: 10_000_000, unit: '$' },
+    retailGrowth: { input: get<HTMLInputElement>('pilot-retail-growth'), max: 1000, unit: '%' },
+  } as const;
+  const pilotNumber = new Intl.NumberFormat('en-US', { maximumFractionDigits: 20 });
+
+  function readPilotField({ input, max, unit }: (typeof pilotFields)[keyof typeof pilotFields]) {
+    const raw = input.value.replaceAll(',', '');
+    const value = (unit ? raw.replaceAll(unit, '') : raw).trim();
+    if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(value)) return null;
+    return Math.min(max, Math.max(0, Number(value)));
+  }
+
   function updateForecast() {
-    const read = (id: string, max: number) => Math.min(max, Math.max(0, Number(get<HTMLInputElement>(id).value) || 0));
-    const orders = read('pilot-orders', 1_000_000);
-    const growth = read('pilot-growth', 1000);
-    const aov = read('pilot-aov', 1_000_000);
+    const orders = readPilotField(pilotFields.orders) ?? 0;
+    const growth = readPilotField(pilotFields.growth) ?? 0;
+    const aov = readPilotField(pilotFields.averageOrder) ?? 0;
     const addedOrders = Math.round(orders * growth / 100);
     const wholesale = orders * aov;
     const wholesaleAdded = addedOrders * aov;
-    const retail = read('pilot-retail-sales', 10_000_000);
-    const retailAdded = retail * read('pilot-retail-growth', 1000) / 100;
+    const retail = readPilotField(pilotFields.retailSales) ?? 0;
+    const retailAdded = retail * (readPilotField(pilotFields.retailGrowth) ?? 0) / 100;
     text('pilot-growth-target', `${count(growth)}% more`);
     text('pilot-extra-revenue', `+${money(wholesaleAdded)}`);
     text('pilot-retail-revenue', `+${money(retailAdded)}`);
@@ -253,12 +267,20 @@ export function initializeDealerPortal(root: HTMLElement) {
 
   root.addEventListener('click', handleClick, { signal: listeners.signal });
   root.addEventListener('keydown', handleKeydown, { signal: listeners.signal });
-  root.addEventListener('input', event => {
-    if (event.target instanceof HTMLInputElement && pilotIds.includes(event.target.id)) updateForecast();
-  }, { signal: listeners.signal });
-  root.addEventListener('submit', event => {
-    if (event.target === get('pilot-model-form')) event.preventDefault();
-  }, { signal: listeners.signal });
+  for (const field of Object.values(pilotFields)) {
+    field.input.addEventListener('input', updateForecast, { signal: listeners.signal });
+    field.input.addEventListener('blur', () => {
+      // Keep the caret stable while typing and restore the display format when done.
+      const value = readPilotField(field);
+      if (value === null) {
+        field.input.value = '';
+      } else {
+        const number = pilotNumber.format(value);
+        field.input.value = field.unit === '$' ? `$${number}` : `${number}${field.unit}`;
+      }
+    }, { signal: listeners.signal });
+  }
+  get('pilot-model-form').addEventListener('submit', event => event.preventDefault(), { signal: listeners.signal });
   selectAccess('retail');
   updateForecast();
 
