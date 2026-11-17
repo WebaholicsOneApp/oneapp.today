@@ -11,7 +11,7 @@ export const dealerPortalMarkup = String.raw`
     <button class="menu-toggle" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false"><span></span><span></span></button>
     <nav id="navigation" aria-label="Main navigation">
       <a href="#platform">The platform</a><a href="#how-it-works">How it works</a><a href="#pilot">The pilot</a><a href="#pricing">Pricing</a>
-      <a class="button small primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20demo">Request a demo <span aria-hidden="true">↗</span></a>
+      <a class="button small primary demo-link" href="/#demo">Request a demo <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>
@@ -23,7 +23,7 @@ export const dealerPortalMarkup = String.raw`
         <div class="eyebrow light"><span class="status-dot"></span> ONEAPP DEALER PORTAL <span class="eyebrow-divider">/</span> PILOT PROPOSAL</div>
         <h1>Make dropshipping part of your <span>dealer network.</span></h1>
         <p>Give approved dealers a simple way to sell your products and send customer orders directly to your fulfillment team.</p>
-        <div class="hero-actions"><a class="button primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20demo">Request a demo <span aria-hidden="true">↗</span></a><a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-actions"><a class="button primary demo-link" href="/#demo">Request a demo <span aria-hidden="true">↗</span></a><a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a></div>
         <div class="hero-note"><span class="check" aria-hidden="true">✓</span> Keep control of dealer access and fulfillment terms.</div>
       </div>
       <div class="product-stage hero-dashboard-stage" aria-label="OneApp product concept">
@@ -52,7 +52,7 @@ export const dealerPortalMarkup = String.raw`
           <div class="storefront-catalog-footer"><span id="storefront-mode-note">Retail checkout preview · Prices change when you switch to wholesale.</span><span>Example products and prices · No order is placed</span></div><span class="sr-only" id="cart-announcement" role="status" aria-live="polite"></span>
         </div>
       </div>
-      <div class="visual-caption"><span><i></i> Your branded retail + wholesale website</span><a href="#how-it-works">See how OneApp fulfills the order <span aria-hidden="true">→</span></a></div>
+      <div class="visual-caption"><span><i></i> Your branded retail + wholesale website</span><a href="#how-it-works">See the order and fulfillment workflow <span aria-hidden="true">→</span></a></div>
     </div>
   </div></section>
 
@@ -94,12 +94,12 @@ export const dealerPortalMarkup = String.raw`
 
   <section class="growth-pilot" id="pilot" aria-labelledby="pilot-title"><div class="shell">
     <div class="visual-heading">
-      <div><span class="eyebrow">DEALER PORTAL PILOT</span><h2 id="pilot-title">What success looks like in 90 days</h2></div>
-      <p>Start with 10 dealers and 25 products in this example. We agree on targets before launch.</p>
+      <div><span class="eyebrow">DEALER PORTAL PILOT</span><h2 id="pilot-title">Example 90-day pilot targets</h2></div>
+      <p>This example starts with 10 dealers and 25 products.</p>
     </div>
     <div class="pilot-targets">
       <article>
-        <strong id="pilot-growth-target">20% more</strong>
+        <strong>20% more</strong>
         <h3>Dealer orders per month</h3>
         <p>Compared with your starting monthly order volume.</p>
       </article>
@@ -119,7 +119,7 @@ export const dealerPortalMarkup = String.raw`
         <p>Measured in surveys after dealers place orders.</p>
       </article>
     </div>
-    <p class="pilot-target-note">Suggested targets. We’ll measure the pilot against your brand’s starting numbers.</p>
+    <p class="pilot-target-note">We’ll agree on targets before launch and measure them against your brand’s starting numbers.</p>
     <div class="pilot-model revenue-forecast">
       <div class="pilot-model-intro">
         <span class="eyebrow">ILLUSTRATIVE FORECAST</span>
@@ -184,15 +184,15 @@ export const dealerPortalMarkup = String.raw`
       </div>
       <p class="pilot-model-note">Illustrative forecast in USD. The figures show one month at your target sales pace, before costs and fees.</p>
     </div>
-    <div class="pilot-plan"><div><span>01 / PREPARE</span><strong>Set the baseline.</strong><p>Catalog, dealer terms, integrations, and success measures.</p></div><div><span>02 / ACTIVATE</span><strong>Launch with your dealers.</strong><p>Invite the pilot group and fulfill the first customer orders.</p></div><div><span>03 / MEASURE</span><strong>Prove the return.</strong><p>Review sales, dispatch times, dealer feedback, and actual costs.</p></div></div>
-    <div class="pilot-plan-cta"><span>Setup is scoped to your pilot. <a href="#pricing" class="pilot-pricing-link">See proposed pricing</a>.</span><a class="button primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20pilot">Build your pilot forecast <span aria-hidden="true">↗</span></a></div>
+    <div class="pilot-plan"><div><span>01 / PREPARE</span><strong>Set the baseline.</strong><p>Catalog, dealer terms, integrations, and success measures.</p></div><div><span>02 / ACTIVATE</span><strong>Launch with your dealers.</strong><p>Invite the pilot group and fulfill the first customer orders.</p></div><div><span>03 / MEASURE</span><strong>Review the results.</strong><p>Compare sales, dispatch times, dealer feedback, and actual costs with your baseline.</p></div></div>
+    <div class="pilot-plan-cta"><span>Setup is scoped to your pilot. <a href="#pricing" class="pilot-pricing-link">See proposed pricing</a>.</span><a class="button primary demo-link" href="/#demo">Discuss your pilot <span aria-hidden="true">↗</span></a></div>
   </div></section>
 
   ${dealerPricingMarkup}
 
   <section class="visual-faq shell" id="questions"><h2>A few practical details.</h2><div class="visual-faq-list"><details><summary>Who ships the products?<span aria-hidden="true">+</span></summary><p>Your brand or fulfillment partner packs and ships. OneApp would coordinate the order flow and updates.</p></details><details><summary>How would payments and returns work?<span aria-hidden="true">+</span></summary><p>Dealers handle their retail sales. Your brand receives wholesale payment under agreed terms. Shipping, fees, returns, and any payment integrations are defined for the pilot.</p></details><details><summary>What would we agree before launch?<span aria-hidden="true">+</span></summary><p>We confirm the proposed features, dealer rules, stock updates, integrations, setup fee, monthly plan, and delivery schedule. The screens above are product concepts with example data. Pilot targets and financial assumptions are agreed against your baseline; they are not guaranteed results.</p></details></div></section>
 
-  <section class="contact" id="contact"><div class="shell contact-inner"><span class="eyebrow light">LET’S PLAN YOUR FIRST ORDER</span><h2>Bring dropshipping<br>to your dealer network.</h2><p>Tell us how your dealers order today.<br>We’ll map out what a OneApp pilot could look like.</p><a class="button primary demo-link" href="mailto:adrian@webaholics.ai?subject=OneApp%20Dealer%20Portal%20demo">Request a demo <span aria-hidden="true">↗</span></a><a class="contact-email" href="mailto:adrian@webaholics.ai">adrian@webaholics.ai</a></div></section>
+  <section class="contact" id="contact"><div class="shell contact-inner"><span class="eyebrow light">LET’S PLAN YOUR FIRST ORDER</span><h2>Bring dropshipping<br>to your dealer network.</h2><p>Tell us how your dealers order today.<br>We’ll map out what a OneApp pilot could look like.</p><a class="button primary demo-link" href="/#demo">Request a demo <span aria-hidden="true">↗</span></a><a class="contact-email" href="mailto:adrian@webaholics.ai">adrian@webaholics.ai</a></div></section>
 </main>
 <footer><div class="shell footer-inner"><a class="brand" href="/" aria-label="OneApp home"><img src="/dealer-portal/oneapp-logo-white.png" alt="OneApp" width="112" height="29"></a><p>Dealer Portal · Pilot proposal</p><a href="#questions">Questions <span aria-hidden="true">↗</span></a><span>© 2026 OneApp</span></div></footer>
 `;

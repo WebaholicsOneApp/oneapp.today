@@ -25,10 +25,10 @@ export const dealerPricingMarkup = `
           <p class="eyebrow">PROPOSED ONEAPP ECOMMERCE PRICING</p>
           <h2 id="dealer-pricing-title">Pick a plan for your catalog.</h2>
         </div>
-        <p>Compare monthly software plans by the size of the catalog you actively sync and the capacity your team needs.</p>
+        <p>Choose a monthly OneApp software subscription based on the size of your active catalog and your team’s usage.</p>
       </div>
       <div class="dealer-plan-grid">${planCards}</div>
-      <p class="dealer-pricing-note">Active synced SKUs count sellable products managed by OneApp. Stored supplier catalogs are separate. Confirm plan allowances, setup, hosting, and any additional usage charges in your pilot proposal.</p>
+      <p class="dealer-pricing-note">Active synced SKUs count sellable products managed by OneApp. Stored supplier catalogs are separate. Pilot setup and integrations are scoped separately. Your pilot proposal confirms plan allowances, hosting, and any additional usage charges. <a class="pilot-pricing-link" href="/pricing?offer=ecommerce">See full OneApp ecommerce pricing</a>.</p>
 
       <section class="dealer-agency" aria-labelledby="dealer-agency-title">
         <div class="dealer-agency-copy">
