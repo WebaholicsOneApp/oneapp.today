@@ -34,9 +34,6 @@ export function initializeDealerPortal(root: HTMLElement) {
   const money = (value: number) => new Intl.NumberFormat('en-US', {
     style: 'currency', currency: 'USD', maximumFractionDigits: 0,
   }).format(value);
-  const count = (value: number) => new Intl.NumberFormat('en-US', {
-    maximumFractionDigits: 1,
-  }).format(value);
 
   const products = {
     plate: { name: 'Trail skid plate', label: 'skid plate', retail: 140, wholesale: 84 },
@@ -205,7 +202,6 @@ export function initializeDealerPortal(root: HTMLElement) {
     const wholesaleAdded = addedOrders * aov;
     const retail = readPilotField(pilotFields.retailSales) ?? 0;
     const retailAdded = retail * (readPilotField(pilotFields.retailGrowth) ?? 0) / 100;
-    text('pilot-growth-target', `${count(growth)}% more`);
     text('pilot-extra-revenue', `+${money(wholesaleAdded)}`);
     text('pilot-retail-revenue', `+${money(retailAdded)}`);
     text('pilot-combined-revenue', `+${money(wholesaleAdded + retailAdded)}`);

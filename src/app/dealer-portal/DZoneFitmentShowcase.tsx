@@ -100,7 +100,7 @@ export function DZoneFitmentShowcase() {
             ))}
           </div>
           <p className={styles.brandNote}>Your brand. Your catalog. OneApp does the matching. Try it here with D-Zone’s parts and fitment data, then picture it on your own storefront.</p>
-          <a className={styles.cta} href="mailto:adrian@webaholics.ai?subject=Fitment%20chat%20for%20our%20brand">Show me this for my brand <ArrowRight size={16} /></a>
+          <a className={styles.cta} href="/#demo">Show me this for my brand <ArrowRight size={16} /></a>
         </div>
 
         <div ref={preview} className={styles.visual}>

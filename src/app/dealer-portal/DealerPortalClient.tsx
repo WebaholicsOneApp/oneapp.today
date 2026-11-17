@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { captureLeadAttribution } from '~/lib/attribution';
 import { dealerPortalMarkup } from './content';
 import { initializeDealerPortal } from './interactions';
 import { DZoneFitmentShowcase } from './DZoneFitmentShowcase';
@@ -19,6 +20,7 @@ export function DealerPortalClient() {
 
   useEffect(() => {
     if (!root.current) return;
+    captureLeadAttribution();
     return initializeDealerPortal(root.current);
   }, []);
 
